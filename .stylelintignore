@@ -1,0 +1,5 @@
+#ignore everything first
+*
+#allow only scss files in src folder to be linted
+!src
+!src/**/*.scss
