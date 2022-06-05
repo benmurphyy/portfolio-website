@@ -1,0 +1,32 @@
+[
+    {
+        "Title": "Tutor",
+        "Company": "Self-Employed",
+        "Duration": "Dec 2017 - Present",
+        "Summary": [
+            "Started providing Secondary School English, Sciences and Humanities subjects from 2017",
+            "Currently providing private computing tuition for both University courses and Pre- University Computer Science"
+        ]
+    },
+    {
+        "Title": "Software Engineer Intern",
+        "Company": "Singapore E-Business Pte. Ltd.",
+        "Duration": "May 2021 - Jul 2021",
+        "Summary": [
+            "Learnt to develop process flows for conceptualising implementation of payment services such as cross border payments",
+            "Developed backend for direct debit authorization service, utilizing Spring Boot framework in Java to implement RESTful API, with Hibernate ORM to interact with MySql supporting database",
+            "Played a key role in the development process, including testing and debugging, reviewing and approving code written by junior developer, providing guidance as needed"
+        ]
+    },
+    {
+        "Title": "Software Engineer Intern",
+        "Company": "Shopee Pte. Ltd.",
+        "Duration": "May 2021 - Present",
+        "Summary": [
+            "Frontend Software Development",
+            "Developed mostly in Typescript",
+            "Libraries used in development: React, Vue.js",
+            "Gained experienced in manually configuring code bundler (Webpack) to set up critical features like transpiling typescript, code-splitting, uglification etc"
+        ]
+    }
+]

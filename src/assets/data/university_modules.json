@@ -1,0 +1,170 @@
+[
+    {
+        "code": "CS1101S",
+        "name": "Programming Methodology",
+        "type": "cs",
+        "description": "",
+        "grade": "A"
+    },
+    {
+        "code": "CS1231S",
+        "name": "Discrete Structures",
+        "type": "cs",
+        "description": "",
+        "grade": "A"
+    },
+    {
+        "code": "IS1103",
+        "name": "Ethics in Computing",
+        "type": "others",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "MA1101R",
+        "name": "Linear Algebra I",
+        "type": "technical",
+        "description": "",
+        "grade": "S" 
+    },
+    {
+        "code": "CS1101R",
+        "name": "Programming Methodology",
+        "type": "cs",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "CS2030S",
+        "name": "Programming Methodology II",
+        "type": "cs",
+        "description": "",
+        "grade": "A" 
+    },
+    {
+        "code": "ES1601",
+        "name": "Professional and Academic Communication",
+        "type": "others",
+        "description": "",
+        "grade": "A" 
+    },
+    {
+        "code": "ES2660",
+        "name": "Communicating in the Information Age",
+        "type": "others",
+        "description": "",
+        "grade": "S" 
+    },
+    {
+        "code": "GEQ1917",
+        "name": "Understanding and Critiquing Sustainability",
+        "type": "others",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "GER1000",
+        "name": "Quantitative Reasoning",
+        "type": "technical",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "LSM1301",
+        "name": "General Biology",
+        "type": "technical",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "MA1521",
+        "name": "Calculus for Computing",
+        "type": "technical",
+        "description": "",
+        "grade": "A" 
+    },
+    {
+        "code": "WR1401",
+        "name": "Workplace Readiness",
+        "type": "others",
+        "description": "",
+        "grade": "CS" 
+    },
+    {
+        "code": "CS2040S",
+        "name": "Data Structure and Algorithms",
+        "type": "cs",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "CS2100",
+        "name": "Computer Organisation",
+        "type": "cs",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "CS2107",
+        "name": "Introduction To Information Security",
+        "type": "cs",
+        "description": "",
+        "grade": "A" 
+    },
+    {
+        "code": "GEH1074",
+        "name": "Luck",
+        "type": "others",
+        "description": "",
+        "grade": "S" 
+    },
+    {
+        "code": "PLS8002",
+        "name": "Cultivating the Self",
+        "type": "others",
+        "description": "",
+        "grade": "CS" 
+    },
+    {
+        "code": "ST2334",
+        "name": "Probability & Statistics",
+        "type": "technical",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "CS2103",
+        "name": "Software Engineering",
+        "type": "cs",
+        "description": "",
+        "grade": "A" 
+    },
+    {
+        "code": "CS2106",
+        "name": "Introduction to Operating Systems",
+        "type": "cs",
+        "description": "",
+        "grade": "A" 
+    },
+    {
+        "code": "CS2105",
+        "name": "Introduction to Computer Networks",
+        "type": "cs",
+        "description": "",
+        "grade": "A+" 
+    },
+    {
+        "code": "CS2102",
+        "name": "Database Systems",
+        "type": "cs",
+        "description": "",
+        "grade": "A" 
+    },
+    {
+        "code": "GET1018",
+        "name": "The Mathematics of Games",
+        "type": "technical",
+        "description": "",
+        "grade": "A" 
+    }
+]

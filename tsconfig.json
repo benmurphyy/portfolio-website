@@ -8,10 +8,11 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
       "src/*": ["./src/*"]
     }
   },
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
+  "include": ["./custom.d.ts", "./src/**/*.tsx", "./src/**/*.ts"]
 }
