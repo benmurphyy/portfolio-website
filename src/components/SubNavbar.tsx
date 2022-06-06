@@ -7,8 +7,7 @@
  * 4) forwardRef is used so that the parent component that contains this subnavbar can reference it
  * 
  */
-
-import React, { useState, useEffect, useRef, forwardRef} from "react";
+import { useState, useEffect, useRef, forwardRef, RefObject } from "react";
 import { useSpring, animated } from 'react-spring';
 import { Nav, Navbar } from 'react-bootstrap';
 
@@ -22,6 +21,14 @@ const observerOptionsDefaultShort = {
 const observerOptionsDefaultLong = {
     rootMargin: '0px',
     threshold: 0.1
+}
+
+interface SubNavbarProps {
+  subPageRefs: {
+    [key: string]: RefObject<HTMLDivElement>
+  },
+  isAnimated: boolean,
+  observerOptionsShort: 
 }
 
 const SubNavbar = forwardRef(({ subPageRefs, isAnimated, observerOptionsShort, observerOptionsLong}, ref) => {
@@ -128,5 +135,7 @@ const SubNavbar = forwardRef(({ subPageRefs, isAnimated, observerOptionsShort, o
         </AnimatedNavbar>
     )
 });
+
+SubNavbar.displayName = "SubNavbar"
 
 export default SubNavbar;

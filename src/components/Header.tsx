@@ -7,7 +7,12 @@ import {Container, Row, Col} from 'react-bootstrap';
  * also this header does not rerender if no props changes, since it is a minimal component, and we dont want unecessary slowdowns in performance.
  */
 
- const Header = React.memo(({ backgroundImage, InnerComponent }) => {
+interface HeaderProps {
+  backgroundImage: string,
+  InnerComponent: React.FC
+}
+
+ const Header = React.memo(({ backgroundImage, InnerComponent }: HeaderProps) => {
     return (
         <Container fluid className="h-100 header-background p-0" style={{backgroundImage: `url(${backgroundImage})`}}>
             <Row className="h-100 align-items-center justify-content-center m-0">
@@ -17,6 +22,8 @@ import {Container, Row, Col} from 'react-bootstrap';
             </Row>
         </Container>
     );
-});
+ });
+
+Header.displayName = "Header";
 
 export default Header;

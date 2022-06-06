@@ -1,10 +1,14 @@
-import React from 'react';
 import { Container } from 'react-bootstrap';
 import { animated, useSpring } from 'react-spring';
 
+interface AnimatedQuoteProps {
+  quoteText: string,
+  quoteOrigin: string,
+  variant: string,
+}
 
 //two variants - dark and light for font colour
-function AnimatedQuote({quoteText, quoteOrigin, variant}) {
+function AnimatedQuote({quoteText, quoteOrigin, variant}: AnimatedQuoteProps) {
     const style = useSpring({
         from: {
             opacity: 0

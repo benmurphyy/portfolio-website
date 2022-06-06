@@ -10,7 +10,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
  */
 export default function useScrollToSubpageBasedOnPath(
   subNavBarRef: RefObject<HTMLDivElement>,
-  quickLinkPaths: string[],
+  quickLinkPaths: [],
   navigator: RefObject<HTMLDivElement>,
   subPageRefs: RefObject<HTMLDivElement>
 ) {
@@ -47,7 +47,7 @@ export default function useScrollToSubpageBasedOnPath(
     if (subNavBarRef.current) {
       //scroll to the subpage
       for (const quickLinkPath of quickLinkPaths) {
-        if (quickLinkPath.path === currentPath.pathname) {
+        if (quickLinkPath === currentPath.pathname) {
           console.log(subNavBarRef.current);
           scrollTo(subPageRefs.current.get(quickLinkPath.name));
           //2nd arg is replace true so as to replace that extra /pathname after the actual pathname, so backtrack works as expected
