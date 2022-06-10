@@ -1,14 +1,20 @@
 import { Container } from 'react-bootstrap';
-import { animated, useSpring } from 'react-spring';
+import { animated, useSpring } from '@react-spring/web';
+
+export enum AnimatedQuoteVariants {
+  DARK,
+  LIGHT
+}
 
 interface AnimatedQuoteProps {
   quoteText: string,
   quoteOrigin: string,
-  variant: string,
+  variant?: AnimatedQuoteVariants,
 }
 
-//two variants - dark and light for font colour
-function AnimatedQuote({quoteText, quoteOrigin, variant}: AnimatedQuoteProps) {
+// two variants - dark and light for font colour
+// default is light
+export default function AnimatedQuote({quoteText, quoteOrigin, variant = AnimatedQuoteVariants.LIGHT}: AnimatedQuoteProps) {
     const style = useSpring({
         from: {
             opacity: 0
@@ -16,7 +22,7 @@ function AnimatedQuote({quoteText, quoteOrigin, variant}: AnimatedQuoteProps) {
         opacity: 1
     });
 
-    return variant === 'dark' ? (
+    return variant === AnimatedQuoteVariants.DARK ? (
         <Container>
             <animated.h1 style={style} className="fw-bold text-dark text-shadow">
                 {quoteText}
@@ -37,4 +43,3 @@ function AnimatedQuote({quoteText, quoteOrigin, variant}: AnimatedQuoteProps) {
             </Container>
         );
 }
-export default AnimatedQuote;

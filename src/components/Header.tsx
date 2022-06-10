@@ -9,15 +9,15 @@ import {Container, Row, Col} from 'react-bootstrap';
 
 interface HeaderProps {
   backgroundImage: string,
-  InnerComponent: React.FC
+  children: React.ReactNode
 }
 
- const Header = React.memo(({ backgroundImage, InnerComponent }: HeaderProps) => {
+ const Header = React.memo(({ backgroundImage, children }: HeaderProps) => {
     return (
         <Container fluid className="h-100 header-background p-0" style={{backgroundImage: `url(${backgroundImage})`}}>
             <Row className="h-100 align-items-center justify-content-center m-0">
                 <Col>
-                    <InnerComponent />
+                  { children }
                 </Col>
             </Row>
         </Container>

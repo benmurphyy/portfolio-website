@@ -1,21 +1,19 @@
-import React, { useRef } from 'react';
+import headerBackgroundImage from 'assets/images/experience_background-min.jpg';
+import { useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Header from 'components/custom/Header';
-import SubNavbar from 'components/custom/SubNavbar';
-import AnimatedQuote from 'components/custom/AnimatedQuote';
-import headerBackgroundImage from 'assets/images/experience_background-min.jpg'
+import { Header } from 'semantic-ui-react';
+import AnimatedQuote from 'src/components/AnimatedQuote';
+import SubNavbar from 'src/components/SubNavbar';
+import useScrollToSubpageBasedOnPath from 'src/util/hooks/useScrollToSubpageBasedOnPath';
+import useSubNavbarTrigger from 'src/util/hooks/useSubNavbarTrigger';
+import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
 import CareerExperience from './careerExperienceSection';
-import Achievements from './Achievements';
+import Achievements from 'src/pages/experiencePage/achievementsSection';
 import Projects from './projectsSection';
-import useScrollToSubpageBasedOnPath from 'components/util/custom_react_hooks/useScrollToSubpage';
-import useSubNavbarTrigger from 'components/util/custom_react_hooks/useSubNavbarTrigger';
-import useSubPageRefMapCreator from 'components/util/custom_react_hooks/useSubPageRefMapCreator';
 
-const quotes = require('data/quotes.json');
-
-//set up data variables
-
-const quickLinks = require('data/quick_links.json');
+// import and set up data variables
+import quotes from 'src/assets/data/quotes.json';
+import quickLinks from 'src/assets/data/quick_links.json';
 const quoteText = quotes.experiencePage.quoteText;
 const quoteOrigin = quotes.experiencePage.quoteOrigin;
 

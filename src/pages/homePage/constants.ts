@@ -30,7 +30,7 @@ export const contacts = [
 ];
 
 //array of download objects, corresponding to items we want to download
-const downloads = [
+export const downloads = [
     {
         name: "Resume",
         link: "/assets/documents/Resume_Ben_Murphy.pdf",
