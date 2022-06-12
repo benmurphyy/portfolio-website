@@ -26,156 +26,199 @@ import { ReactComponent as WebpackIcon } from 'assets/icons/skills/webpack/webpa
 import { ReactComponent as VueJsIcon } from 'assets/icons/skills/vuejs/vuejs.svg';
 import { ReactComponent as PostgreSQLIcon } from 'assets/icons/skills/postgresql/postgresql.svg';
 
-export const skills = {
+enum Types {
+  MISCELLANEOUS = "Miscellaneous",
+  PROGRAMMING_LANGUAGES = "Programming Languages",
+  LIBRARIES_RUNTIMES_FRAMEWORKS = "Libraries, Runtimes and Frameworks"
+}
+
+enum Proficiencys {
+  VERY_HIGH = "Very High",
+  HIGH = "High",
+  FAIR = "Fair"
+}
+
+interface Skill {
+  icon: React.ElementType,
+  type: Types,
+  proficiency: Proficiencys
+}
+
+export const skills: {
+  [key: string]: Skill
+} = {
   Arduino: {
     icon: ArduinoIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'Fair',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.FAIR,
   },
   Bash: {
     icon: BashIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Bootstrap: {
     icon: BootstrapIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   C: {
     icon: CIcon,
-    Type: 'Programming Languages',
-    Proficiency: 'High',
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.HIGH,
   },
   CSS: {
     icon: CSSIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Docker: {
     icon: DockerIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'Fair',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.FAIR,
   },
   Git: {
     icon: GitIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   HTML: {
     icon: HTMLIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Java: {
     icon: JavaIcon,
-    Type: 'Programming Languages',
-    Proficiency: 'Very High',
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.VERY_HIGH,
   },
   Javascript: {
     icon: JavascriptIcon,
-    Type: 'Programming Languages',
-    Proficiency: 'High',
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.HIGH,
   },
   Kotlin: {
     icon: KotlinIcon,
-    Type: 'Programming Languages',
-    Proficiency: 'Fair',
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.FAIR,
   },
   Linux: {
     icon: LinuxIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Lua: {
     icon: LuaIcon,
-    Type: 'Programming Languages',
-    Proficiency: 'Fair',
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.FAIR,
   },
   MySql: {
     icon: MySqlIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'Fair',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.FAIR,
   },
   NodeJS: {
     icon: NodeJSIcon,
-    Type: 'Libraries, Runtimes & Frameworks',
-    Proficiency: 'Fair',
+    type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
+    proficiency: Proficiencys.FAIR,
   },
   Python: {
     icon: PythonIcon,
-    Type: 'Programming Languages',
-    Proficiency: 'Very High',
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.VERY_HIGH,
   },
   'Raspberry Pi': {
     icon: RaspberryPiIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'Fair',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.FAIR,
   },
   React: {
     icon: ReactIcon,
-    Type: 'Libraries, Runtimes & Frameworks',
-    Proficiency: 'Very High',
+    type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
+    proficiency: Proficiencys.VERY_HIGH,
   },
   Spring: {
     icon: SpringIcon,
-    Type: 'Libraries, Runtimes & Frameworks',
-    Proficiency: 'High',
+    type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
+    proficiency: Proficiencys.HIGH,
   },
   Unix: {
     icon: UnixIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Vim: {
     icon: VimIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   VSCode: {
     icon: VscodeIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Yarn: {
     icon: YarnIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Typescript: {
     icon: TypescriptIcon,
-    Type: 'Programming Languages',
-    Proficiency: 'High',
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.HIGH,
   },
   Webpack: {
     icon: WebpackIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
   Vuejs: {
     icon: VueJsIcon,
-    Type: 'Libraries, Runtimes & Frameworks',
-    Proficiency: 'High',
+    type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
+    proficiency: Proficiencys.HIGH,
   },
   PostgreSQL: {
     icon: PostgreSQLIcon,
-    Type: 'Miscellaneous',
-    Proficiency: 'High',
+    type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
   },
 };
 
 //all the sorting categories for each type of sorting criteria
 export const sortingCategories = {
-  Type: [
-    'Programming Languages',
-    'Libraries, Runtimes & Frameworks',
-    'Miscellaneous',
+  type: [
+    Types.PROGRAMMING_LANGUAGES,
+    Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
+    Types.MISCELLANEOUS,
   ],
-  Proficiency: ['Very High', 'High', 'Fair'],
+  proficiency: [Proficiencys.VERY_HIGH, Proficiencys.HIGH, Proficiencys.FAIR],
 };
 
-export enum SkillsSortingCriteria {
-  ALPHABET = "Alphabet",
-  TYPE = "Type",
-  PROFICIENCY = "Proficiency"
+// object that contains the information for a particular sorting criteria
+interface SkillsSortObject {
+  // tht title of the sorting criteria in the button that activates it
+  title: string;
+  // the background color of the header when this sorting criteria is active
+  backgroundColor: string;
 }
+
+export enum SkillsSortingCriteria {
+  ALPHABET = 'alphabet',
+  TYPE = 'type',
+  PROFICIENCY = 'proficiency'
+}
+
+export const skillsSortingCriteriaDetails: { [key: string]: SkillsSortObject } = {
+  [SkillsSortingCriteria.ALPHABET]: {
+    title: 'Alphabet',
+    backgroundColor: '#EEF4D4',
+  },
+  [SkillsSortingCriteria.TYPE]: {
+    title: 'Type',
+    backgroundColor: '#DAEFB3',
+  },
+  [SkillsSortingCriteria.PROFICIENCY]: {
+    title: 'Proficiency',
+    backgroundColor: '#EA9E8D',
+  },
+};
