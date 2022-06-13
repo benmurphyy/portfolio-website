@@ -5,11 +5,10 @@
 import { animated, useSpring } from '@react-spring/web';
 import { MutableRefObject, useEffect, useLayoutEffect, useRef } from 'react';
 
-
 /**
  * Type which tracks position of a DOM node with the top and left keys.
  */
-interface Position {
+export interface Position {
   top: number;
   left: number;
 }
@@ -28,7 +27,7 @@ type IconProps = {
   // which prevents the inbuilt previous position tracking from working
   previousPositionFromParent?: Position;
   // optional: to give parent container access to the ref to the Icon, so it can get its position if needed
-  iconRef?: MutableRefObject<HTMLDivElement>
+  iconRef?: MutableRefObject<HTMLDivElement | null>;
 };
 
 /**
@@ -46,16 +45,18 @@ export default function Icon({
   height,
   width,
   previousPositionFromParent,
-  iconRef
+  iconRef,
 }: IconProps) {
   const AnimatedIcon = animated(IconSvgComponent);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   // if previousPositionFromParent is given, then set previous position to be that, else
   // set it to be the top and left values from containerRef.current
-  // containerRef would have the old HTMLDivElement in the previous render at this point, 
+  // containerRef would have the old HTMLDivElement in the previous render at this point,
   // thus we can store the old position of the SVG icon here
-  const previousPosition = previousPositionFromParent ? previousPositionFromParent : containerRef.current
+  const previousPosition = previousPositionFromParent
+    ? previousPositionFromParent
+    : containerRef.current
     ? {
         top: containerRef.current.offsetTop,
         left: containerRef.current.offsetLeft,
@@ -109,7 +110,7 @@ export default function Icon({
     moveSvg(newPosition);
   });
 
-  // callback function to pass as ref to the div container 
+  // callback function to pass as ref to the div container
   // so that both containerRef and iconRef can contain the div container in their current properties
   function containerRefCallback(element: HTMLDivElement) {
     if (iconRef) {

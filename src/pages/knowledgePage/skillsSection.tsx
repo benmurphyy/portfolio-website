@@ -1,24 +1,14 @@
-import { useSpring, animated } from '@react-spring/web';
-import React, {
-  forwardRef,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
-import Icon from 'src/components/Icon';
-import Heading from 'src/pages/homePage/components/CustomLineBreaker';
-import { skills, SkillsSortingCriteria, sortingCategories } from 'src/pages/knowledgePage/constants';
+import { ForwardedRef, forwardRef, useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import SkillIcons from 'src/pages/knowledgePage/components/SkillIcons';
+import SkillsHeading from 'src/pages/knowledgePage/components/SkillsHeading';
 
-
-
-export default const SkillsSection = forwardRef((props, ref) => {
-  const [sortMethod, setSortMethod] = useState("alphabet");
+const SkillsSection = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
+  const [sortMethod, setSortMethod] = useState('alphabet');
   return (
     <Container fluid className="background-grunge" ref={ref}>
       <Row>
-        <Heading setSortMethod={setSortMethod} />
+        <SkillsHeading setSortMethodCallback={setSortMethod} />
       </Row>
       <Row>
         <SkillIcons sortMethod={sortMethod} />
@@ -28,4 +18,6 @@ export default const SkillsSection = forwardRef((props, ref) => {
   );
 });
 
-//we dont want this component being unecessarily rerendered upon irrelevant state change in parent that dosent affect it.
+SkillsSection.displayName = 'SkillsSection';
+
+export default SkillsSection;
