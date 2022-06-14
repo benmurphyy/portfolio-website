@@ -1,11 +1,15 @@
-import { ForwardedRef, forwardRef } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Heading from "src/pages/homePage/components/CustomLineBreaker";
-import { contacts, downloads } from "src/pages/homePage/constants";
-import DownloadIcon from 'src/assets/icons/download/download.svg';
+import { ForwardedRef, forwardRef } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Heading from 'src/pages/homePage/components/CustomLineBreaker';
+import { contacts, downloads } from 'src/pages/homePage/constants';
+import DownloadIcon from 'src/assets/icons/contact/download/download.svg';
 
 //to return specific contact icon
-function ContactIconSelector({ IconSVGComponent }: { IconSVGComponent: React.ElementType}) {
+function ContactIconSelector({
+  IconSVGComponent,
+}: {
+  IconSVGComponent: React.ElementType;
+}) {
   return <IconSVGComponent />;
 }
 
@@ -56,6 +60,6 @@ const Contact = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   );
 });
 
-Contact.displayName = "Contact";
+Contact.displayName = 'Contact';
 
 export default Contact;

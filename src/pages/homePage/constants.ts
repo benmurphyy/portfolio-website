@@ -1,7 +1,7 @@
-import GithubIcon from 'assets/icons/contact/github/github-original.svg';
-import TelegramIcon from 'assets/icons/contact/telegram/telegram.svg';
-import LinkedInIcon from 'assets/icons/contact/linkedin/linkedin-original.svg';
-import EmailIcon from 'assets/icons/contact/email/email.svg';
+import GithubIcon from 'src/assets/icons/contact/github/github-original.svg';
+import TelegramIcon from 'src/assets/icons/contact/telegram/telegram.svg';
+import LinkedInIcon from 'src/assets/icons/contact/linkedin/linkedin-original.svg';
+import EmailIcon from 'src/assets/icons/contact/email/email.svg';
 
 export const subPages = ['About Me', 'Contact'];
 
@@ -31,12 +31,12 @@ export const contacts = [
 
 //array of download objects, corresponding to items we want to download
 export const downloads = [
-    {
-        name: "Resume",
-        link: "/assets/documents/Resume_Ben_Murphy.pdf",
-    },
-    {
-        name: "Transcript",
-        link: "/assets/documents/Transcript_Ben_Murphy.pdf"
-    }
-]
+  {
+    name: 'Resume',
+    link: '/assets/documents/Resume_Ben_Murphy.pdf',
+  },
+  {
+    name: 'Transcript',
+    link: '/assets/documents/Transcript_Ben_Murphy.pdf',
+  },
+];

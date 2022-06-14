@@ -10,12 +10,12 @@ import Routes from 'src/routes';
  */
 
 export default function App() {
-  const navigatorRef = useRef<HTMLDivElement>(null);
+  const mainNavbarRef = useRef<HTMLDivElement>(null);
   return (
     <HashRouter basename="/">
       <Container fluid className="App p-0 fill h-100">
-        <Navigator ref={navigatorRef}></Navigator>
-        <Routes navigator={navigatorRef} />
+        <Navigator ref={mainNavbarRef}></Navigator>
+        <Routes mainNavbarRef={mainNavbarRef} />
       </Container>
     </HashRouter>
   );

@@ -5,24 +5,25 @@ import SubNavbar from 'src/components/SubNavbar';
 import AboutMe from 'src/pages/homePage/components/AboutMe';
 import Contact from 'src/pages/homePage/components/Contact';
 import QuickLinks from 'src/pages/homePage/components/QuickLinks';
-import { subPages } from 'src/pages/homePage/constants';
-import useSubNavbarTrigger from 'src/util/hooks/useSubNavbarTrigger';
+import { subPages } from 'src/pages/constants';
 import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
 import headerBackgroundImage from 'src/assets/images/homepage_background-min.jpg';
 import AnimatedGreeting from 'src/pages/homePage/components/AnimatedGreeting';
 
-export default function Homepage({ navigatorRef }: { navigatorRef: RefObject<HTMLDivElement>}) {
+interface HomepageProps {
+  mainNavbarRef: RefObject<HTMLDivElement>;
+}
+
+export default function Homepage({ mainNavbarRef }: HomepageProps) {
   const subPageRefs = useSubPageRefMapCreator(subPages);
-  const subNavState = useSubNavbarTrigger(navigatorRef);
   const subNavbarRef = useRef<HTMLDivElement>(null);
   return (
     <Container fluid className="p-0 h-100">
-      {subNavState && (
-        <SubNavbar
-          subNavbarRef={subNavbarRef}
-          subPageRefs={subPageRefs.current}
-        />
-      )}
+      <SubNavbar
+        mainNavbarRef={mainNavbarRef}
+        subNavbarRef={subNavbarRef}
+        subPageRefs={subPageRefs.current}
+      />
       <Header backgroundImage={headerBackgroundImage}>
         <AnimatedGreeting />
       </Header>

@@ -4,22 +4,22 @@ import quickLinks from 'src/assets/data/quick_links.json';
 
 /**
  * custom react hook to handle the scrolling to a specific subpage on a page based on path name. Used for quicklink navigation.
- * @param {*} subNavBarRef  ref to subnavbar
- * @param {*} navigator  ref to main nav bar
+ * @param {*} subNavbarRef  ref to subnavbar
+ * @param {*} mainNavbarRef  ref to main nav bar
  * @param {*} subPageRefs  ref that contains a map of all subpage names to their own refs
  */
 export default function useScrollToSubpageBasedOnPath(
-  subNavBarRef: RefObject<HTMLDivElement>,
-  navigator: RefObject<HTMLDivElement>,
+  subNavbarRef: RefObject<HTMLDivElement>,
+  mainNavbarRef: RefObject<HTMLDivElement>,
   subPageRefs: RefObject<Map<string, RefObject<HTMLDivElement>>>
 ) {
   //scroll to section of page using its ref, taking into account the height of the subnavbar, so scroll correct amount
   function scrollTo(sectionRef: RefObject<HTMLDivElement>) {
     //dont execute if any of the current objects in the ref are null
-    if (!subNavBarRef.current || !sectionRef.current) {
+    if (!subNavbarRef.current || !sectionRef.current) {
       return;
     }
-    const yOffset = -subNavBarRef.current.offsetHeight;
+    const yOffset = -subNavbarRef.current.offsetHeight;
     const y =
       sectionRef.current.getBoundingClientRect().top +
       window.pageYOffset +
@@ -33,8 +33,8 @@ export default function useScrollToSubpageBasedOnPath(
   // thus making the subnavbar visible so that can use its height on screen to control the exact scroll amount.
   useEffect(() => {
     for (const quickLink of quickLinks) {
-      if (quickLink.name === currentPath.pathname && navigator.current) {
-        const yOffset = navigator.current.offsetHeight;
+      if (quickLink.name === currentPath.pathname && mainNavbarRef.current) {
+        const yOffset = mainNavbarRef.current.offsetHeight;
         const y = window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
@@ -44,7 +44,7 @@ export default function useScrollToSubpageBasedOnPath(
   // conditional effect only if subnavbar is already active, this is so the ref for it exists, and we can scroll to the subpage in
   // scrollTo function
   useEffect(() => {
-    if (subNavBarRef.current) {
+    if (subNavbarRef.current) {
       //scroll to the subpage
       for (const quickLink of quickLinks) {
         if (quickLink.name === currentPath.pathname) {

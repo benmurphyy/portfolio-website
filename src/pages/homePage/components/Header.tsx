@@ -1,5 +1,5 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { AnimatedGreeting } from "src/pages/homePage/components/AnimatedGreeting";
+import { Container, Row, Col } from 'react-bootstrap';
+import AnimatedGreeting from 'src/pages/homePage/components/AnimatedGreeting';
 import homepageBackground from 'src/assets/images/homepage_background-min.jpg';
 
 //header containing the background image and initial greeting

@@ -1,51 +1,51 @@
-import { ReactComponent as ArduinoIcon } from 'assets/icons/skills/arduino/arduino-original.svg';
-import { ReactComponent as BashIcon } from 'assets/icons/skills/bash/bash-original.svg';
-import { ReactComponent as BootstrapIcon } from 'assets/icons/skills/bootstrap/bootstrap-original.svg';
-import { ReactComponent as CIcon } from 'assets/icons/skills/c/c-original.svg';
-import { ReactComponent as CSSIcon } from 'assets/icons/skills/css3/css3-original.svg';
-import { ReactComponent as DockerIcon } from 'assets/icons/skills/docker/docker-original.svg';
-import { ReactComponent as GitIcon } from 'assets/icons/skills/git/git-original.svg';
-import { ReactComponent as HTMLIcon } from 'assets/icons/skills/html5/html5-original.svg';
-import { ReactComponent as JavaIcon } from 'assets/icons/skills/java/java-original.svg';
-import { ReactComponent as JavascriptIcon } from 'assets/icons/skills/javascript/javascript-original.svg';
-import { ReactComponent as KotlinIcon } from 'assets/icons/skills/kotlin/kotlin-original.svg';
-import { ReactComponent as LinuxIcon } from 'assets/icons/skills/linux/linux-original.svg';
-import { ReactComponent as LuaIcon } from 'assets/icons/skills/lua/lua-original.svg';
-import { ReactComponent as MySqlIcon } from 'assets/icons/skills/mysql/mysql-original.svg';
-import { ReactComponent as NodeJSIcon } from 'assets/icons/skills/nodejs/nodejs-original.svg';
-import { ReactComponent as PythonIcon } from 'assets/icons/skills/python/python-original.svg';
-import { ReactComponent as RaspberryPiIcon } from 'assets/icons/skills/raspberrypi/raspberrypi-original.svg';
-import { ReactComponent as ReactIcon } from 'assets/icons/skills/react/react-original.svg';
-import { ReactComponent as SpringIcon } from 'assets/icons/skills/spring/spring-original.svg';
-import { ReactComponent as UnixIcon } from 'assets/icons/skills/unix/unix-original.svg';
-import { ReactComponent as VimIcon } from 'assets/icons/skills/vim/vim-original.svg';
-import { ReactComponent as VscodeIcon } from 'assets/icons/skills/vscode/vscode-original.svg';
-import { ReactComponent as YarnIcon } from 'assets/icons/skills/yarn/yarn-original.svg';
-import { ReactComponent as TypescriptIcon } from 'assets/icons/skills/typescript/typescript.svg';
-import { ReactComponent as WebpackIcon } from 'assets/icons/skills/webpack/webpack.svg';
-import { ReactComponent as VueJsIcon } from 'assets/icons/skills/vuejs/vuejs.svg';
-import { ReactComponent as PostgreSQLIcon } from 'assets/icons/skills/postgresql/postgresql.svg';
+import ArduinoIcon from 'src/assets/icons/skills/arduino/arduino-original.svg';
+import BashIcon from 'src/assets/icons/skills/bash/bash-original.svg';
+import BootstrapIcon from 'src/assets/icons/skills/bootstrap/bootstrap-original.svg';
+import CIcon from 'src/assets/icons/skills/c/c-original.svg';
+import CSSIcon from 'src/assets/icons/skills/css3/css3-original.svg';
+import DockerIcon from 'src/assets/icons/skills/docker/docker-original.svg';
+import GitIcon from 'src/assets/icons/skills/git/git-original.svg';
+import HTMLIcon from 'src/assets/icons/skills/html5/html5-original.svg';
+import JavaIcon from 'src/assets/icons/skills/java/java-original.svg';
+import JavascriptIcon from 'src/assets/icons/skills/javascript/javascript-original.svg';
+import KotlinIcon from 'src/assets/icons/skills/kotlin/kotlin-original.svg';
+import LinuxIcon from 'src/assets/icons/skills/linux/linux-original.svg';
+import LuaIcon from 'src/assets/icons/skills/lua/lua-original.svg';
+import MySqlIcon from 'src/assets/icons/skills/mysql/mysql-original.svg';
+import NodeJSIcon from 'src/assets/icons/skills/nodejs/nodejs-original.svg';
+import PythonIcon from 'src/assets/icons/skills/python/python-original.svg';
+import RaspberryPiIcon from 'src/assets/icons/skills/raspberrypi/raspberrypi-original.svg';
+import ReactIcon from 'src/assets/icons/skills/react/react-original.svg';
+import SpringIcon from 'src/assets/icons/skills/spring/spring-original.svg';
+import UnixIcon from 'src/assets/icons/skills/unix/unix-original.svg';
+import VimIcon from 'src/assets/icons/skills/vim/vim-original.svg';
+import VscodeIcon from 'src/assets/icons/skills/vscode/vscode-original.svg';
+import YarnIcon from 'src/assets/icons/skills/yarn/yarn-original.svg';
+import TypescriptIcon from 'src/assets/icons/skills/typescript/typescript.svg';
+import WebpackIcon from 'src/assets/icons/skills/webpack/webpack.svg';
+import VueJsIcon from 'src/assets/icons/skills/vuejs/vuejs.svg';
+import PostgreSQLIcon from 'src/assets/icons/skills/postgresql/postgresql.svg';
 
 enum Types {
-  MISCELLANEOUS = "Miscellaneous",
-  PROGRAMMING_LANGUAGES = "Programming Languages",
-  LIBRARIES_RUNTIMES_FRAMEWORKS = "Libraries, Runtimes and Frameworks"
+  MISCELLANEOUS = 'Miscellaneous',
+  PROGRAMMING_LANGUAGES = 'Programming Languages',
+  LIBRARIES_RUNTIMES_FRAMEWORKS = 'Libraries, Runtimes and Frameworks',
 }
 
 enum Proficiencys {
-  VERY_HIGH = "Very High",
-  HIGH = "High",
-  FAIR = "Fair"
+  VERY_HIGH = 'Very High',
+  HIGH = 'High',
+  FAIR = 'Fair',
 }
 
 interface Skill {
-  icon: React.ElementType,
-  type: Types,
-  proficiency: Proficiencys
+  icon: React.ElementType;
+  type: Types;
+  proficiency: Proficiencys;
 }
 
 export const skills: {
-  [key: string]: Skill
+  [key: string]: Skill;
 } = {
   Arduino: {
     icon: ArduinoIcon,
@@ -205,20 +205,21 @@ interface SkillsSortObject {
 export enum SkillsSortingCriteria {
   ALPHABET = 'alphabet',
   TYPE = 'type',
-  PROFICIENCY = 'proficiency'
+  PROFICIENCY = 'proficiency',
 }
 
-export const skillsSortingCriteriaDetails: { [key: string]: SkillsSortObject } = {
-  [SkillsSortingCriteria.ALPHABET]: {
-    title: 'Alphabet',
-    backgroundColor: '#EEF4D4',
-  },
-  [SkillsSortingCriteria.TYPE]: {
-    title: 'Type',
-    backgroundColor: '#DAEFB3',
-  },
-  [SkillsSortingCriteria.PROFICIENCY]: {
-    title: 'Proficiency',
-    backgroundColor: '#EA9E8D',
-  },
-};
+export const skillsSortingCriteriaDetails: { [key: string]: SkillsSortObject } =
+  {
+    [SkillsSortingCriteria.ALPHABET]: {
+      title: 'Alphabet',
+      backgroundColor: '#EEF4D4',
+    },
+    [SkillsSortingCriteria.TYPE]: {
+      title: 'Type',
+      backgroundColor: '#DAEFB3',
+    },
+    [SkillsSortingCriteria.PROFICIENCY]: {
+      title: 'Proficiency',
+      backgroundColor: '#EA9E8D',
+    },
+  };
