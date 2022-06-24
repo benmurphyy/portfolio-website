@@ -26,7 +26,7 @@ interface PageChooserProps {
 
 //pass down the navigator ref to all specific pages
 function PageChooser({ page, mainNavbarRef }: PageChooserProps) {
-  const SpecificPage = pageComponents[page as keyof typeof pageComponents];
+  const SpecificPage = pageComponents[page];
   return <SpecificPage mainNavbarRef={mainNavbarRef} />;
 }
 

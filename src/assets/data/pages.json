@@ -1,10 +1,12 @@
 [
-    {
-        "name" : "Knowledge",
-        "path" : "/knowledge"
-    },
-    {
-        "name" : "Experience",
-        "path" : "/experience"
-    }
+  {
+    "name": "knowledge",
+    "navbarLinkTitle": "Knowledge",
+    "path": "/knowledge"
+  },
+  {
+    "name": "experience",
+    "navbarLinkTitle": "Experience",
+    "path": "/experience"
+  }
 ]

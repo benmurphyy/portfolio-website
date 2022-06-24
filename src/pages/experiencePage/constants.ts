@@ -14,6 +14,8 @@ interface Project {
   icon: React.ElementType;
 }
 
+export const subPages = ['Career Experience', 'Achievements', 'Projects'];
+
 export const projects: Project[] = [
   {
     title: 'This Webpage',

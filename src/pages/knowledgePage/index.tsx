@@ -1,14 +1,15 @@
 import { RefObject, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Header } from 'semantic-ui-react';
 import AnimatedQuote from 'src/components/AnimatedQuote';
 import SubNavbar from 'src/components/SubNavbar';
 import useScrollToSubpageBasedOnPath from 'src/util/hooks/useScrollToSubpageBasedOnPath';
 import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
 import headerBackgroundImage from 'src/assets/images/knowledge_background-min.jpg';
 import quotes from 'src/assets/data/quotes.json';
-import SkillsSection from 'src/pages/knowledgePage/skillsSection';
-import UniModulesSection from 'src/pages/knowledgePage/uniModulesSection';
+import SkillsSection from 'src/pages/knowledgePage/components/SkillsSection';
+import UniModulesSection from 'src/pages/knowledgePage/components/UniModulesSection';
+import { subPages } from 'src/pages/knowledgePage/components/SkillsSection/constants';
+import PageHeader from 'src/components/PageHeader';
 
 /**
  * Skills component for all skill icons.
@@ -16,7 +17,6 @@ import UniModulesSection from 'src/pages/knowledgePage/uniModulesSection';
  * TODO: add other ksills like fusion360
  */
 //setting up data variables
-const subPages = ['Skills', 'University Modules'];
 
 interface KnowledgePageProps {
   mainNavbarRef: RefObject<HTMLDivElement>;
@@ -41,7 +41,7 @@ export default function Knowledge({ mainNavbarRef }: KnowledgePageProps) {
         subNavbarRef={subNavbarRef}
         subPageRefs={subPageRefs.current}
       />
-      <Header backgroundImage={headerBackgroundImage}>
+      <PageHeader backgroundImage={headerBackgroundImage}>
         <Container>
           <Row className="justify-content-center">
             <Col className="col-lg-6">
@@ -52,7 +52,7 @@ export default function Knowledge({ mainNavbarRef }: KnowledgePageProps) {
             </Col>
           </Row>
         </Container>
-      </Header>
+      </PageHeader>
       <SkillsSection ref={subPageRefs.current.get('Skills')} />
       <UniModulesSection ref={subPageRefs.current.get('University Modules')} />
     </Container>

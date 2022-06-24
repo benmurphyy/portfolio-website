@@ -27,8 +27,8 @@ const observerOptionsDefaultLong: IntersectionObserverInit = {
 
 // observer options for the main nav bar, controls when the subnavbar will be hidden upon scrolling away from the mainnavbar
 const mainNavbarObserverOptions = {
-    rootMargin: '0px',
-    threshold: 0.1
+  rootMargin: '0px',
+  threshold: 0.1,
 };
 
 interface SubNavbarProps {
@@ -41,25 +41,25 @@ interface SubNavbarProps {
   mainNavbarRef: RefObject<HTMLDivElement>;
 }
 
-
 /**
  * Reponsible for setting up the observer on the mainNavbar which controls the visibility of the subNavBar.
  * When mainNavbar is no longer visible, then the subNavbar should become visible and vice versa.
- * @param mainNavbarRef 
+ * @param mainNavbarRef
  * @returns react state variable indicating if the subNavState should be visible.
  */
 function useSetUpMainNavbarObserver(mainNavbarRef: RefObject<HTMLDivElement>) {
-   const [isSubNavbarVisible, setIsSubNavbarVisible] = useState(false);
+  const [isSubNavbarVisible, setIsSubNavbarVisible] = useState(false);
 
-  const observer = new IntersectionObserver(([entry]) => 
-        setIsSubNavbarVisible(!entry.isIntersecting)
-    , mainNavbarObserverOptions);
-    useEffect (() => {
-        observer.observe(mainNavbarRef.current!);
-        //to avoid ref change warning
-        const refCur = mainNavbarRef.current!;
-        return (() => observer.unobserve(refCur));
-    });
+  const observer = new IntersectionObserver(
+    ([entry]) => setIsSubNavbarVisible(!entry.isIntersecting),
+    mainNavbarObserverOptions
+  );
+  useEffect(() => {
+    observer.observe(mainNavbarRef.current!);
+    //to avoid ref change warning
+    const refCur = mainNavbarRef.current!;
+    return () => observer.unobserve(refCur);
+  });
 
   return isSubNavbarVisible;
 }
@@ -70,12 +70,12 @@ export default function SubNavbar({
   observerOptionsShort = observerOptionsDefaultShort,
   observerOptionsLong = observerOptionsDefaultLong,
   subNavbarRef,
-  mainNavbarRef
+  mainNavbarRef,
 }: SubNavbarProps) {
   const isVisible = useSetUpMainNavbarObserver(mainNavbarRef);
   // create a map of each navlink button page name to nav link button ref, for use in resolving focus after nav link press
   const navLinkRefsMap = new Map<string, RefObject<HTMLAnchorElement>>();
-  
+
   // navlink names
   const subPageNames: string[] = [];
 
@@ -150,14 +150,12 @@ export default function SubNavbar({
   }
 
   const AnimatedNavbar = animated(Navbar);
-  return (
-    isVisible ? 
+  return isVisible ? (
     <AnimatedNavbar
       ref={subNavbarRef}
       onSelect={onSelectFunc}
       fixed="top"
-      variant="dark"
-      bg="secondary"
+      bg="primary"
       className="justify-content-center"
       style={isAnimated ? style : {}}
     >
@@ -174,6 +172,6 @@ export default function SubNavbar({
           </Nav.Item>
         ))}
       </Nav>
-    </AnimatedNavbar> : null
-  );
+    </AnimatedNavbar>
+  ) : null;
 }

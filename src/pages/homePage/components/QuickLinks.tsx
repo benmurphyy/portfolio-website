@@ -1,6 +1,6 @@
-import { Container, Button } from "react-bootstrap";
-import { useNavigate } from "react-router";
-import Heading from "src/pages/homePage/components/CustomLineBreaker";
+import { Container, Button, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router';
+import SectionHeader from 'src/components/SectionHeader';
 import quickLinks from 'src/assets/data/quick_links.json';
 
 export default function QuickLinks() {
@@ -14,19 +14,25 @@ export default function QuickLinks() {
     navigate(quickLink.path);
   }
   return (
-    <Container fluid className="pb-4 px-4 background-light-green">
-      <Heading title="Quick Links" />
-      <Container className="d-grid gap-2 d-sm-block">
-        {quickLinks.map((quickLink) => (
-          <Button
-            className="quick-link-button mx-1"
-            key={quickLink.name}
-            style={{ backgroundColor: quickLink.buttonColor }}
-            onClick={() => quickLinkTrigger(quickLink)}
-          >
-            {quickLink.name}
-          </Button>
-        ))}
+    <Container fluid className="pb-4 px-4">
+      <SectionHeader title="Quick Links" />
+      <Container className="">
+        <Row className="justify-content-center">
+          {quickLinks.map((quickLink) => (
+            <Col
+              className="d-flex justify-content-center align-items-stretch col-12 col-sm-3 col-xl-2 gy-1 gx-2"
+              key={quickLink.name}
+            >
+              <Button
+                className="w-100"
+                style={{ backgroundColor: quickLink.buttonColor }}
+                onClick={() => quickLinkTrigger(quickLink)}
+              >
+                {quickLink.name}
+              </Button>
+            </Col>
+          ))}
+        </Row>
       </Container>
     </Container>
   );

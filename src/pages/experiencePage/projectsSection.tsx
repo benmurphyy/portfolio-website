@@ -16,12 +16,12 @@ const ProjectsSubpage = forwardRef(function (
   const [iconHeight, setIconHeight] = useState(80);
   const [iconWidth, setIconWidth] = useState(80);
   useEffect(() => {
+    sizeIconAccordingToScreenSize();
     //event listener to change icon size when screen is resized
     window.addEventListener('resize', sizeIconAccordingToScreenSize);
     return () =>
       window.removeEventListener('resize', sizeIconAccordingToScreenSize);
-  });
-
+  }, []);
   //sizing according to bootstrap standard sizes
   function sizeIconAccordingToScreenSize() {
     const width = window.innerWidth;
@@ -34,8 +34,6 @@ const ProjectsSubpage = forwardRef(function (
       setIconWidth(80);
     }
   }
-
-  sizeIconAccordingToScreenSize();
 
   return (
     <Container fluid className=" background-grunge" ref={ref}>

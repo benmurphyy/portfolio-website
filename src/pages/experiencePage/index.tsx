@@ -1,7 +1,6 @@
 import headerBackgroundImage from 'src/assets/images/experience_background-min.jpg';
 import { RefObject, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Header } from 'semantic-ui-react';
 import AnimatedQuote, {
   AnimatedQuoteVariants,
 } from 'src/components/AnimatedQuote';
@@ -12,9 +11,10 @@ import Projects from './projectsSection';
 
 // import and set up data variables
 import quotes from 'src/assets/data/quotes.json';
-import { subPages } from 'src/pages/constants';
 import AchievementsSubpage from 'src/pages/experiencePage/achievementsSection';
 import CareerExperienceSubpage from './careerExperienceSection';
+import { subPages } from 'src/pages/experiencePage/constants';
+import PageHeader from 'src/components/PageHeader';
 const quoteText = quotes.experiencePage.quoteText;
 const quoteOrigin = quotes.experiencePage.quoteOrigin;
 
@@ -60,7 +60,9 @@ export default function Experience({ mainNavbarRef }: ExperiencePageProps) {
         subNavbarRef={subNavbarRef}
         subPageRefs={subPageRefs.current}
       />
-      <Header InnerComponent={Quote} backgroundImage={headerBackgroundImage} />
+      <PageHeader backgroundImage={headerBackgroundImage}>
+        <Quote></Quote>
+      </PageHeader>
       <CareerExperienceSubpage
         ref={subPageRefs.current.get('Career Experience')}
       />

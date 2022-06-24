@@ -26,7 +26,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "10.4.5",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^8.17.0",
@@ -37,9 +37,12 @@
     "lint-staged": "^13.0.0",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.7.2",
     "prettier": "2.6.2",
     "react-svg-loader": "^3.0.3",
+    "sass": "^1.52.3",
     "sass-loader": "^13.0.0",
+    "sass-resources-loader": "^2.2.5",
     "source-map-loader": "^3.0.1",
     "style-loader": "^3.3.1",
     "stylelint": "^14.8.5",
@@ -47,7 +50,7 @@
     "stylelint-config-standard-scss": "^4.0.0",
     "ts-loader": "^9.3.0",
     "typescript": "^4.7.2",
-    "webpack": "^5.72.1",
+    "webpack": "^5.73.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.1",
     "webpack-merge": "^5.8.0"
@@ -63,6 +66,9 @@
       "stylelint --allow-empty-input",
       "prettier --write --ignore-unknown"
     ]
+  },
+  "resolutions": {
+    "autoprefixer": "10.4.5"
   },
   "browserslist": "> 0.25%, not dead"
 }

@@ -1,0 +1,37 @@
+.quote {
+  text-align: center;
+}
+
+.footer {
+  text-align: right;
+}
+
+.dark {
+  color: $dark;
+  text-shadow: 1px 1px 10px $gray-300;
+}
+
+.light {
+  color: $light;
+  text-shadow: 2px 2px 8px $gray-900;
+}
+
+.lightQuote {
+  @extend .quote;
+  @extend .light;
+}
+
+.darkQuote {
+  @extend .quote;
+  @extend .dark;
+}
+
+.darkFooter {
+  @extend .dark;
+  @extend .footer;
+}
+
+.lightFooter {
+  @extend .light;
+  @extend .footer;
+}

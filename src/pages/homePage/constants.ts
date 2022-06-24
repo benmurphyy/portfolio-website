@@ -3,6 +3,10 @@ import TelegramIcon from 'src/assets/icons/contact/telegram/telegram.svg';
 import LinkedInIcon from 'src/assets/icons/contact/linkedin/linkedin-original.svg';
 import EmailIcon from 'src/assets/icons/contact/email/email.svg';
 
+//Download Files
+import resumeFile from 'src/assets/downloads/Resume_Ben_Murphy.pdf';
+import transcriptFile from 'src/assets/downloads/Transcript_Ben_Murphy.pdf';
+
 export const subPages = ['About Me', 'Contact'];
 
 //array of contact objects, corresponding to contact links
@@ -33,10 +37,10 @@ export const contacts = [
 export const downloads = [
   {
     name: 'Resume',
-    link: '/assets/documents/Resume_Ben_Murphy.pdf',
+    file: resumeFile,
   },
   {
     name: 'Transcript',
-    link: '/assets/documents/Transcript_Ben_Murphy.pdf',
+    file: transcriptFile,
   },
 ];

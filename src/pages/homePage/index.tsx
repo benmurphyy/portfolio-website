@@ -1,11 +1,11 @@
 import { RefObject, useRef } from 'react';
 import { Container } from 'react-bootstrap';
-import Header from 'src/components/Header';
+import PageHeader from 'src/components/PageHeader';
 import SubNavbar from 'src/components/SubNavbar';
 import AboutMe from 'src/pages/homePage/components/AboutMe';
 import Contact from 'src/pages/homePage/components/Contact';
 import QuickLinks from 'src/pages/homePage/components/QuickLinks';
-import { subPages } from 'src/pages/constants';
+import { subPages } from 'src/pages/homePage/constants';
 import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
 import headerBackgroundImage from 'src/assets/images/homepage_background-min.jpg';
 import AnimatedGreeting from 'src/pages/homePage/components/AnimatedGreeting';
@@ -15,6 +15,7 @@ interface HomepageProps {
 }
 
 export default function Homepage({ mainNavbarRef }: HomepageProps) {
+  console.log(headerBackgroundImage);
   const subPageRefs = useSubPageRefMapCreator(subPages);
   const subNavbarRef = useRef<HTMLDivElement>(null);
   return (
@@ -24,9 +25,9 @@ export default function Homepage({ mainNavbarRef }: HomepageProps) {
         subNavbarRef={subNavbarRef}
         subPageRefs={subPageRefs.current}
       />
-      <Header backgroundImage={headerBackgroundImage}>
+      <PageHeader backgroundImage={headerBackgroundImage}>
         <AnimatedGreeting />
-      </Header>
+      </PageHeader>
       <AboutMe ref={subPageRefs.current.get('About Me')} />
       <QuickLinks />
       <Contact ref={subPageRefs.current.get('Contact')} />

@@ -1,8 +1,9 @@
 import { useRef } from 'react';
 import { HashRouter } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Navigator from 'src/components/Navigator';
+import Navigator from 'src/components/MainNavbar';
 import Routes from 'src/routes';
+
 //all the images we want to preload
 /**
  * This is the main react component. Take note that we need to use HashRouter here instead of BrowserRouter as

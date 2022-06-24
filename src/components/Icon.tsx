@@ -15,14 +15,15 @@ export interface Position {
 
 /**
  * Prop types definition for the Icon component.
+ * Extends the standard HTML attributes.
  */
-type IconProps = {
+type IconProps = React.HTMLAttributes<HTMLDivElement> & {
   IconSvgComponent: React.ElementType;
-  // accessibility text
-  altText: string;
-  // a ref containing a object that has SkillSortingCritiria as keys, and the refs to the corresponding icon housing refs as values
-  height: number;
-  width: number;
+  // optional accessibility text
+  altText?: string;
+  // optional height and width settings
+  height?: number;
+  width?: number;
   // optional: manually controls the previous position of the Icon. Useful when the Icon is not rendered in a similar arrangment (changing of parent layout etc),
   // which prevents the inbuilt previous position tracking from working
   previousPositionFromParent?: Position;
@@ -46,6 +47,7 @@ export default function Icon({
   width,
   previousPositionFromParent,
   iconRef,
+  ...HTMLattributes
 }: IconProps) {
   const AnimatedIcon = animated(IconSvgComponent);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -53,7 +55,7 @@ export default function Icon({
   // if previousPositionFromParent is given, then set previous position to be that, else
   // set it to be the top and left values from containerRef.current
   // containerRef would have the old HTMLDivElement in the previous render at this point,
-  // thus we can store the old position of the SVG icon here
+  // thus we can use it to get out the previous position of the Icon.
   const previousPosition = previousPositionFromParent
     ? previousPositionFromParent
     : containerRef.current
@@ -78,7 +80,7 @@ export default function Icon({
     api.start(newPosition);
   }
 
-  // set up the window resize listeners to move icon to its div housing position when window resized
+  // set up the window resize listeners on Icon mount to move icon to its div housing position when window resized
   useEffect(() => {
     function moveIconSvgToCorrectPosition() {
       if (containerRef.current) {
@@ -91,7 +93,7 @@ export default function Icon({
     window.addEventListener('resize', moveIconSvgToCorrectPosition);
     return () =>
       window.removeEventListener('resize', moveIconSvgToCorrectPosition);
-  });
+  }, []);
 
   // This needs to run before any DOM paints can be performed, hence useLayoutEffect is the right choice here
   useLayoutEffect(() => {
@@ -121,16 +123,15 @@ export default function Icon({
 
   return (
     <div
-      className="iconHousing"
       ref={containerRefCallback}
       style={{
         height: height,
         width: width,
       }}
+      {...HTMLattributes}
     >
       <AnimatedIcon
         alt={altText + ' Icon'}
-        className="skillIcon"
         style={{
           position: 'absolute',
           top: svgStyle.top,
@@ -138,6 +139,7 @@ export default function Icon({
           height: height,
           width: width,
         }}
+        {...HTMLattributes}
       />
     </div>
   );

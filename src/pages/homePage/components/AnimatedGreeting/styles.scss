@@ -1,0 +1,14 @@
+//start of homepage styling
+// TODO: perhaps adjust this
+.greeting-text {
+  font-family: 'Merienda-Bold';
+  font-size: 15vmin;
+  color: #fff9e3;
+  text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  .greeting-text {
+    font-size: 8vmin;
+  }
+}

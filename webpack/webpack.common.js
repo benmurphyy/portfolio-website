@@ -1,18 +1,22 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const { default: postcss } = require('postcss');
 
 const port = process.env.PORT || 8080;
 
-//abolute path of the root directory of the project
+// absolute path of the root directory of the project
 const rootDir = path.resolve(__dirname, '..');
+
+console.log(path.resolve(rootDir, 'build'));
+
+// absolute path of global stylesheet
+const globalStyleSheetPath = path.resolve(rootDir, 'src/styles/index.scss');
 
 module.exports = {
   // resolve all entry paths and loaders from the root directory of the project
   // also serves as root when resolving import paths of modules
   entry: path.resolve(rootDir, 'src/index.tsx'),
   output: {
-    path: path.resolve(rootDir, 'dist'),
+    path: path.resolve(rootDir, 'build'),
     filename: '[name].js',
     clean: true,
   },
@@ -25,7 +29,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
+        exclude: ['/node_modules/'],
         use: [
           {
             loader: 'babel-loader',
@@ -41,8 +45,11 @@ module.exports = {
           },
         ],
       },
+      // This scss loading rule applies to all styles except global stylesheet
+      // this is because it applies css modules
       {
-        test: /\.s[ac]ss$/,
+        test: /\.s[ac]ss$/i,
+        exclude: [globalStyleSheetPath],
         use: [
           {
             loader: 'style-loader',
@@ -50,8 +57,46 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-              exportLocalsConvention: 'camelCaseOnly',
+              modules: {
+                exportLocalsConvention: 'camelCaseOnly',
+              },
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env']],
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(rootDir, 'src/styles/index.scss'),
+            },
+          },
+        ],
+      },
+      // this scss rule applies only to the global style sheet
+      // css modules is not applied in this rule
+      {
+        test: /\.s[ac]ss$/,
+        include: [globalStyleSheetPath],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
               sourceMap: true,
             },
           },
@@ -62,6 +107,14 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
+            },
+          },
+          // loads all the variables in the globalStyleSheet globally
+          // so they can be used in any sass module
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: globalStyleSheetPath,
             },
           },
         ],
@@ -81,8 +134,22 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|ttf)$/i,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 8 * 1024, //8kb default
+          },
+        },
+      },
+      {
+        test: /\.pdf$/i,
         type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]',
+          publicPath: 'static/',
+          outputPath: 'static/',
+        },
       },
     ],
   },
@@ -98,7 +165,7 @@ module.exports = {
     require('autoprefixer'),
   ],
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: port,
     historyApiFallback: true,
   },

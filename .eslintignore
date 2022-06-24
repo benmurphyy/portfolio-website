@@ -1,6 +1,6 @@
 #ignore everything first
 *
-#now allow only files in src to be linted
+#now allow only ts or tsx files in src to be linted
 !src
-!src/**/*
-
+!src/**/*.ts
+!src/**/*.tsx
