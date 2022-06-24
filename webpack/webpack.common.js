@@ -126,7 +126,7 @@ module.exports = {
             loader: 'babel-loader',
           },
           {
-            loader: 'react-svg-loader',
+            loader: '@svgr/webpack',
             options: {
               jsx: true,
             },
