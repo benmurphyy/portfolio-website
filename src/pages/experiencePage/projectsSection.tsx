@@ -58,10 +58,7 @@ const ProjectsSection = forwardRef(function (
 
       <Row className="">
         {projects.map((project) => (
-          <Col
-            key={project.title}
-            className="d-flex py-4 col-12 col-md-6 col-lg-6 col-xl-4"
-          >
+          <Col key={project.title} className="d-flex g-3 col-12 col-lg-6">
             <Card className="w-100">
               <Card.Header className="project-card-header-background">
                 <Container fluid className="p-0">

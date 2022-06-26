@@ -33,6 +33,7 @@
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.0",
@@ -58,7 +59,8 @@
   "scripts": {
     "start": "npx webpack serve --config webpack/webpack.dev.js",
     "build": "npx webpack --config webpack/webpack.prod.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "gh-pages -d build -b main -r https://github.com/benmurphyy/benmurphyy.github.io"
   },
   "lint-staged": {
     "**/*": [
