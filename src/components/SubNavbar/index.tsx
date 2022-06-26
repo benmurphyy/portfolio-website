@@ -92,7 +92,6 @@ export default function SubNavbar({
       window.pageYOffset +
       yOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });
-    sectionRef.current!.scrollIntoView();
   }
 
   /**
