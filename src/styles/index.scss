@@ -1,7 +1,12 @@
-// all my variables
-@import '_variables';
+// import all varaibles that neeed to be imported before boostrap is imported - to customise boostrap
+@import './preBootstrapLoad/_variables';
 // basic bootstrap styling
 @import '~bootstrap/scss/bootstrap';
+// import all variables and mixins that depend on variables defined by bootstrap
+@import './postBootstrapLoad/_variables';
+@import './postBootstrapLoad/_mixins';
+
+// custom settings
 
 html,
 body {
@@ -12,4 +17,15 @@ body {
 
 #root {
   height: 100%;
+}
+
+// make buttons only show accessibility outline when tabbing, not when mouse clicking
+.btn {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  &:focus-visible {
+    outline: solid 5px !important;
+  }
 }

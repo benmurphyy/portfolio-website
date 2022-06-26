@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { useNavigate } from 'react-router';
-import BjmIcon from 'src/assets/icons/bjm.svg';
+import bjmIcon from 'src/assets/icons/bjm.svg';
 
 import pages from 'src/assets/data/pages.json';
 
@@ -18,7 +18,7 @@ const Navigator = forwardRef<HTMLDivElement>((_, ref) => {
       expand="md"
     >
       <Navbar.Brand href="/" className="px-2 rounded">
-        <BjmIcon />
+        <img src={bjmIcon} alt="ben murphy brand icon" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">

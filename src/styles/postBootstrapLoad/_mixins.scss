@@ -1,0 +1,22 @@
+// to be able to size heigh and width in one line
+@mixin size-icon($size) {
+  height: $size;
+  width: $size;
+}
+
+// applies changes listed in @content to apply upon resolution passing the phone width threshold
+@mixin phone-to-desktop-changes {
+  @media only screen and (min-width: $phone-breakpoint-width) {
+    @content;
+  }
+}
+
+// gives an icon responsive sizes. Changes the size from $phone-size to $desktop-size
+// once the desktop breakpoint is reached.
+@mixin responsive-icon-sizes($phone-size, $desktop-size) {
+  @include size-icon($phone-size);
+
+  @include phone-to-desktop-changes {
+    @include size-icon($desktop-size);
+  }
+}

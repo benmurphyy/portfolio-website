@@ -1,0 +1,2 @@
+// breakpoint for triggering changes between phone/desktop - set to bootstrap 'md' breakpoint
+$phone-breakpoint-width: map-get($grid_breakpoints, 'md');

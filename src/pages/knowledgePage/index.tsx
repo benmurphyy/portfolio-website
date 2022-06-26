@@ -8,7 +8,10 @@ import headerBackgroundImage from 'src/assets/images/knowledge_background-min.jp
 import quotes from 'src/assets/data/quotes.json';
 import SkillsSection from 'src/pages/knowledgePage/components/SkillsSection';
 import UniModulesSection from 'src/pages/knowledgePage/components/UniModulesSection';
-import { subPages } from 'src/pages/knowledgePage/components/SkillsSection/constants';
+import {
+  KnowledgePageSectionNames,
+  knowledgePageSections,
+} from 'src/pages/knowledgePage/constants';
 import PageHeader from 'src/components/PageHeader';
 
 /**
@@ -24,7 +27,7 @@ interface KnowledgePageProps {
 
 export default function Knowledge({ mainNavbarRef }: KnowledgePageProps) {
   //create a mapping object of page to its ref
-  const subPageRefs = useSubPageRefMapCreator(subPages);
+  const subPageRefs = useSubPageRefMapCreator(knowledgePageSections);
 
   //subNavBar Ref
   const subNavbarRef = useRef<HTMLDivElement>(null);
@@ -32,8 +35,6 @@ export default function Knowledge({ mainNavbarRef }: KnowledgePageProps) {
   //for quicklink functionality from homepage
   useScrollToSubpageBasedOnPath(subNavbarRef, mainNavbarRef, subPageRefs);
 
-  //take note all subcomponents other than main container are set to React.memo, so as to prevent unecessary updates when the state, whcih
-  //is used for subNavBar changes.
   return (
     <Container fluid className="h-100 p-0 knowledge">
       <SubNavbar
@@ -53,8 +54,14 @@ export default function Knowledge({ mainNavbarRef }: KnowledgePageProps) {
           </Row>
         </Container>
       </PageHeader>
-      <SkillsSection ref={subPageRefs.current.get('Skills')} />
-      <UniModulesSection ref={subPageRefs.current.get('University Modules')} />
+      <SkillsSection
+        ref={subPageRefs.current.get(KnowledgePageSectionNames.SKILLS)}
+      />
+      <UniModulesSection
+        ref={subPageRefs.current.get(
+          KnowledgePageSectionNames.UNIVERSITY_MODULES
+        )}
+      />
     </Container>
   );
 }

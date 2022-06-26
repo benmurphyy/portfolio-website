@@ -121,17 +121,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-          {
-            loader: '@svgr/webpack',
-            options: {
-              jsx: true,
-            },
-          },
-        ],
+        type: 'asset/inline',
       },
       {
         test: /\.(png|jpg|jpeg|gif|ttf)$/i,

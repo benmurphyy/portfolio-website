@@ -3,3 +3,11 @@
   height: 3px;
   margin: 0 auto;
 }
+
+.isHiddenOnPhone {
+  display: none;
+
+  @include phone-to-desktop-changes {
+    display: block;
+  }
+}

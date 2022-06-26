@@ -51,7 +51,12 @@ export default function Router({ mainNavbarRef }: RouterProps) {
               <PageChooser mainNavbarRef={mainNavbarRef} page={page.name} />
             }
           >
-            <Route path=":subPage"></Route>
+            <Route
+              path=":subPage"
+              element={
+                <PageChooser mainNavbarRef={mainNavbarRef} page={page.name} />
+              }
+            ></Route>
           </Route>
         ))}
       </Routes>

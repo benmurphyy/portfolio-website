@@ -11,6 +11,7 @@ export default function QuickLinks() {
     path: string;
     buttonColor: string;
   }) {
+    console.log(quickLink.path);
     navigate(quickLink.path);
   }
   return (

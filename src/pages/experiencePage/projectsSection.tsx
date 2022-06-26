@@ -4,12 +4,13 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 //array of project data objects - consisting of Title and Description
 import Icon from 'src/components/Icon';
+import SectionHeader from 'src/components/SectionHeader';
 import { projects } from 'src/pages/experiencePage/constants';
 
 /**
- * Projects subpage of experience page.
+ * Projects section of experience page.
  */
-const ProjectsSubpage = forwardRef(function (
+const ProjectsSection = forwardRef(function (
   _,
   ref: ForwardedRef<HTMLDivElement>
 ) {
@@ -36,39 +37,25 @@ const ProjectsSubpage = forwardRef(function (
   }
 
   return (
-    <Container fluid className=" background-grunge" ref={ref}>
-      <Row className="heading-background py-2">
-        <Col>
-          <h1 className="display-5">Projects</h1>
+    <Container ref={ref}>
+      <SectionHeader title="Projects" isHiddenOnPhone></SectionHeader>
+      <Row className="justify-content-end pt-2">
+        <Col className="d-flex flex-column justify-content-center">
+          <h2>A Short Write-Up.</h2>
+          <hr className="mt-0 mb-2"></hr>
+          <p>
+            I've always been interested in electronic projects from a young age,
+            and programming projects extend nicely from there. I'm always keen
+            to try out new technologies, and see what I can build from them.
+            Every technical project involves problem solving - which I enjoy. As
+            a person with interests in many things technology, I have a varied
+            array of projects under my belt - not just limited to software
+            development. So here's just a collection of projects I would like to
+            share.
+          </p>
         </Col>
       </Row>
-      <Row>
-        <Col className="p-0">
-          <Container fluid className="projects-header-background">
-            <Row className="justify-content-end">
-              <Col className="d-flex flex-column justify-content-center">
-                <Container className="background-grunge my-5 p-2 rounded">
-                  <h1 className="fw-bold">A Short Write-Up.</h1>
-                  <Container className="w-15">
-                    <hr className="projects-description-header-linebreak"></hr>
-                  </Container>
-                  <p className="fs-5 short-writeup-text">
-                    I've always been interested in electronic projects from a
-                    young age, and programming projects extend nicely from
-                    there. I'm always keen to try out new technologies, and see
-                    what I can build from them. Every technical project involves
-                    problem solving - which I enjoy. Being a person with
-                    interests in many things technology, I have a varied array
-                    of projects under my belt - not just limited to software
-                    development. So here's just a collection of projects I would
-                    like to share.
-                  </p>
-                </Container>
-              </Col>
-            </Row>
-          </Container>
-        </Col>
-      </Row>
+
       <Row className="">
         {projects.map((project) => (
           <Col
@@ -81,7 +68,7 @@ const ProjectsSubpage = forwardRef(function (
                   <Row>
                     <Col className="p-2">
                       <Icon
-                        IconSvgComponent={project.icon}
+                        iconSvg={project.icon}
                         height={iconHeight}
                         width={iconWidth}
                         altText={`${project}`}
@@ -121,5 +108,5 @@ const ProjectsSubpage = forwardRef(function (
   );
 });
 
-ProjectsSubpage.displayName = 'ProjectsSubpage';
-export default ProjectsSubpage;
+ProjectsSection.displayName = 'ProjectsSubpage';
+export default ProjectsSection;

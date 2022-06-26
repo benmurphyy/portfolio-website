@@ -1,24 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useSpring, animated } from '@react-spring/web';
 import { forwardRef, ForwardedRef } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import potraitImage from 'src/assets/images/ben_photo.jpg';
+import SectionHeader from 'src/components/SectionHeader';
 import styles from './styles.scss';
 
 //about me write up + picture
 const AboutMe = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
-  const style = useSpring({
-    from: {
-      opacity: 0,
-    },
-    opacity: 1,
-    config: {
-      duration: 500,
-    },
-  });
-  const AnimatedContainer = animated(Container);
   return (
-    <AnimatedContainer fluid className="" ref={ref} style={style}>
+    <Container fluid className="" ref={ref}>
+      <Row>
+        <SectionHeader title="About Me" isHiddenOnPhone={true} />
+      </Row>
       <Row className="pt-4">
         <Col className="d-flex justify-content-center">
           <Image
@@ -39,7 +32,7 @@ const AboutMe = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
           </p>
         </Col>
       </Row>
-    </AnimatedContainer>
+    </Container>
   );
 });
 

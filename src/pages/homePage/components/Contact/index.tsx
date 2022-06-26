@@ -2,19 +2,19 @@ import { ForwardedRef, forwardRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SectionHeader from 'src/components/SectionHeader';
 import { contacts, downloads } from 'src/pages/homePage/constants';
-import DownloadIcon from 'src/assets/icons/contact/download/download.svg';
+import downloadIcon from 'src/assets/icons/contact/download/download.svg';
 import styles from './styles.scss';
 import Icon from 'src/components/Icon';
 
 //to return specific contact icon
 function ContactIconSelector({
   className,
-  IconSVGComponent,
+  iconSvg,
 }: {
   className: string;
-  IconSVGComponent: React.ElementType;
+  iconSvg: string;
 }) {
-  return <IconSVGComponent className={className} />;
+  return <img src={iconSvg} className={className} />;
 }
 
 const Contact = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
@@ -30,13 +30,13 @@ const Contact = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
             <a href={contact.link} target="_blank" rel="noreferrer">
               <ContactIconSelector
                 className={styles.contactIcon}
-                IconSVGComponent={contact.icon}
+                iconSvg={contact.icon}
               />
             </a>
           </Col>
         ))}
       </Row>
-      <Row className="my-4 justify-content-evenly">
+      <Row className="my-4 justify-content-center">
         {downloads.map((document) => (
           <Col
             className="d-flex flex-column align-items-center col-sm-4 col-xl-3"
@@ -51,7 +51,7 @@ const Contact = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
             >
               <h4 className="text-center">{document.name}</h4>
               <Icon
-                IconSvgComponent={DownloadIcon}
+                iconSvg={downloadIcon}
                 className={styles.documentDownloadIcon}
                 altText={`Download ${document.name}`}
               />

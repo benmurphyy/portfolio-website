@@ -33,7 +33,7 @@ export default function useScrollToSubpageBasedOnPath(
   // thus making the subnavbar visible so that can use its height on screen to control the exact scroll amount.
   useEffect(() => {
     for (const quickLink of quickLinks) {
-      if (quickLink.name === currentPath.pathname && mainNavbarRef.current) {
+      if (quickLink.path === currentPath.pathname && mainNavbarRef.current) {
         const yOffset = mainNavbarRef.current.offsetHeight;
         const y = window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
@@ -44,14 +44,14 @@ export default function useScrollToSubpageBasedOnPath(
   // conditional effect only if subnavbar is already active, this is so the ref for it exists, and we can scroll to the subpage in
   // scrollTo function
   useEffect(() => {
-    if (subNavbarRef.current) {
-      //scroll to the subpage
-      for (const quickLink of quickLinks) {
-        if (quickLink.name === currentPath.pathname) {
-          scrollTo(subPageRefs.current!.get(quickLink.name)!);
-          //2nd arg is replace true so as to replace that extra /pathname after the actual pathname, so backtrack works as expected
-          navigate('/' + currentPath.pathname.split('/')[1], { replace: true });
-        }
+    //scroll to the subpage
+    for (const quickLink of quickLinks) {
+      if (quickLink.path === currentPath.pathname) {
+        console.log(subPageRefs);
+        console.log(quickLink.name);
+        scrollTo(subPageRefs.current!.get(quickLink.name)!);
+        //2nd arg is replace true so as to replace that extra /pathname after the actual pathname, so backtrack works as expected
+        navigate('/' + currentPath.pathname.split('/')[1], { replace: true });
       }
     }
   });

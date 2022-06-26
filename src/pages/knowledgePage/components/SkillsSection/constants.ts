@@ -1,32 +1,30 @@
-import ArduinoIcon from 'src/assets/icons/skills/arduino/arduino-original.svg';
-import BashIcon from 'src/assets/icons/skills/bash/bash-original.svg';
-import BootstrapIcon from 'src/assets/icons/skills/bootstrap/bootstrap-original.svg';
-import CIcon from 'src/assets/icons/skills/c/c-original.svg';
-import CSSIcon from 'src/assets/icons/skills/css3/css3-original.svg';
-import DockerIcon from 'src/assets/icons/skills/docker/docker-original.svg';
-import GitIcon from 'src/assets/icons/skills/git/git-original.svg';
-import HTMLIcon from 'src/assets/icons/skills/html5/html5-original.svg';
-import JavaIcon from 'src/assets/icons/skills/java/java-original.svg';
-import JavascriptIcon from 'src/assets/icons/skills/javascript/javascript-original.svg';
-import KotlinIcon from 'src/assets/icons/skills/kotlin/kotlin-original.svg';
-import LinuxIcon from 'src/assets/icons/skills/linux/linux-original.svg';
-import LuaIcon from 'src/assets/icons/skills/lua/lua-original.svg';
-import MySqlIcon from 'src/assets/icons/skills/mysql/mysql-original.svg';
-import NodeJSIcon from 'src/assets/icons/skills/nodejs/nodejs-original.svg';
-import PythonIcon from 'src/assets/icons/skills/python/python-original.svg';
-import RaspberryPiIcon from 'src/assets/icons/skills/raspberrypi/raspberrypi-original.svg';
-import ReactIcon from 'src/assets/icons/skills/react/react-original.svg';
-import SpringIcon from 'src/assets/icons/skills/spring/spring-original.svg';
-import UnixIcon from 'src/assets/icons/skills/unix/unix-original.svg';
-import VimIcon from 'src/assets/icons/skills/vim/vim-original.svg';
-import VscodeIcon from 'src/assets/icons/skills/vscode/vscode-original.svg';
-import YarnIcon from 'src/assets/icons/skills/yarn/yarn-original.svg';
-import TypescriptIcon from 'src/assets/icons/skills/typescript/typescript.svg';
-import WebpackIcon from 'src/assets/icons/skills/webpack/webpack.svg';
-import VueJsIcon from 'src/assets/icons/skills/vuejs/vuejs.svg';
-import PostgreSQLIcon from 'src/assets/icons/skills/postgresql/postgresql.svg';
-
-export const subPages = ['Skills', 'University Modules'];
+import arduinoIcon from 'src/assets/icons/skills/arduino/arduino-original.svg';
+import bashIcon from 'src/assets/icons/skills/bash/bash-original.svg';
+import bootstrapIcon from 'src/assets/icons/skills/bootstrap/bootstrap-original.svg';
+import cIcon from 'src/assets/icons/skills/c/c-original.svg';
+import cssIcon from 'src/assets/icons/skills/css3/css3-original.svg';
+import dockerIcon from 'src/assets/icons/skills/docker/docker-original.svg';
+import gitIcon from 'src/assets/icons/skills/git/git-original.svg';
+import htmlIcon from 'src/assets/icons/skills/html5/html5-original.svg';
+import javaIcon from 'src/assets/icons/skills/java/java-original.svg';
+import javascriptIcon from 'src/assets/icons/skills/javascript/javascript-original.svg';
+import kotlinIcon from 'src/assets/icons/skills/kotlin/kotlin-original.svg';
+import linuxIcon from 'src/assets/icons/skills/linux/linux-original.svg';
+import luaIcon from 'src/assets/icons/skills/lua/lua-original.svg';
+import mySqlIcon from 'src/assets/icons/skills/mysql/mysql-original.svg';
+import nodeJSIcon from 'src/assets/icons/skills/nodejs/nodejs-original.svg';
+import pythonIcon from 'src/assets/icons/skills/python/python-original.svg';
+import raspberryPiIcon from 'src/assets/icons/skills/raspberrypi/raspberrypi-original.svg';
+import reactIcon from 'src/assets/icons/skills/react/react-original.svg';
+import springIcon from 'src/assets/icons/skills/spring/spring-original.svg';
+import unixIcon from 'src/assets/icons/skills/unix/unix-original.svg';
+import vimIcon from 'src/assets/icons/skills/vim/vim-original.svg';
+import vscodeIcon from 'src/assets/icons/skills/vscode/vscode-original.svg';
+import yarnIcon from 'src/assets/icons/skills/yarn/yarn-original.svg';
+import typescriptIcon from 'src/assets/icons/skills/typescript/typescript.svg';
+import webpackIcon from 'src/assets/icons/skills/webpack/webpack.svg';
+import vueJsIcon from 'src/assets/icons/skills/vuejs/vuejs.svg';
+import postgreSQLIcon from 'src/assets/icons/skills/postgresql/postgresql.svg';
 
 enum Types {
   MISCELLANEOUS = 'Miscellaneous',
@@ -41,7 +39,7 @@ enum Proficiencys {
 }
 
 interface Skill {
-  icon: React.ElementType;
+  icon: string;
   type: Types;
   proficiency: Proficiencys;
 }
@@ -50,137 +48,137 @@ export const skills: {
   [key: string]: Skill;
 } = {
   Arduino: {
-    icon: ArduinoIcon,
+    icon: arduinoIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.FAIR,
   },
   Bash: {
-    icon: BashIcon,
+    icon: bashIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Bootstrap: {
-    icon: BootstrapIcon,
+    icon: bootstrapIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   C: {
-    icon: CIcon,
+    icon: cIcon,
     type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.HIGH,
   },
   CSS: {
-    icon: CSSIcon,
+    icon: cssIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Docker: {
-    icon: DockerIcon,
+    icon: dockerIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.FAIR,
   },
   Git: {
-    icon: GitIcon,
+    icon: gitIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   HTML: {
-    icon: HTMLIcon,
+    icon: htmlIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Java: {
-    icon: JavaIcon,
+    icon: javaIcon,
     type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.VERY_HIGH,
   },
   Javascript: {
-    icon: JavascriptIcon,
+    icon: javascriptIcon,
     type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.HIGH,
   },
   Kotlin: {
-    icon: KotlinIcon,
+    icon: kotlinIcon,
     type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.FAIR,
   },
   Linux: {
-    icon: LinuxIcon,
+    icon: linuxIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Lua: {
-    icon: LuaIcon,
+    icon: luaIcon,
     type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.FAIR,
   },
   MySql: {
-    icon: MySqlIcon,
+    icon: mySqlIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.FAIR,
   },
   NodeJS: {
-    icon: NodeJSIcon,
+    icon: nodeJSIcon,
     type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
     proficiency: Proficiencys.FAIR,
   },
   Python: {
-    icon: PythonIcon,
+    icon: pythonIcon,
     type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.VERY_HIGH,
   },
   'Raspberry Pi': {
-    icon: RaspberryPiIcon,
+    icon: raspberryPiIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.FAIR,
   },
   React: {
-    icon: ReactIcon,
+    icon: reactIcon,
     type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
     proficiency: Proficiencys.VERY_HIGH,
   },
   Spring: {
-    icon: SpringIcon,
+    icon: springIcon,
     type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
     proficiency: Proficiencys.HIGH,
   },
   Unix: {
-    icon: UnixIcon,
+    icon: unixIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Vim: {
-    icon: VimIcon,
+    icon: vimIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   VSCode: {
-    icon: VscodeIcon,
+    icon: vscodeIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Yarn: {
-    icon: YarnIcon,
+    icon: yarnIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Typescript: {
-    icon: TypescriptIcon,
+    icon: typescriptIcon,
     type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.HIGH,
   },
   Webpack: {
-    icon: WebpackIcon,
+    icon: webpackIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
   Vuejs: {
-    icon: VueJsIcon,
+    icon: vueJsIcon,
     type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
     proficiency: Proficiencys.HIGH,
   },
   PostgreSQL: {
-    icon: PostgreSQLIcon,
+    icon: postgreSQLIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.HIGH,
   },
@@ -210,18 +208,21 @@ export enum SkillsSortingCriteria {
   PROFICIENCY = 'proficiency',
 }
 
-export const skillsSortingCriteriaDetails: { [key: string]: SkillsSortObject } =
-  {
-    [SkillsSortingCriteria.ALPHABET]: {
-      title: 'Alphabet',
-      backgroundColor: '#EEF4D4',
-    },
-    [SkillsSortingCriteria.TYPE]: {
-      title: 'Type',
-      backgroundColor: '#DAEFB3',
-    },
-    [SkillsSortingCriteria.PROFICIENCY]: {
-      title: 'Proficiency',
-      backgroundColor: '#EA9E8D',
-    },
-  };
+type SkillsSortingCriteriaDetails = {
+  [key in SkillsSortingCriteria]: SkillsSortObject;
+};
+
+export const skillsSortingCriteriaDetails: SkillsSortingCriteriaDetails = {
+  [SkillsSortingCriteria.ALPHABET]: {
+    title: 'Alphabet',
+    backgroundColor: '#EEF4D4',
+  },
+  [SkillsSortingCriteria.TYPE]: {
+    title: 'Type',
+    backgroundColor: '#DAEFB3',
+  },
+  [SkillsSortingCriteria.PROFICIENCY]: {
+    title: 'Proficiency',
+    backgroundColor: '#EA9E8D',
+  },
+};

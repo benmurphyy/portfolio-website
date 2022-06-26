@@ -1,19 +1,20 @@
 import { ForwardedRef, forwardRef, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import SectionHeader from 'src/components/SectionHeader';
 import SkillIcons from 'src/pages/knowledgePage/components/SkillsSection/SkillIcons';
-import SkillsHeading from 'src/pages/knowledgePage/components/SkillsSection/SkillsHeading';
+import SkillsHeader from 'src/pages/knowledgePage/components/SkillsSection/SkillsHeader';
 
 const SkillsSection = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   const [sortMethod, setSortMethod] = useState('alphabet');
   return (
-    <Container fluid className="background-grunge" ref={ref}>
+    <Container className="background-grunge" ref={ref}>
+      <SectionHeader title="Skills" isHiddenOnPhone />
       <Row>
-        <SkillsHeading setSortMethodCallback={setSortMethod} />
+        <SkillsHeader setSortMethodCallback={setSortMethod} />
       </Row>
       <Row>
         <SkillIcons sortMethod={sortMethod} />
       </Row>
-      <Row></Row>
     </Container>
   );
 });

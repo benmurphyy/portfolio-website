@@ -1,29 +1,14 @@
 //make icon larger for larger screens
 $icon-size-lg: 100px;
-$icon-size-md: 80px;
-$icon-size-sm: 50px;
-
-// to be able to size heigh and width in one line
-@mixin size-icon($size) {
-  height: $size;
-  width: $size;
-}
+$icon-size-document-download: 80px;
+$icon-size-document-download: 50px;
 
 .contact-icon {
-  @include size-icon($icon-size-md);
-
-  // make the icon bigger when the screen size is past boostrap "lg" breakpoint
-  @media only screen and (min-width: map-get($grid_breakpoints, 'lg')) {
-    @include size-icon($icon-size-lg);
-  }
+  @include responsive-icon-sizes(80px, 100px);
 }
 
 .document-download-icon {
-  width: $icon-size-sm;
-
-  @media only screen and (min-width: map-get($grid_breakpoints, 'lg')) {
-    width: $icon-size-sm;
-  }
+  @include responsive-icon-sizes(50px, 80px);
 }
 
 .document-download-link {

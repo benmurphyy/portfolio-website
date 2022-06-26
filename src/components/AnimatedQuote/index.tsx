@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
-import { animated, useSpring } from '@react-spring/web';
 import styles from './styles.scss';
+import { motion } from 'framer-motion';
 
 export enum AnimatedQuoteVariants {
   DARK,
@@ -20,30 +20,15 @@ export default function AnimatedQuote({
   quoteOrigin,
   variant = AnimatedQuoteVariants.LIGHT,
 }: AnimatedQuoteProps) {
-  const style = useSpring({
-    from: {
-      opacity: 0,
-    },
-    opacity: 1,
-  });
-
   return variant === AnimatedQuoteVariants.DARK ? (
     <Container>
-      <animated.h1 style={style} className={styles.darkQuote}>
-        {quoteText}
-      </animated.h1>
-      <animated.h4 style={style} className={styles.darkFooter}>
-        - {quoteOrigin}
-      </animated.h4>
+      <motion.h1 className={styles.darkQuote}>{quoteText}</motion.h1>
+      <motion.h4 className={styles.darkFooter}>- {quoteOrigin}</motion.h4>
     </Container>
   ) : (
     <Container>
-      <animated.h1 style={style} className={styles.lightQuote}>
-        {quoteText}
-      </animated.h1>
-      <animated.h4 style={style} className={styles.lightFooter}>
-        - {quoteOrigin}
-      </animated.h4>
+      <motion.h1 className={styles.lightQuote}>{quoteText}</motion.h1>
+      <motion.h4 className={styles.lightFooter}>- {quoteOrigin}</motion.h4>
     </Container>
   );
 }

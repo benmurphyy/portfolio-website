@@ -11,39 +11,27 @@ import Projects from './projectsSection';
 
 // import and set up data variables
 import quotes from 'src/assets/data/quotes.json';
-import AchievementsSubpage from 'src/pages/experiencePage/achievementsSection';
-import CareerExperienceSubpage from './careerExperienceSection';
-import { subPages } from 'src/pages/experiencePage/constants';
+import AchievementsSection from 'src/pages/experiencePage/achievementsSection';
+import CareerExperienceSection from './careerExperienceSection';
+import {
+  ExperiencePageSectionName,
+  experiencePageSections,
+} from 'src/pages/experiencePage/constants';
 import PageHeader from 'src/components/PageHeader';
+import SectionHeader from 'src/components/SectionHeader';
 const quoteText = quotes.experiencePage.quoteText;
 const quoteOrigin = quotes.experiencePage.quoteOrigin;
-
-function Quote() {
-  return (
-    <Container>
-      <Row className="justify-content-center">
-        <Col className="col-md-6">
-          <AnimatedQuote
-            quoteText={quoteText}
-            quoteOrigin={quoteOrigin}
-            variant={AnimatedQuoteVariants.DARK}
-          />
-        </Col>
-      </Row>
-    </Container>
-  );
-}
 
 interface ExperiencePageProps {
   mainNavbarRef: RefObject<HTMLDivElement>;
 }
 
 /**
- * Experience page
+ * Experience page.
  */
 export default function Experience({ mainNavbarRef }: ExperiencePageProps) {
   //create a mapping object of page to its ref
-  const subPageRefs = useSubPageRefMapCreator(subPages);
+  const subPageRefs = useSubPageRefMapCreator(experiencePageSections);
 
   //subNavBar ref
   const subNavbarRef = useRef(null);
@@ -61,13 +49,29 @@ export default function Experience({ mainNavbarRef }: ExperiencePageProps) {
         subPageRefs={subPageRefs.current}
       />
       <PageHeader backgroundImage={headerBackgroundImage}>
-        <Quote></Quote>
+        <Container>
+          <Row className="justify-content-center">
+            <Col className="col-md-6">
+              <AnimatedQuote
+                quoteText={quoteText}
+                quoteOrigin={quoteOrigin}
+                variant={AnimatedQuoteVariants.DARK}
+              />
+            </Col>
+          </Row>
+        </Container>
       </PageHeader>
-      <CareerExperienceSubpage
-        ref={subPageRefs.current.get('Career Experience')}
+      <CareerExperienceSection
+        ref={subPageRefs.current.get(
+          ExperiencePageSectionName.CAREER_EXPERIENCE
+        )}
       />
-      <AchievementsSubpage ref={subPageRefs.current.get('Achievements')} />
-      <Projects ref={subPageRefs.current.get('Projects')} />
+      <AchievementsSection
+        ref={subPageRefs.current.get(ExperiencePageSectionName.ACHIEVEMENTS)}
+      />
+      <Projects
+        ref={subPageRefs.current.get(ExperiencePageSectionName.PROJECTS)}
+      />
     </Container>
   );
 }
