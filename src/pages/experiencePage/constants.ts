@@ -36,7 +36,7 @@ export const projects: Project[] = [
       'Main libraries used: react-router, framer-motion, react-bootstrap',
     ],
     description:
-      'This webpage was built using React with Bootstrap to help in the layouts. Framer-motion was used for routing and React-spring for the animations. No template was used, as I wanted to fashion the website from the ground up, so I could impart my own style and also maximise the learning experience. This webpage was also manually configured using Webpack.',
+      'This webpage was built using React with Bootstrap to help in the layouts. React-router was used for routing and framer-motion for the animations. No template was used, as I wanted to fashion the website from the ground up, so I could impart my own style and also maximise the learning experience. This webpage was also manually configured using Webpack.',
     icon: bjmIcon,
   },
   {
