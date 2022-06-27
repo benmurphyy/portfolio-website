@@ -199,8 +199,7 @@
                   return (0, y.jsx)(
                     n.Z,
                     {
-                      className:
-                        'd-flex py-4 col-12 col-md-6 col-lg-6 col-xl-4',
+                      className: 'd-flex g-3 col-12 col-lg-6',
                       children: (0, y.jsxs)(r.Z, {
                         className: 'w-100',
                         children: [

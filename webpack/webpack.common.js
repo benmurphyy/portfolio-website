@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const path = require('path');
 
 const port = process.env.PORT || 8080;
@@ -15,6 +16,7 @@ module.exports = {
   // resolve all entry paths and loaders from the root directory of the project
   // also serves as root when resolving import paths of modules
   entry: path.resolve(rootDir, 'src/index.tsx'),
+  context: rootDir,
   output: {
     path: path.resolve(rootDir, 'build'),
     filename: '[name].js',
@@ -153,6 +155,14 @@ module.exports = {
       template: path.resolve(rootDir, 'public/index.html'),
     }),
     require('autoprefixer'),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(rootDir, 'src/assets/icons/bjm.svg'),
+      prefix: 'static/assets/',
+      favicons: {
+        background: '#0b3948',
+        theme_color: '#0b3948',
+      },
+    }),
   ],
   devServer: {
     host: '0.0.0.0',
