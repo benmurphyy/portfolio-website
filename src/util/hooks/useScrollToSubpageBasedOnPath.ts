@@ -13,15 +13,13 @@ export default function useScrollToSubpageBasedOnPath(
   mainNavbarRef: RefObject<HTMLDivElement>,
   subPageRefs: RefObject<Map<string, RefObject<HTMLDivElement>>>
 ) {
+  //TODO: REWRITE! COME UP WITH BETTER SOLUTION
   //scroll to section of page using its ref, taking into account the height of the subnavbar, so scroll correct amount
   function scrollTo(sectionRef: RefObject<HTMLDivElement>) {
     //dont execute if any of the current objects in the ref are null
-    if (!subNavbarRef.current || !sectionRef.current) {
-      return;
-    }
-    const yOffset = -subNavbarRef.current.offsetHeight;
+    const yOffset = -mainNavbarRef.current!.offsetHeight;
     const y =
-      sectionRef.current.getBoundingClientRect().top +
+      sectionRef.current!.getBoundingClientRect().top +
       window.pageYOffset +
       yOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });

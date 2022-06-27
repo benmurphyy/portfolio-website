@@ -31,11 +31,12 @@ export const projects: Project[] = [
     title: 'This Webpage',
     subtitle: 'My portfolio website using React',
     summary: [
+      "Having originally started development on this website in December 2021, I have been continually updating it as I've learned more techniques in frontend developement.",
       'Objective was to create a space to share my skills and projects, along with industrial experience. and develop my skill in front-end dev at the same time',
-      'Libraries used: react-router, react-spring, react-bootstrap',
+      'Main libraries used: react-router, framer-motion, react-bootstrap',
     ],
     description:
-      'This webpage was built using React with Bootstrap to help in the layouts. React-router was used for routing and React-spring for the animations. No template was used, as I wanted to fashion the website from the ground up, so I could impart my own style and also maximise the learning experience.',
+      'This webpage was built using React with Bootstrap to help in the layouts. Framer-motion was used for routing and React-spring for the animations. No template was used, as I wanted to fashion the website from the ground up, so I could impart my own style and also maximise the learning experience. This webpage was also manually configured using Webpack.',
     icon: bjmIcon,
   },
   {

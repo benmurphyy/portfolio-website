@@ -147,22 +147,14 @@
         return r;
       }
       function m(A, t, o) {
-        function n(t) {
-          if (A.current && t.current) {
-            var o = -A.current.offsetHeight,
-              r =
-                t.current.getBoundingClientRect().top + window.pageYOffset + o;
-            window.scrollTo({ top: r, behavior: 'smooth' });
-          }
-        }
-        var m = (0, e.s0)(),
-          C = (0, e.TH)();
+        var n = (0, e.s0)(),
+          m = (0, e.TH)();
         (0, r.useEffect)(function () {
           var A,
             o = i(a);
           try {
             for (o.s(); !(A = o.n()).done; )
-              if (A.value.path === C.pathname && t.current) {
+              if (A.value.path === m.pathname && t.current) {
                 var r = t.current.offsetHeight,
                   e = window.pageYOffset + r;
                 window.scrollTo({ top: e, behavior: 'smooth' });
@@ -175,20 +167,31 @@
         }),
           (0, r.useEffect)(function () {
             var A,
-              t = i(a);
+              r,
+              e,
+              C,
+              l = i(a);
             try {
-              for (t.s(); !(A = t.n()).done; ) {
-                var r = A.value;
-                r.path === C.pathname &&
+              for (l.s(); !(A = l.n()).done; ) {
+                var d = A.value;
+                d.path === m.pathname &&
                   (console.log(o),
-                  console.log(r.name),
-                  n(o.current.get(r.name)),
-                  m('/' + C.pathname.split('/')[1], { replace: !0 }));
+                  console.log(d.name),
+                  (r = o.current.get(d.name)),
+                  void 0,
+                  void 0,
+                  (e = -t.current.offsetHeight),
+                  (C =
+                    r.current.getBoundingClientRect().top +
+                    window.pageYOffset +
+                    e),
+                  window.scrollTo({ top: C, behavior: 'smooth' }),
+                  n('/' + m.pathname.split('/')[1], { replace: !0 }));
               }
             } catch (A) {
-              t.e(A);
+              l.e(A);
             } finally {
-              t.f();
+              l.f();
             }
           });
       }

@@ -28,7 +28,7 @@ const CareerExperienceSection = forwardRef(function (
       {careerExperiences.map((career) => (
         <Container key={career.Company}>
           <Row className="gx-2 justify-content-between">
-            <Col className="col-12 col-md-auto d-flex">
+            <Col className="col-12 col-md-8 d-flex">
               <h5 className="fw-bold">
                 {career.Title + ', ' + career.Company}
               </h5>
