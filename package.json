@@ -62,7 +62,7 @@
     "start": "npx webpack serve --config webpack/webpack.dev.js",
     "build": "npx webpack --config webpack/webpack.prod.js",
     "prepare": "husky install",
-    "deploy": "gh-pages -d build -b main -r https://github.com/benmurphyy/benmurphyy.github.io"
+    "deploy": "npx webpack --config webpack/webpack.prod.js && gh-pages -d build -b main -r https://github.com/benmurphyy/benmurphyy.github.io"
   },
   "lint-staged": {
     "**/*": [
