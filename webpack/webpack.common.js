@@ -159,7 +159,7 @@ module.exports = {
         theme_color: '#0b3948',
       },
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({ analyzerMode: 'json' }),
   ],
   devServer: {
     host: '0.0.0.0',
