@@ -1,0 +1,19 @@
+// custom colours that override bootstrap variables
+$primary: #0b3948 !default;
+$secondary: #481a0b !default;
+$light: #dbd7d2 !default;
+
+//custom fonts
+@font-face {
+  font-family: 'Open Sans';
+  src: url('src/assets/fonts/OpenSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Merienda-Bold';
+  src: url('src/assets/fonts/Merienda-Bold.ttf');
+}
+
+// default font family sans serif
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-cursive: 'Merienda-Bold';

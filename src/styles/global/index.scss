@@ -1,0 +1,17 @@
+/**
+ * This file is for importing using sass-resource-loader, as it defines all the common scss variables that 
+ * are used across scss modules in the project.
+ */
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '~bootstrap/scss/functions';
+
+// Custom bootstrap variables
+@import './variableOverrides';
+
+// Include remainder of required Bootstrap stylesheets
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+// Custom variables and mixins that require bootstrap to be loaded first
+@import './variables';
+@import './mixins';

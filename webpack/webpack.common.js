@@ -82,15 +82,17 @@ module.exports = {
             },
           },
           {
+            // loads the global sass variables to that they can be used throughout all scss modules
+            // without explicit imports
             loader: 'sass-resources-loader',
             options: {
-              resources: path.resolve(rootDir, 'src/styles/index.scss'),
+              resources: path.resolve(rootDir, 'src/styles/global/index.scss'),
             },
           },
         ],
       },
-      // this scss rule applies only to the global style sheet
-      // css modules is not applied in this rule
+      // alternative loading of global scss file, no css modules implementied here,
+      // so that the bootstrap css classes will apply to all css modules.
       {
         test: /\.s[ac]ss$/,
         include: [globalStyleSheetPath],
@@ -111,14 +113,6 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-            },
-          },
-          // loads all the variables in the globalStyleSheet globally
-          // so they can be used in any sass module
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: globalStyleSheetPath,
             },
           },
         ],
