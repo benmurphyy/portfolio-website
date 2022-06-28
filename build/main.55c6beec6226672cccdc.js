@@ -1,4 +1,4 @@
-/*! For license information please see main.c1ae3a0085ef2cb06439.js.LICENSE.txt */
+/*! For license information please see main.55c6beec6226672cccdc.js.LICENSE.txt */
 !(function () {
   var A,
     t,
@@ -1018,6 +1018,51 @@
               ),
           });
         }
+      },
+      3931: function (A, t, o) {
+        'use strict';
+        o.d(t, {
+          L: function () {
+            return r;
+          },
+          r: function () {
+            return e;
+          },
+        });
+        var r = [
+            {
+              name: 'knowledge',
+              navbarLinkTitle: 'Knowledge',
+              path: '/knowledge',
+            },
+            {
+              name: 'experience',
+              navbarLinkTitle: 'Experience',
+              path: '/experience',
+            },
+          ],
+          e = [
+            {
+              name: 'University Modules',
+              path: '/knowledge/modules',
+              buttonColor: '#373F51',
+            },
+            {
+              name: 'Skills',
+              path: '/knowledge/skills',
+              buttonColor: '#58A4B0',
+            },
+            {
+              name: 'Career Experience',
+              path: '/experience/career',
+              buttonColor: '#CE8147',
+            },
+            {
+              name: 'Projects',
+              path: '/experience/projects',
+              buttonColor: '#931621',
+            },
+          ];
       },
       1089: function (A, t, o) {
         'use strict';
@@ -30034,12 +30079,6 @@
           return 'string' == typeof A;
         }
       },
-      6737: function (A) {
-        'use strict';
-        A.exports = JSON.parse(
-          '[{"name":"University Modules","path":"/knowledge/modules","buttonColor":"#373F51"},{"name":"Skills","path":"/knowledge/skills","buttonColor":"#58A4B0"},{"name":"Career Experience","path":"/experience/career","buttonColor":"#CE8147"},{"name":"Projects","path":"/experience/projects","buttonColor":"#931621"}]'
-        );
-      },
     },
     r = {};
   function e(A) {
@@ -30080,10 +30119,10 @@
         '.' +
         {
           25: '4e498a6ab73d81f28a71',
+          292: 'cf72c6d15ea0cedc567b',
           741: 'fbf0c8fcf6c7a7fac8e3',
-          810: 'dba01898e2469ce675f7',
           818: 'b54e7986d0099695f465',
-          842: '599f3c20aef323709c71',
+          842: '0b92d08ed1d700b30058',
         }[A] +
         '.js'
       );
@@ -30256,9 +30295,7 @@
       var i = e(682),
         n = e(3364),
         l = e(701),
-        m = JSON.parse(
-          '[{"name":"knowledge","navbarLinkTitle":"Knowledge","path":"/knowledge"},{"name":"experience","navbarLinkTitle":"Experience","path":"/experience"}]'
-        ),
+        m = e(3931),
         d = e(5893),
         C = (0, t.forwardRef)(function (A, t) {
           var o = (0, r.s0)();
@@ -30289,7 +30326,7 @@
                   onSelect: function (A) {
                     return o(A);
                   },
-                  children: m.map(function (A) {
+                  children: m.L.map(function (A) {
                     return (0,
                     d.jsx)(l.Z.Item, { className: 'd-flex justify-content-end', children: (0, d.jsx)(l.Z.Link, { className: 'px-2', eventKey: A.path, children: A.navbarLinkTitle }, A.name) }, A.name);
                   }),
@@ -30440,9 +30477,8 @@
       });
       J.displayName = 'Contact';
       var Z = J,
-        $ = e(5005),
-        AA = e(6737);
-      function tA() {
+        $ = e(5005);
+      function AA() {
         var A = (0, r.s0)();
         return (0, d.jsxs)(i.Z, {
           fluid: !0,
@@ -30453,7 +30489,7 @@
               className: '',
               children: (0, d.jsx)(g.Z, {
                 className: 'justify-content-center',
-                children: AA.map(function (t) {
+                children: m.r.map(function (t) {
                   return (0, d.jsx)(
                     B.Z,
                     {
@@ -30478,30 +30514,30 @@
           ],
         });
       }
-      var oA = e(1089),
-        rA = e.p + '59c0f4b8a3cc006a6862.jpg',
-        eA = e(2197),
-        aA = {};
-      (aA.styleTagTransform = X()),
-        (aA.setAttributes = q()),
-        (aA.insert = D().bind(null, 'head')),
-        (aA.domAPI = z()),
-        (aA.insertStyleElement = W()),
-        U()(eA.Z, aA);
-      var iA = eA.Z && eA.Z.locals ? eA.Z.locals : void 0,
-        nA = e(4288);
-      function lA() {
-        return (0, d.jsx)(nA.E.h1, {
-          className: iA.greetingText,
+      var tA = e(1089),
+        oA = e.p + '59c0f4b8a3cc006a6862.jpg',
+        rA = e(2197),
+        eA = {};
+      (eA.styleTagTransform = X()),
+        (eA.setAttributes = q()),
+        (eA.insert = D().bind(null, 'head')),
+        (eA.domAPI = z()),
+        (eA.insertStyleElement = W()),
+        U()(rA.Z, eA);
+      var aA = rA.Z && rA.Z.locals ? rA.Z.locals : void 0,
+        iA = e(4288);
+      function nA() {
+        return (0, d.jsx)(iA.E.h1, {
+          className: aA.greetingText,
           initial: { y: -window.innerHeight / 2 },
           animate: { y: 0 },
           children: 'Welcome!',
         });
       }
-      function mA(A) {
+      function lA(A) {
         var o = A.mainNavbarRef;
-        console.log(rA);
-        var r = (0, oA.Z)(N),
+        console.log(oA);
+        var r = (0, tA.Z)(N),
           e = (0, t.useRef)(null);
         return (0, d.jsxs)(i.Z, {
           fluid: !0,
@@ -30513,64 +30549,66 @@
               subPageRefs: r.current,
             }),
             (0, d.jsx)(p.Z, {
-              backgroundImage: rA,
-              children: (0, d.jsx)(lA, {}),
+              backgroundImage: oA,
+              children: (0, d.jsx)(nA, {}),
             }),
             (0, d.jsx)(O, { ref: r.current.get('About Me') }),
-            (0, d.jsx)(tA, {}),
+            (0, d.jsx)(AA, {}),
             (0, d.jsx)(Z, { ref: r.current.get('Contact') }),
           ],
         });
       }
-      var dA = {
-        homepage: mA,
+      var mA = {
+        homepage: lA,
         knowledge: t.lazy(function () {
           return Promise.all([e.e(741), e.e(842), e.e(818)]).then(
             e.bind(e, 4943)
           );
         }),
         experience: t.lazy(function () {
-          return Promise.all([e.e(25), e.e(842), e.e(810)]).then(e.bind(e, 12));
+          return Promise.all([e.e(25), e.e(842), e.e(292)]).then(
+            e.bind(e, 4779)
+          );
         }),
       };
-      function CA(A) {
+      function dA(A) {
         var t = A.page,
           o = A.mainNavbarRef,
-          r = dA[t];
+          r = mA[t];
         return (0, d.jsx)(r, { mainNavbarRef: o });
       }
-      function sA(A) {
+      function CA(A) {
         var o = A.mainNavbarRef;
         return (0, d.jsx)(t.Suspense, {
           children: (0, d.jsxs)(r.Z5, {
             children: [
               (0, d.jsx)(
                 r.AW,
-                { path: '/', element: (0, d.jsx)(mA, { mainNavbarRef: o }) },
+                { path: '/', element: (0, d.jsx)(lA, { mainNavbarRef: o }) },
                 'home'
               ),
-              m.map(function (A) {
+              m.L.map(function (A) {
                 return (0,
-                d.jsx)(r.AW, { path: A.path, element: (0, d.jsx)(CA, { mainNavbarRef: o, page: A.name }), children: (0, d.jsx)(r.AW, { path: ':subPage', element: (0, d.jsx)(CA, { mainNavbarRef: o, page: A.name }) }) }, A.name);
+                d.jsx)(r.AW, { path: A.path, element: (0, d.jsx)(dA, { mainNavbarRef: o, page: A.name }), children: (0, d.jsx)(r.AW, { path: ':subPage', element: (0, d.jsx)(dA, { mainNavbarRef: o, page: A.name }) }) }, A.name);
               }),
             ],
           }),
         });
       }
-      var pA = e(4572),
-        cA = {};
-      (cA.styleTagTransform = X()),
-        (cA.setAttributes = q()),
-        (cA.insert = D().bind(null, 'head')),
-        (cA.domAPI = z()),
-        (cA.insertStyleElement = W()),
-        U()(pA.Z, cA),
-        pA.Z && pA.Z.locals && pA.Z.locals,
+      var sA = e(4572),
+        pA = {};
+      (pA.styleTagTransform = X()),
+        (pA.setAttributes = q()),
+        (pA.insert = D().bind(null, 'head')),
+        (pA.domAPI = z()),
+        (pA.insertStyleElement = W()),
+        U()(sA.Z, pA),
+        sA.Z && sA.Z.locals && sA.Z.locals,
         A.createRoot(document.getElementById('root')).render(
           (0, d.jsx)(function () {
             var A = (0, t.useRef)(null);
             return (0,
-            d.jsx)(a, { basename: '/', children: (0, d.jsxs)(i.Z, { fluid: !0, className: 'App p-0 fill h-100', children: [(0, d.jsx)(s, { ref: A }), (0, d.jsx)(sA, { mainNavbarRef: A })] }) });
+            d.jsx)(a, { basename: '/', children: (0, d.jsxs)(i.Z, { fluid: !0, className: 'App p-0 fill h-100', children: [(0, d.jsx)(s, { ref: A }), (0, d.jsx)(CA, { mainNavbarRef: A })] }) });
           }, {})
         );
     })();

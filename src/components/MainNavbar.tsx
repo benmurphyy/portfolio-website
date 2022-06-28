@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import { useNavigate } from 'react-router';
 import bjmIcon from 'src/assets/icons/bjm.svg';
 
-import pages from 'src/assets/data/pages.json';
+import { pages } from 'src/constants';
 
 const Navigator = forwardRef<HTMLDivElement>((_, ref) => {
   const navigate = useNavigate();

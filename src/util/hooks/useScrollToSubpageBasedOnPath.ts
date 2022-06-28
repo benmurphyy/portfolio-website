@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import quickLinks from 'src/assets/data/quick_links.json';
+import { quickLinks } from 'src/constants';
 
 /**
  * custom react hook to handle the scrolling to a specific subpage on a page based on path name. Used for quicklink navigation.

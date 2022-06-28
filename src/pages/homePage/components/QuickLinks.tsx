@@ -1,7 +1,7 @@
 import { Container, Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import SectionHeader from 'src/components/SectionHeader';
-import quickLinks from 'src/assets/data/quick_links.json';
+import { quickLinks } from 'src/constants';
 
 export default function QuickLinks() {
   const navigate = useNavigate();

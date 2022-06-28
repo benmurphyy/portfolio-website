@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 const port = process.env.PORT || 8080;
@@ -163,6 +165,7 @@ module.exports = {
         theme_color: '#0b3948',
       },
     }),
+    new BundleAnalyzerPlugin(),
   ],
   devServer: {
     host: '0.0.0.0',

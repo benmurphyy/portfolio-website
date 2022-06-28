@@ -7,7 +7,7 @@ import Homepage from 'src/pages/homePage';
 const Knowledge = React.lazy(() => import('src/pages/knowledgePage'));
 const Experience = React.lazy(() => import('src/pages/experiencePage'));
 
-import pages from 'src/assets/data/pages.json';
+import { pages } from 'src/constants';
 
 interface PageProps {
   mainNavbarRef: RefObject<HTMLDivElement>;
