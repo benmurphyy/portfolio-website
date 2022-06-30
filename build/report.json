@@ -2,7 +2,7 @@
   {
     "label": "main.js",
     "isAsset": true,
-    "statSize": 2673963.34,
+    "statSize": 2674063.34,
     "groups": [
       {
         "label": "node_modules",
@@ -2836,7 +2836,7 @@
       {
         "label": "src",
         "path": "./src",
-        "statSize": 694461.48,
+        "statSize": 694561.48,
         "groups": [
           {
             "label": "components",
@@ -3229,7 +3229,7 @@
             "id": "./src/routes.tsx",
             "label": "routes.tsx",
             "path": "./src/routes.tsx",
-            "statSize": 1509
+            "statSize": 1609
           },
           {
             "label": "util/hooks",

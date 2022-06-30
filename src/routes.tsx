@@ -3,9 +3,12 @@ import { Routes, Route } from 'react-router';
 
 import Homepage from 'src/pages/homePage';
 
-//lazily load all other pages of application except homepage
-const Knowledge = React.lazy(() => import('src/pages/knowledgePage'));
-const Experience = React.lazy(() => import('src/pages/experiencePage'));
+//lazily load all other pages of application except homepage, with prefetching
+const knowledgePagePromise = import('src/pages/knowledgePage');
+const Knowledge = React.lazy(() => knowledgePagePromise);
+
+const experiencePagePromise = import('src/pages/experiencePage');
+const Experience = React.lazy(() => experiencePagePromise);
 
 import { pages } from 'src/constants';
 
