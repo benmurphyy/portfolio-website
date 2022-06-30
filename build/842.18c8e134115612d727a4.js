@@ -16,9 +16,9 @@
         r = n(3379),
         a = n.n(r),
         s = n(7795),
-        i = n.n(s),
-        l = n(569),
-        c = n.n(l),
+        l = n.n(s),
+        i = n(569),
+        c = n.n(i),
         u = n(3565),
         f = n.n(u),
         d = n(9216),
@@ -30,7 +30,7 @@
       (y.styleTagTransform = h()),
         (y.setAttributes = f()),
         (y.insert = c().bind(null, 'head')),
-        (y.domAPI = i()),
+        (y.domAPI = l()),
         (y.insertStyleElement = A()),
         a()(m.Z, y);
       var g,
@@ -68,7 +68,7 @@
     8738: function (e, t, n) {
       n.d(t, {
         Z: function () {
-          return l;
+          return i;
         },
       });
       var o = n(7294),
@@ -83,7 +83,7 @@
             Array.isArray(e) ||
             (n = (function (e, t) {
               if (e) {
-                if ('string' == typeof e) return i(e, t);
+                if ('string' == typeof e) return l(e, t);
                 var n = Object.prototype.toString.call(e).slice(8, -1);
                 return (
                   'Object' === n && e.constructor && (n = e.constructor.name),
@@ -91,7 +91,7 @@
                     ? Array.from(e)
                     : 'Arguments' === n ||
                       /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                    ? i(e, t)
+                    ? l(e, t)
                     : void 0
                 );
               }
@@ -120,7 +120,7 @@
         }
         var a,
           s = !0,
-          l = !1;
+          i = !1;
         return {
           s: function () {
             n = n.call(e);
@@ -130,31 +130,31 @@
             return (s = e.done), e;
           },
           e: function (e) {
-            (l = !0), (a = e);
+            (i = !0), (a = e);
           },
           f: function () {
             try {
               s || null == n.return || n.return();
             } finally {
-              if (l) throw a;
+              if (i) throw a;
             }
           },
         };
       }
-      function i(e, t) {
+      function l(e, t) {
         (null == t || t > e.length) && (t = e.length);
         for (var n = 0, o = new Array(t); n < t; n++) o[n] = e[n];
         return o;
       }
-      function l(e, t, n) {
-        var i = (0, r.s0)(),
-          l = (0, r.TH)();
+      function i(e, t, n) {
+        var l = (0, r.s0)(),
+          i = (0, r.TH)();
         (0, o.useEffect)(function () {
           var e,
             n = s(a.r);
           try {
             for (n.s(); !(e = n.n()).done; )
-              if (e.value.path === l.pathname && t.current) {
+              if (e.value.path === i.pathname && t.current) {
                 var o = t.current.offsetHeight,
                   r = window.pageYOffset + o;
                 window.scrollTo({ top: r, behavior: 'smooth' });
@@ -174,7 +174,7 @@
             try {
               for (u.s(); !(e = u.n()).done; ) {
                 var f = e.value;
-                f.path === l.pathname &&
+                f.path === i.pathname &&
                   (console.log(n),
                   console.log(f.name),
                   (o = n.current.get(f.name)),
@@ -186,7 +186,7 @@
                     window.pageYOffset +
                     r),
                   window.scrollTo({ top: c, behavior: 'smooth' }),
-                  i('/' + l.pathname.split('/')[1], { replace: !0 }));
+                  l('/' + i.pathname.split('/')[1], { replace: !0 }));
               }
             } catch (e) {
               u.e(e);
@@ -201,29 +201,29 @@
         r = n.n(o),
         a = n(3645),
         s = n.n(a),
-        i = n(1667),
-        l = n.n(i),
-        c = new URL(n(8293), n.b),
+        l = n(1667),
+        i = n.n(l),
+        c = new URL(n(7517), n.b),
         u = new URL(n(3392), n.b),
         f = s()(r()),
-        d = l()(c),
-        A = l()(u);
+        d = i()(c),
+        A = i()(u);
       f.push([
         e.id,
         '@font-face{font-family:"Open Sans";src:url(' +
           d +
           ')}@font-face{font-family:"Merienda-Bold";src:url(' +
           A +
-          ')}.U9Y7UAzKMW0Jx5YJ_jlS,.hy39YanyJ0IMDI6NVHo5,.e8oU63sIMDs3PHz259Tb{text-align:left}.lSnalANoNsdR_Ei5_WLP,.hTXSJbzcMlmwECg4t4wN,.uypnRjipORL4cp4c4s8q{text-align:left}.pWDKCSsmy0I6wBpzQVyN,.uypnRjipORL4cp4c4s8q,.hy39YanyJ0IMDI6NVHo5{color:#212529;text-shadow:1px 1px 10px #dee2e6}.XRV8vyVKUwPnkI6K4VdZ,.hTXSJbzcMlmwECg4t4wN,.e8oU63sIMDs3PHz259Tb{color:#dbd7d2;text-shadow:2px 2px 8px #212529}',
+          ')}.U9Y7UAzKMW0Jx5YJ_jlS,.hy39YanyJ0IMDI6NVHo5,.e8oU63sIMDs3PHz259Tb{text-align:left}.lSnalANoNsdR_Ei5_WLP,.hTXSJbzcMlmwECg4t4wN,.uypnRjipORL4cp4c4s8q{text-align:left}.pWDKCSsmy0I6wBpzQVyN,.uypnRjipORL4cp4c4s8q,.hy39YanyJ0IMDI6NVHo5{color:#000;text-shadow:1px 1px 10px #dee2e6}.XRV8vyVKUwPnkI6K4VdZ,.hTXSJbzcMlmwECg4t4wN,.e8oU63sIMDs3PHz259Tb{color:#dbd7d2;text-shadow:2px 2px 8px #212529}',
         '',
         {
           version: 3,
           sources: ['webpack://./src/components/AnimatedQuote/styles.scss'],
           names: [],
           mappings:
-            'AAAA,WAAW,uBAAuB,CAAC,2CAA+C,CAAC,WAAW,2BAA2B,CAAC,2CAA6C,CAAC,kEAA8B,eAAe,CAAC,kEAAiC,eAAe,CAAC,kEAA6B,aAAa,CAAC,gCAAgC,CAAC,kEAAgC,aAAa,CAAC,+BAA+B',
+            'AAAA,WAAW,uBAAuB,CAAC,2CAAwC,CAAC,WAAW,2BAA2B,CAAC,2CAA6C,CAAC,kEAA8B,eAAe,CAAC,kEAAiC,eAAe,CAAC,kEAA6B,UAAU,CAAC,gCAAgC,CAAC,kEAAgC,aAAa,CAAC,+BAA+B',
           sourcesContent: [
-            '@font-face{font-family:"Open Sans";src:url("src/assets/fonts/OpenSans-Medium.ttf")}@font-face{font-family:"Merienda-Bold";src:url("src/assets/fonts/Merienda-Bold.ttf")}.quote,.darkQuote,.lightQuote{text-align:left}.footer,.lightFooter,.darkFooter{text-align:left}.dark,.darkFooter,.darkQuote{color:#212529;text-shadow:1px 1px 10px #dee2e6}.light,.lightFooter,.lightQuote{color:#dbd7d2;text-shadow:2px 2px 8px #212529}',
+            '@font-face{font-family:"Open Sans";src:url("src/assets/fonts/OpenSans.ttf")}@font-face{font-family:"Merienda-Bold";src:url("src/assets/fonts/Merienda-Bold.ttf")}.quote,.darkQuote,.lightQuote{text-align:left}.footer,.lightFooter,.darkFooter{text-align:left}.dark,.darkFooter,.darkQuote{color:#000;text-shadow:1px 1px 10px #dee2e6}.light,.lightFooter,.lightQuote{color:#dbd7d2;text-shadow:2px 2px 8px #212529}',
           ],
           sourceRoot: '',
         },

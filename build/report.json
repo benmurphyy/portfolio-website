@@ -2,7 +2,7 @@
   {
     "label": "main.js",
     "isAsset": true,
-    "statSize": 2673879.34,
+    "statSize": 2673963.34,
     "groups": [
       {
         "label": "node_modules",
@@ -2836,23 +2836,23 @@
       {
         "label": "src",
         "path": "./src",
-        "statSize": 694377.48,
+        "statSize": 694461.48,
         "groups": [
           {
             "label": "components",
             "path": "./src/components",
-            "statSize": 27961,
+            "statSize": 27989,
             "groups": [
               {
                 "label": "PageHeader",
                 "path": "./src/components/PageHeader",
-                "statSize": 6812,
+                "statSize": 6826,
                 "groups": [
                   {
                     "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./src/components/PageHeader/styles.scss",
                     "label": "styles.scss",
                     "path": "./src/components/PageHeader/styles.scss",
-                    "statSize": 6165
+                    "statSize": 6179
                   },
                   {
                     "id": "./src/components/PageHeader/index.tsx",
@@ -2867,13 +2867,13 @@
               {
                 "label": "SectionHeader",
                 "path": "./src/components/SectionHeader",
-                "statSize": 8296,
+                "statSize": 8310,
                 "groups": [
                   {
                     "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./src/components/SectionHeader/styles.scss",
                     "label": "styles.scss",
                     "path": "./src/components/SectionHeader/styles.scss",
-                    "statSize": 7226
+                    "statSize": 7240
                   },
                   {
                     "id": "./src/components/SectionHeader/index.tsx",
@@ -2925,23 +2925,23 @@
           {
             "label": "pages/homePage",
             "path": "./src/pages/homePage",
-            "statSize": 99725,
+            "statSize": 99767,
             "groups": [
               {
                 "label": "components",
                 "path": "./src/pages/homePage/components",
-                "statSize": 97264,
+                "statSize": 97306,
                 "groups": [
                   {
                     "label": "AboutMe",
                     "path": "./src/pages/homePage/components/AboutMe",
-                    "statSize": 8142,
+                    "statSize": 8156,
                     "groups": [
                       {
                         "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./src/pages/homePage/components/AboutMe/styles.scss",
                         "label": "styles.scss",
                         "path": "./src/pages/homePage/components/AboutMe/styles.scss",
-                        "statSize": 6568
+                        "statSize": 6582
                       },
                       {
                         "id": "./src/pages/homePage/components/AboutMe/index.tsx",
@@ -2956,13 +2956,13 @@
                   {
                     "label": "AnimatedGreeting",
                     "path": "./src/pages/homePage/components/AnimatedGreeting",
-                    "statSize": 7071,
+                    "statSize": 7085,
                     "groups": [
                       {
                         "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./src/pages/homePage/components/AnimatedGreeting/styles.scss",
                         "label": "styles.scss",
                         "path": "./src/pages/homePage/components/AnimatedGreeting/styles.scss",
-                        "statSize": 6718
+                        "statSize": 6732
                       },
                       {
                         "id": "./src/pages/homePage/components/AnimatedGreeting/index.tsx",
@@ -2977,13 +2977,13 @@
                   {
                     "label": "Contact",
                     "path": "./src/pages/homePage/components/Contact",
-                    "statSize": 80710,
+                    "statSize": 80724,
                     "groups": [
                       {
                         "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./src/pages/homePage/components/Contact/styles.scss",
                         "label": "styles.scss",
                         "path": "./src/pages/homePage/components/Contact/styles.scss",
-                        "statSize": 78504
+                        "statSize": 78518
                       },
                       {
                         "id": "./src/pages/homePage/components/Contact/index.tsx",
@@ -3024,13 +3024,13 @@
           {
             "label": "styles",
             "path": "./src/styles",
-            "statSize": 544946,
+            "statSize": 544960,
             "groups": [
               {
                 "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/styles/index.scss",
                 "label": "index.scss",
                 "path": "./src/styles/index.scss",
-                "statSize": 544946
+                "statSize": 544960
               }
             ],
             "parsedSize": 0,
@@ -3074,9 +3074,9 @@
                     "statSize": 42
                   },
                   {
-                    "id": "./src/assets/fonts/OpenSans.ttf",
-                    "label": "OpenSans.ttf",
-                    "path": "./src/assets/fonts/OpenSans.ttf",
+                    "id": "./src/assets/fonts/OpenSans-Medium.ttf",
+                    "label": "OpenSans-Medium.ttf",
+                    "path": "./src/assets/fonts/OpenSans-Medium.ttf",
                     "statSize": 42
                   }
                 ],
@@ -3504,38 +3504,38 @@
   {
     "label": "src_pages_knowledgePage_index_tsx.js",
     "isAsset": true,
-    "statSize": 398027.7,
+    "statSize": 398041.7,
     "groups": [
       {
         "label": "src",
         "path": "./src",
-        "statSize": 398027.7,
+        "statSize": 398041.7,
         "groups": [
           {
             "label": "pages/knowledgePage",
             "path": "./src/pages/knowledgePage",
-            "statSize": 28912,
+            "statSize": 28926,
             "groups": [
               {
                 "label": "components",
                 "path": "./src/pages/knowledgePage/components",
-                "statSize": 26434,
+                "statSize": 26448,
                 "groups": [
                   {
                     "label": "SkillsSection",
                     "path": "./src/pages/knowledgePage/components/SkillsSection",
-                    "statSize": 22993,
+                    "statSize": 23007,
                     "groups": [
                       {
                         "label": "SkillIcons",
                         "path": "./src/pages/knowledgePage/components/SkillsSection/SkillIcons",
-                        "statSize": 10594,
+                        "statSize": 10608,
                         "groups": [
                           {
                             "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./src/pages/knowledgePage/components/SkillsSection/SkillIcons/styles.scss",
                             "label": "styles.scss",
                             "path": "./src/pages/knowledgePage/components/SkillsSection/SkillIcons/styles.scss",
-                            "statSize": 7479
+                            "statSize": 7493
                           },
                           {
                             "id": "./src/pages/knowledgePage/components/SkillsSection/SkillIcons/constants.ts",
@@ -4072,12 +4072,12 @@
   {
     "label": "src_pages_experiencePage_index_tsx.js",
     "isAsset": true,
-    "statSize": 41554.92,
+    "statSize": 41500.92,
     "groups": [
       {
         "label": "src",
         "path": "./src",
-        "statSize": 41554.92,
+        "statSize": 41500.92,
         "groups": [
           {
             "label": "assets",
@@ -4172,7 +4172,7 @@
           {
             "label": "pages/experiencePage",
             "path": "./src/pages/experiencePage",
-            "statSize": 14990,
+            "statSize": 14936,
             "groups": [
               {
                 "id": "./src/pages/experiencePage/achievementsSection.tsx",
@@ -4202,7 +4202,7 @@
                 "id": "./src/pages/experiencePage/projectsSection.tsx",
                 "label": "projectsSection.tsx",
                 "path": "./src/pages/experiencePage/projectsSection.tsx",
-                "statSize": 5948
+                "statSize": 5894
               }
             ],
             "parsedSize": 0,
@@ -4217,23 +4217,23 @@
   {
     "label": "src_components_AnimatedQuote_index_tsx-src_util_hooks_useScrollToSubpageBasedOnPath_ts-src_as-98278d.js",
     "isAsset": true,
-    "statSize": 12115,
+    "statSize": 12129,
     "groups": [
       {
         "label": "src",
         "path": "./src",
-        "statSize": 12115,
+        "statSize": 12129,
         "groups": [
           {
             "label": "components/AnimatedQuote",
             "path": "./src/components/AnimatedQuote",
-            "statSize": 8462,
+            "statSize": 8476,
             "groups": [
               {
                 "id": "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./src/components/AnimatedQuote/styles.scss",
                 "label": "styles.scss",
                 "path": "./src/components/AnimatedQuote/styles.scss",
-                "statSize": 7225
+                "statSize": 7239
               },
               {
                 "id": "./src/components/AnimatedQuote/index.tsx",

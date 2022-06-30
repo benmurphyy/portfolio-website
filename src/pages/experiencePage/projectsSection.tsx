@@ -60,10 +60,10 @@ const ProjectsSection = forwardRef(function (
         {projects.map((project) => (
           <Col key={project.title} className="d-flex g-3 col-12 col-lg-6">
             <Card className="w-100">
-              <Card.Header className="project-card-header-background">
+              <Card.Header>
                 <Container fluid className="p-0">
                   <Row>
-                    <Col className="p-2">
+                    <Col className="col-auto">
                       <Icon
                         iconSvg={project.icon}
                         height={iconHeight}

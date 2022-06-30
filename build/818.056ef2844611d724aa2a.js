@@ -668,7 +668,7 @@
         D = L.n(u),
         T = L(1667),
         z = L.n(T),
-        S = new URL(L(8293), L.b),
+        S = new URL(L(7517), L.b),
         y = new URL(L(3392), L.b),
         g = D()(I()),
         x = z()(S),
@@ -688,9 +688,9 @@
           ],
           names: [],
           mappings:
-            'AAAA,WAAW,uBAAuB,CAAC,2CAA+C,CAAC,WAAW,2BAA2B,CAAC,2CAA6C,CAAC,sBAAY,WAAW,CAAC,UAAU,CAAC,0CAA0C,sBAAY,WAAW,CAAC,UAAU,CAAC,CAAC,sBAAkB,eAAe,CAAC,iBAAiB',
+            'AAAA,WAAW,uBAAuB,CAAC,2CAAwC,CAAC,WAAW,2BAA2B,CAAC,2CAA6C,CAAC,sBAAY,WAAW,CAAC,UAAU,CAAC,0CAA0C,sBAAY,WAAW,CAAC,UAAU,CAAC,CAAC,sBAAkB,eAAe,CAAC,iBAAiB',
           sourcesContent: [
-            '@font-face{font-family:"Open Sans";src:url("src/assets/fonts/OpenSans-Medium.ttf")}@font-face{font-family:"Merienda-Bold";src:url("src/assets/fonts/Merienda-Bold.ttf")}.skill-icon{height:50px;width:50px}@media only screen and (min-width: 768px){.skill-icon{height:80px;width:80px}}.skill-icon-label{font-size:.8rem;text-align:center}',
+            '@font-face{font-family:"Open Sans";src:url("src/assets/fonts/OpenSans.ttf")}@font-face{font-family:"Merienda-Bold";src:url("src/assets/fonts/Merienda-Bold.ttf")}.skill-icon{height:50px;width:50px}@media only screen and (min-width: 768px){.skill-icon{height:80px;width:80px}}.skill-icon-label{font-size:.8rem;text-align:center}',
           ],
           sourceRoot: '',
         },
