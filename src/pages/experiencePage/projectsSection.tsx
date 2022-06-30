@@ -86,16 +86,20 @@ const ProjectsSection = forwardRef(function (
                     <li key={point}>{point}</li>
                   ))}
                 </ul>
+                {project.repository && (
+                  <Card.Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={project.repository}
+                  >
+                    Repository
+                  </Card.Link>
+                )}
+                <div className="py-1">
+                  <hr className="w-25 mx-auto"></hr>
+                </div>
                 <h5>Description</h5>
-                <Container className="w-25">
-                  <hr className="projects-description-header-linebreak"></hr>
-                </Container>
-                <Card.Text
-                  className="text-start"
-                  style={{ whiteSpace: 'pre-wrap' }}
-                >
-                  {project.description}
-                </Card.Text>
+                <Card.Text>{project.description}</Card.Text>
               </Card.Body>
             </Card>
           </Col>

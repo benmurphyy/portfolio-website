@@ -1,0 +1,7 @@
+.button {
+  &:hover,
+  &:active,
+  &:focus {
+    filter: brightness(85%);
+  }
+}

@@ -10,6 +10,7 @@ interface Project {
   subtitle: string;
   summary: string[];
   description: string;
+  repository: string;
   icon: string;
 }
 
@@ -22,7 +23,7 @@ export enum ExperiencePageSectionName {
 /**
  * Icons for each project in the SAME order that they are written in the json file.
  */
-const icons = [bjmIcon, threeDPrintIcon, alexaIcon, pongIcon, telegramIcon];
+const icons = [bjmIcon, threeDPrintIcon, alexaIcon, telegramIcon, pongIcon];
 
 export const experiencePageSections = [
   ExperiencePageSectionName.CAREER_EXPERIENCE,

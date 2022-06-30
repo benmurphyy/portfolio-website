@@ -2,6 +2,7 @@ import { Container, Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import SectionHeader from 'src/components/SectionHeader';
 import { quickLinks } from 'src/constants';
+import styles from './styles.scss';
 
 export default function QuickLinks() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function QuickLinks() {
               key={quickLink.name}
             >
               <Button
-                className="w-100"
+                className={`${styles.button} w-100`}
                 style={{ backgroundColor: quickLink.buttonColor }}
                 onClick={() => quickLinkTrigger(quickLink)}
               >
