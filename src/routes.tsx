@@ -3,9 +3,17 @@ import { Routes, Route } from 'react-router';
 
 import Homepage from 'src/pages/homePage';
 
-//lazily load all other pages of application except homepage
-const Knowledge = React.lazy(() => import('src/pages/knowledgePage'));
-const Experience = React.lazy(() => import('src/pages/experiencePage'));
+// lazily load all other pages of application except homepage
+// use prefetching to load them while user still on homepage
+const knowledgePromise = import(
+  /* webpackPrefetch: true */ 'src/pages/knowledgePage'
+);
+const Knowledge = React.lazy(
+  () => knowledgePromise
+);
+const Experience = React.lazy(
+  () => import(/* webpackPrefetch: true */ 'src/pages/experiencePage')
+);
 
 import { pages } from 'src/constants';
 

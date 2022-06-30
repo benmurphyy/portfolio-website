@@ -9,8 +9,6 @@ const port = process.env.PORT || 8080;
 // absolute path of the root directory of the project
 const rootDir = path.resolve(__dirname, '..');
 
-console.log(path.resolve(rootDir, 'build'));
-
 // absolute path of global stylesheet
 const globalStyleSheetPath = path.resolve(rootDir, 'src/styles/index.scss');
 
