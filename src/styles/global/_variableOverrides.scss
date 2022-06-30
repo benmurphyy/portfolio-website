@@ -3,15 +3,15 @@ $primary: #0b3948 !default;
 $secondary: #481a0b !default;
 $light: #dbd7d2 !default;
 
-//custom fonts
+//custom fonts - all fonts are set to preload
 @font-face {
   font-family: 'Open Sans';
-  src: url('src/assets/fonts/OpenSans-Medium.ttf');
+  src: url('src/assets/fonts/OpenSans-Medium.ttf?preload');
 }
 
 @font-face {
   font-family: 'Merienda-Bold';
-  src: url('src/assets/fonts/Merienda-Bold.ttf');
+  src: url('src/assets/fonts/Merienda-Bold.ttf?preload');
 }
 
 // default font family sans serif

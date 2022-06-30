@@ -19,6 +19,9 @@ export enum ExperiencePageSectionName {
   PROJECTS = 'Projects',
 }
 
+/**
+ * Icons for each project in the SAME order that they are written in the json file.
+ */
 const icons = [bjmIcon, threeDPrintIcon, alexaIcon, pongIcon, telegramIcon];
 
 export const experiencePageSections = [
@@ -27,6 +30,10 @@ export const experiencePageSections = [
   ExperiencePageSectionName.PROJECTS,
 ];
 
+/**
+ * The array of Projects, which contains information from the json file,
+ * combined with the icon svg for each project.
+ */
 export const projects: Project[] = projectWriteups.map(
   (projectInfo, index) => ({
     ...projectInfo,

@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -9,9 +11,7 @@ const port = process.env.PORT || 8080;
 // absolute path of the root directory of the project
 const rootDir = path.resolve(__dirname, '..');
 
-console.log(path.resolve(rootDir, 'build'));
-
-// absolute path of global stylesheet
+// absolute path of global stylesheet which applies all the global css styling, mostly the Bootstrap styles
 const globalStyleSheetPath = path.resolve(rootDir, 'src/styles/index.scss');
 
 module.exports = {
@@ -108,6 +108,11 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env']],
+              },
+            },
           },
           {
             loader: 'sass-loader',
@@ -150,7 +155,28 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(rootDir, 'public/index.html'),
     }),
-    require('autoprefixer'),
+    // allows preloading of images with "?preload" resource query
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'allAssets',
+      fileWhitelist: [/.*\.(jpg|svg|png|jpeg)\?preload/],
+      as: 'image',
+    }),
+    // allows prefetching of images with "?prefetch" resource query
+    new PreloadWebpackPlugin({
+      rel: 'prefetch',
+      include: 'allAssets',
+      fileWhitelist: [/.*\.(jpg|svg|png|jpeg)\?prefetch/],
+      as: 'image',
+    }),
+    // allows preloading of font file with "?preload" resource query
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'allAssets',
+      fileWhitelist: [/.*\.(ttf|woff)\?preload/],
+      as: 'font',
+    }),
+    // automatically generate favicon, and add it in the generated HTML index file
     new FaviconsWebpackPlugin({
       logo: path.resolve(rootDir, 'src/assets/icons/bjm.svg'),
       prefix: 'static/assets/',
@@ -159,6 +185,7 @@ module.exports = {
         theme_color: '#0b3948',
       },
     }),
+    // for analyzing bundle size
     new BundleAnalyzerPlugin({ analyzerMode: 'json' }),
   ],
   devServer: {

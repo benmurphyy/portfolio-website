@@ -7,15 +7,14 @@ import Contact from 'src/pages/homePage/components/Contact';
 import QuickLinks from 'src/pages/homePage/components/QuickLinks';
 import { subPages } from 'src/pages/homePage/constants';
 import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
-import headerBackgroundImage from 'src/assets/images/homepage_background-min.jpg';
 import AnimatedGreeting from 'src/pages/homePage/components/AnimatedGreeting';
+import headerBackgroundImage from 'src/assets/images/background/homepage_background-min.jpg?preload';
 
 interface HomepageProps {
   mainNavbarRef: RefObject<HTMLDivElement>;
 }
 
 export default function Homepage({ mainNavbarRef }: HomepageProps) {
-  console.log(headerBackgroundImage);
   const subPageRefs = useSubPageRefMapCreator(subPages);
   const subNavbarRef = useRef<HTMLDivElement>(null);
   return (

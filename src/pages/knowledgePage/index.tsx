@@ -4,7 +4,7 @@ import AnimatedQuote from 'src/components/AnimatedQuote';
 import SubNavbar from 'src/components/SubNavbar';
 import useScrollToSubpageBasedOnPath from 'src/util/hooks/useScrollToSubpageBasedOnPath';
 import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
-import headerBackgroundImage from 'src/assets/images/knowledge_background-min.jpg';
+import headerBackgroundImage from 'src/assets/images/background/knowledge_background-min.jpg?prefetch';
 import quotes from 'src/assets/data/quotes.json';
 import SkillsSection from 'src/pages/knowledgePage/components/SkillsSection';
 import UniModulesSection from 'src/pages/knowledgePage/components/UniModulesSection';

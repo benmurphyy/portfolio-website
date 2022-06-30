@@ -1,4 +1,4 @@
-import headerBackgroundImage from 'src/assets/images/experience_background-min.jpg';
+import headerBackgroundImage from 'src/assets/images/background/experience_background-min.jpg?prefetch';
 import { RefObject, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AnimatedQuote, {
@@ -18,7 +18,6 @@ import {
   experiencePageSections,
 } from 'src/pages/experiencePage/constants';
 import PageHeader from 'src/components/PageHeader';
-import SectionHeader from 'src/components/SectionHeader';
 const quoteText = quotes.experiencePage.quoteText;
 const quoteOrigin = quotes.experiencePage.quoteOrigin;
 

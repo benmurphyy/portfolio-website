@@ -1,14 +1,16 @@
 import React, { RefObject, Suspense } from 'react';
-import { Routes, Route } from 'react-router';
-
+import { Route, Routes } from 'react-router';
 import Homepage from 'src/pages/homePage';
 
-//lazily load all other pages of application except homepage, with prefetching
-const knowledgePagePromise = import('src/pages/knowledgePage');
-const Knowledge = React.lazy(() => knowledgePagePromise);
+// Implement code splitting of other pages other than homepage,
+// with prefetching so that navigating to these pages will be fast
+const Knowledge = React.lazy(
+  () => import(/*  webpackPrefetch: true */ 'src/pages/knowledgePage')
+);
 
-const experiencePagePromise = import('src/pages/experiencePage');
-const Experience = React.lazy(() => experiencePagePromise);
+const Experience = React.lazy(
+  () => import(/* webpackPrefetch: true */ 'src/pages/experiencePage')
+);
 
 import { pages } from 'src/constants';
 

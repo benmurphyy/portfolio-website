@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { HashRouter } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
+import { HashRouter } from 'react-router-dom';
 import Navigator from 'src/components/MainNavbar';
 import Routes from 'src/routes';
 

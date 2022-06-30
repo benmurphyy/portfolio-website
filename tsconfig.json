@@ -14,10 +14,5 @@
       "src/*": ["./src/*"]
     }
   },
-  "include": [
-    "./custom.d.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "src/components/.SubNavbar.backup.tsx"
-  ]
+  "include": ["./custom.d.ts", "./src/**/*.tsx", "./src/**/*.ts"]
 }

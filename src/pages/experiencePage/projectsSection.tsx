@@ -72,7 +72,7 @@ const ProjectsSection = forwardRef(function (
                       />
                     </Col>
                     <Col className="d-flex align-items-center justify-content-center">
-                      <h3 className="fw-bold">{project.title}</h3>
+                      <h3 className="fw-bold text-center">{project.title}</h3>
                     </Col>
                   </Row>
                 </Container>
