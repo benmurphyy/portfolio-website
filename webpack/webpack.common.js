@@ -3,6 +3,7 @@ const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 const port = process.env.PORT || 8080;
@@ -55,7 +56,7 @@ module.exports = {
         exclude: [globalStyleSheetPath],
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -97,7 +98,7 @@ module.exports = {
         include: [globalStyleSheetPath],
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -186,6 +187,7 @@ module.exports = {
     }),
     // for analyzing bundle size
     new BundleAnalyzerPlugin({ analyzerMode: 'json' }),
+    new MiniCssExtractPlugin(),
   ],
   devServer: {
     host: '0.0.0.0',
