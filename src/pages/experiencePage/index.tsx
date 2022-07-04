@@ -1,4 +1,4 @@
-import headerBackgroundImage from 'src/assets/images/background/experience_background-min.jpg?prefetch';
+import headerBackgroundImage from 'src/assets/images/background/experience_background-min.jpg';
 import { RefObject, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AnimatedQuote, {

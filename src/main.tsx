@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import Container from 'react-bootstrap/Container';
-import { HashRouter } from 'react-router-dom';
 import Navigator from 'src/components/MainNavbar';
 import Routes from 'src/routes';
 
@@ -13,11 +12,9 @@ import Routes from 'src/routes';
 export default function App() {
   const mainNavbarRef = useRef<HTMLDivElement>(null);
   return (
-    <HashRouter basename="/">
-      <Container fluid className="App p-0 fill h-100">
-        <Navigator ref={mainNavbarRef}></Navigator>
-        <Routes mainNavbarRef={mainNavbarRef} />
-      </Container>
-    </HashRouter>
+    <Container fluid className="App p-0 fill h-100">
+      <Navigator ref={mainNavbarRef}></Navigator>
+      <Routes mainNavbarRef={mainNavbarRef} />
+    </Container>
   );
 }

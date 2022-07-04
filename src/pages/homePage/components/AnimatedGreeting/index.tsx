@@ -5,7 +5,7 @@ export default function AnimatedGreeting() {
   return (
     <motion.h1
       className={styles.greetingText}
-      initial={{ y: -window.innerHeight / 2 }}
+      initial={{ y: -200 }}
       animate={{ y: 0 }}
     >
       Welcome!

@@ -8,7 +8,9 @@ import QuickLinks from 'src/pages/homePage/components/QuickLinks';
 import { subPages } from 'src/pages/homePage/constants';
 import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
 import AnimatedGreeting from 'src/pages/homePage/components/AnimatedGreeting';
-import headerBackgroundImage from 'src/assets/images/background/homepage_background-min.jpg?preload';
+import headerBackgroundImage from 'src/assets/images/background/homepage_background-min.jpg';
+
+console.log(headerBackgroundImage);
 
 interface HomepageProps {
   mainNavbarRef: RefObject<HTMLDivElement>;

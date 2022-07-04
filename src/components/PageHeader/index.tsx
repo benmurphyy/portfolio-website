@@ -4,8 +4,7 @@ import styles from './styles.scss';
 
 /**
  * Header component used for each page, consisting of a background image, with the header taking hup the whole height of the viewport.
- * Takes an innercomponent for its contents
- * also this header does not rerender if no props changes, since it is a minimal component, and we dont want unecessary slowdowns in performance.
+ * Takes an innercomponent for its contents.
  */
 
 interface HeaderProps {

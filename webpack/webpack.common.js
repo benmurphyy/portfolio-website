@@ -1,19 +1,16 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-
-const port = process.env.PORT || 8080;
-
-// absolute path of the root directory of the project
-const rootDir = path.resolve(__dirname, '..');
+const { rootDir } = require('./constants.js');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 // absolute path of global stylesheet which applies all the global css styling, mostly the Bootstrap styles
 const globalStyleSheetPath = path.resolve(rootDir, 'src/styles/index.scss');
 
+/**
+ * Contains all the common webpack settings for both client and server side bundling.
+ * Mostly this consists of loaders, which must match on both client and server side bundling,
+ * so that loaded resources can be accessed properly.
+ */
 module.exports = {
   // resolve all entry paths and loaders from the root directory of the project
   // also serves as root when resolving import paths of modules
@@ -146,52 +143,5 @@ module.exports = {
       },
     ],
   },
-  optimization: {
-    splitChunks: {
-      minSize: 0,
-    },
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(rootDir, 'public/index.html'),
-    }),
-    // allows preloading of images with "?preload" resource query
-    new PreloadWebpackPlugin({
-      rel: 'preload',
-      include: 'allAssets',
-      fileWhitelist: [/.*\.(jpg|svg|png|jpeg)\?preload/],
-      as: 'image',
-    }),
-    // allows prefetching of images with "?prefetch" resource query
-    new PreloadWebpackPlugin({
-      rel: 'prefetch',
-      include: 'allAssets',
-      fileWhitelist: [/.*\.(jpg|svg|png|jpeg)\?prefetch/],
-      as: 'image',
-    }),
-    // allows preloading of font file with "?preload" resource query
-    new PreloadWebpackPlugin({
-      rel: 'preload',
-      include: 'allAssets',
-      fileWhitelist: [/.*\.(ttf|woff)\?preload/],
-      as: 'font',
-    }),
-    // automatically generate favicon, and add it in the generated HTML index file
-    new FaviconsWebpackPlugin({
-      logo: path.resolve(rootDir, 'src/assets/icons/bjm.svg'),
-      prefix: 'static/assets/',
-      favicons: {
-        background: '#0b3948',
-        theme_color: '#0b3948',
-      },
-    }),
-    // for analyzing bundle size
-    new BundleAnalyzerPlugin({ analyzerMode: 'json' }),
-    new MiniCssExtractPlugin(),
-  ],
-  devServer: {
-    host: '0.0.0.0',
-    port: port,
-    historyApiFallback: true,
-  },
+  plugins: [new MiniCssExtractPlugin(), new ProgressBarPlugin()],
 };

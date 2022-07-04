@@ -3,11 +3,6 @@ import { RefObject, useEffect, useLayoutEffect, useState } from 'react';
 // used to determine when to use observer options short or long
 export const SUBPAGE_WINDOW_RATIO = 9 / 5;
 
-/**
- * Defines how long (in ms) the user does not scroll for before the SubNavbar disappears.
- */
-const TIME_BEFORE_HIDE = 800;
-
 //two different observer options for short elements (smaller than 2x of viewport), and long elements (double of viewport)
 export const observerOptionsDefaultShort: IntersectionObserverInit = {
   rootMargin: '0px',
@@ -38,11 +33,11 @@ export function useVisibilityController(
 ) {
   const [isSubNavbarVisible, setIsSubNavbarVisible] = useState(false);
 
-  const observer = new IntersectionObserver(
-    ([entry]) => setIsSubNavbarVisible(!entry.isIntersecting),
-    mainNavbarObserverOptions
-  );
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsSubNavbarVisible(!entry.isIntersecting),
+      mainNavbarObserverOptions
+    );
     observer.observe(mainNavbarRef.current!);
     //to avoid ref change warning
     const refCur = mainNavbarRef.current!;
