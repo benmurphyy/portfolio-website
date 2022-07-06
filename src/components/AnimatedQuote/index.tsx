@@ -1,6 +1,7 @@
-import { Container } from 'react-bootstrap';
-import styles from './styles.scss';
 import { motion } from 'framer-motion';
+import { Container } from 'react-bootstrap';
+
+import styles from './styles.scss';
 
 export enum AnimatedQuoteVariants {
   DARK,

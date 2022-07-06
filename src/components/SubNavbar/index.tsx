@@ -7,9 +7,9 @@
  * 4) forwardRef is used so that the parent component that contains this subnavbar can reference it
  *
  */
-import { useEffect, useRef, RefObject } from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
 import { AnimatePresence, motion } from 'framer-motion';
+import { RefObject, useEffect, useRef } from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
 import {
   observerOptionsDefaultLong,
   observerOptionsDefaultShort,
@@ -19,7 +19,6 @@ import {
 
 interface SubNavbarProps {
   subPageRefs: Map<string, RefObject<HTMLDivElement>>;
-  isAnimated?: boolean;
   observerOptionsShort?: IntersectionObserverInit;
   observerOptionsLong?: IntersectionObserverInit;
   subNavbarRef: RefObject<HTMLDivElement>;
@@ -29,7 +28,6 @@ interface SubNavbarProps {
 
 export default function SubNavbar({
   subPageRefs,
-  isAnimated = true,
   observerOptionsShort = observerOptionsDefaultShort,
   observerOptionsLong = observerOptionsDefaultLong,
   subNavbarRef,

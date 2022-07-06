@@ -1,5 +1,4 @@
 import { RefObject, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { quickLinks } from 'src/constants';
 
 /**
@@ -25,13 +24,14 @@ export default function useScrollToSubpageBasedOnPath(
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
-  const navigate = useNavigate();
-  const currentPath = useLocation();
   // check the url path, if the quicklink is equal, then scroll down past the main navbar, so that it will no longer by visible,
   // thus making the subnavbar visible so that can use its height on screen to control the exact scroll amount.
   useEffect(() => {
     for (const quickLink of quickLinks) {
-      if (quickLink.path === currentPath.pathname && mainNavbarRef.current) {
+      if (
+        quickLink.path === window.location.pathname &&
+        mainNavbarRef.current
+      ) {
         const yOffset = mainNavbarRef.current.offsetHeight;
         const y = window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
@@ -44,12 +44,8 @@ export default function useScrollToSubpageBasedOnPath(
   useEffect(() => {
     //scroll to the subpage
     for (const quickLink of quickLinks) {
-      if (quickLink.path === currentPath.pathname) {
-        console.log(subPageRefs);
-        console.log(quickLink.name);
+      if (quickLink.path === window.location.pathname) {
         scrollTo(subPageRefs.current!.get(quickLink.name)!);
-        //2nd arg is replace true so as to replace that extra /pathname after the actual pathname, so backtrack works as expected
-        navigate('/' + currentPath.pathname.split('/')[1], { replace: true });
       }
     }
   });

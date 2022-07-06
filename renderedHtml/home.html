@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SVXB49MSFY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-SVXB49MSFY');
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben's Portfolio Website</title>
+  </head>
+  <body>
+    <div id="root">
+      <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+          <a href="/" class="px-2 rounded navbar-brand"
+            ><img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iMjguMjAwMDAwMHB0IiBoZWlnaHQ9IjI1LjYwMDAwMDBwdCIgdmlld0JveD0iMCAwIDQyNi4wMDAwMDAgMzg0LjAwMDAwMCIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgoKPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsMzg0LjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSIKZmlsbD0iI0FBQUFBQSIgc3Ryb2tlPSJub25lIj4KPHBhdGggZD0iTTE5ODYgMzY4NCBjLTQzIC04IC0xNDAgLTM3IC0yMTUgLTY1IC0zMDYgLTExNCAtMzgzIC0xMzggLTU0MSAtMTc0Ci05MSAtMjAgLTE3MiAtMzkgLTE4MCAtNDIgLTggLTQgLTE4IC01IC0yMyAtNSAtMTQgMyAtMjEyIC00NyAtMjg3IC03MiAtNDEKLTE0IC05NCAtMjYgLTExOCAtMjYgLTg3IDAgLTEzMCAtMzYgLTEyMCAtMTAwIDExIC03NCAxNTQgLTg3IDM0MyAtMzEgNjEgMTcKMTE3IDM1IDEyNSAzOCA4IDMgMTggNiAyMiA1IDExIC0yIDI3MyA1NiA0MDMgOTAgNjYgMTcgMTc5IDUzIDI1MCA4MCAzNzggMTQ0CjM1MSAxMzYgMzU5IDk3IDMgLTE3IDYgLTQ2IDYgLTY0IDAgLTE3IDIgLTM0IDUgLTM3IDcgLTcgOSAtNTE5IDIgLTUzOCAtMyAtOAotOSAtMTU5IC0xMyAtMzM1IC05IC00NDYgLTkgLTQ0NSAtMjggLTQ5MCAtNTYgLTEzMSAtMzcyIC0xMDE0IC00MDIgLTExMjAgLTkKLTMzIC0xNyAtOTcgLTE4IC0xNDIgLTEgLTQ1IC01IC04NSAtOSAtODkgLTExIC0xMSAtOCAtMjkyIDIgLTI5OSA2IC0zIDcgLTI3CjQgLTU0IC04IC02NyAyMCAtMTU2IDYxIC0xOTcgNDUgLTQ1IDkyIC01MiAxNTAgLTI0IDYzIDMwIDE4NCAxNjIgMjI0IDI0MiAzOAo3OCA5NCAyNDcgODggMjY1IC0zIDcgLTEgMTUgNCAxOCAxMSA3IDM0IDE0MSAyNiAxNTQgLTQgNSAtMiAxMiAzIDE1IDExIDcgMzUKMTMyIDI3IDE0NSAtNCA1IC0xIDEzIDQgMTYgNiA0IDEwIDE3IDkgMjggLTEgMTIgMSAyOSA0IDM3IDE2IDM4IDI4IDM1NiAyNgo2NjMgLTEgMTg1IDEgMzQwIDUgMzQ0IDMgMyA2IDI2IDYgNDkgMCA0NCAyMyAxMDEgMTI4IDMyNCAyNyA1OCA4NCAxODQgMTI3CjI4MCA0MiA5NiA4MCAxNzggODQgMTgyIDkgMTAgNiAtNjMgLTQgLTg1IC00IC0xMCAtNSAtNDAgLTIgLTY3IDMgLTI3IDIgLTUyCi0yIC01NCAtNyAtNSAtMjAgLTExOCAtMjYgLTIzMSAtMSAtMjIgLTYgLTQ4IC0xMCAtNTkgLTUgLTEwIC05IC05MSAtOSAtMTgwCi0xIC0xNDUgMSAtMTY0IDE5IC0xOTYgMTMgLTIxIDM1IC00MCA1NyAtNDggMzMgLTEzIDQxIC0xMiA3NSA0IDIxIDExIDQzIDMwCjUwIDQ0IDI0IDUyIDM2IDIwMiAzMCAzOTYgLTMgMTA2IC0xIDE5NiAzIDIwMCAxMiAxMyA0MiAyNDMgMzYgMjcwIC00IDEzIC0yCjI2IDQgMjkgNSAzIDEwIDIxIDEwIDM4IDAgNjQgMTYgNTYgMzQgLTE2IDY4IC0yNjUgMTQyIC00NTUgMTk2IC01MDEgNjggLTU3CjE2MCAtNTQgMjIyIDcgNzYgNzUgMTk4IDI0MSAzMDQgNDE0IGwxOSAzMSAwIC05OCBjMCAtNTQgLTMgLTEwMiAtNyAtMTA2IC0xMwotMTMgLTEwIC0zNDIgMyAtMzUwIDggLTUgMTAgLTM1IDYgLTk3IC01IC03NiAtMyAtOTggMTUgLTE0NiAzNyAtOTggMTIyIC0xNjAKMjAwIC0xNDQgMTcgMyA0NSAyMSA2MyAzOCAzMCAzMCAzMiAzOCAzMCA4OCAtMiAzNyAtMTAgNjggLTI1IDkyIC0yMiAzNiAtMjIKMzkgLTE1IDI2MSA0IDEyMyA4IDM3MiAxMCA1NTMgMSAxODEgNSAzMzMgNyAzMzcgMyA1IDExIDYxIDE4IDEyNCAxNCAxMzAgNQoxNzMgLTQ0IDIwNSAtNjEgNDAgLTE1OSAtMTcgLTE2MCAtOTIgLTEgLTIxIC00IC00MiAtNyAtNDggLTQgLTUgLTE2IC00MiAtMjgKLTgyIC0xMyAtNDMgLTQzIC0xMDQgLTc0IC0xNTIgLTI5IC00NCAtODYgLTEzNiAtMTI3IC0yMDMgLTE2NiAtMjcxIC0yNzMKLTQxOSAtMjkxIC00MDEgLTQgNCAtNDYgMTIxIC05MyAyNjAgLTkyIDI3NCAtMTUyIDQxNSAtMTg1IDQzMiAtMTEgNyAtMzEgMzMKLTQzIDU5IC0zNyA3NSAtMTEwIDg0IC0xNTEgMTcgLTY1IC0xMDUgLTIxNyAtMzk1IC0zMTIgLTU5NyBsLTExMiAtMjM4IC01CjE3OCBjLTMgOTcgLTEgMTgxIDMgMTg2IDExIDEyIDEyIDM1MCAyIDM2MCAtNSA0IC04IDM4IC04IDc0IC0xIDEwMiAtMTUgMjU0Ci0yNyAyODUgLTEyIDMxIC01NSA1OCAtOTAgNTYgLTEzIC0xIC01OSAtOCAtMTAyIC0xNXogbS0xMSAtMjE1NiBjLTMgLTI0IC03Ci0xMzcgLTkgLTI1MyAtMiAtMTE1IC03IC0yMTggLTExIC0yMjggLTQgLTkgLTUgLTI3IC0yIC0zOCAzIC0xMiAyIC0yOSAtMwotMzggLTUgLTkgLTE2IC02NSAtMjUgLTEyNiAtMTcgLTExMyAtMzggLTIwNyAtNTcgLTI2MCAtMjQgLTY2IC0xMTAgLTIzMwotMTI4IC0yNTAgLTIwIC0xOCAtMjAgLTE3IC0yMCAyNyAwIDI0IC0zIDQ3IC02IDUxIC03IDcgLTggMzQ0IC0xIDM2NyAzIDggMTAKNDIgMTcgNzUgMTIgNTYgNTcgMTkwIDE4MCA1MzUgMjkgODAgNTMgMTUyIDU1IDE2MCA1IDIxIDQgMjAgMTAgMjAgMiAwIDIgLTE5CjAgLTQyeiIvPgo8cGF0aCBkPSJNMTA1NSAzMTQzIGMtMTEgLTIgLTI3IC03IC0zNSAtMTAgLTggLTMgLTE4IC02IC0yMiAtNSAtMTQgMyAtMTc3Ci01NyAtMjM4IC04OCAtOTEgLTQ2IC0yNDYgLTE0NSAtMzA2IC0xOTcgLTU2IC00NyAtNjggLTc2IC00OSAtMTIwIDEyIC0yOSA2OQotNjMgODIgLTQ5IDE2IDE2IDMzIC0xOCAyNyAtNTUgLTQgLTIxIC0zIC00NiAxIC01NiA4IC0yMSAxMSAtMzU1IDMgLTM2OSAtNQotOCAtNCAtMzQ5IDEgLTM0OSAxIDAgNCAtMjQwIDYgLTUzNCBsNCAtNTM0IDMwIC0zMSBjMjUgLTI0IDQwIC0zMSA3MiAtMzEgMzUKMCA0NiA2IDc2IDM5IGwzNiAzOSAtNiAxMDMgYy0zIDU3IC0zIDEwNCAxIDEwMyA0IDAgMTYgLTQgMjcgLTggMzMgLTEzIDcxIDcKMTE0IDYyIDIyIDI5IDkxIDExNyAxNTMgMTk2IDYyIDc4IDE0MCAxNzggMTczIDIyMCAzMyA0MyA5MyAxMTggMTMzIDE2NyA5MAoxMTEgMTU1IDIzOSAxODIgMzU5IDMyIDE0NSAyNCAyMzUgLTI1IDI5NCAtMjYgMzEgLTExMCA3NSAtMTI1IDY2IC01IC0zIC0xMQotMSAtMTUgNSAtOCAxMyAtNzIgMTMgLTgwIDAgLTQgLTYgLTE1IC04IC0yNiAtNSAtMjQgOCAtMTcwIC0xNCAtMTg2IC0yNyAtOQotNyAtMTMgLTcgLTEzIDAgMCA2IDM1IDUzIDc4IDEwNCAxNDMgMTczIDIxMSAyODEgMjU2IDQwNiAyOCA4MCAzMiAxMjEgMTUKMTczIC0xNSA0MyAtNzQgMTA3IC0xMTYgMTI1IC0zMSAxMyAtMTgwIDE4IC0yMjggN3ogbTE4MSAtMTU0IGMzOCAtMzEgLTE2Ci0xNzggLTExNiAtMzE5IC0yOSAtNDEgLTEwMSAtMTMzIC0xNTkgLTIwNCAtMjEwIC0yNTYgLTIzMCAtMjg0IC0yMTQgLTMwOSA0Ci03IDggLTE5IDggLTI3IDAgLTggMTUgLTIzIDM0IC0zMiAzMSAtMTYgMzcgLTE2IDcwIC0xIDExMCA0OCAxNTUgNjMgMjM2IDc5CjUwIDkgOTcgMTkgMTA1IDIyIDE4IDYgMTI3IDMgMTUzIC00IDEwIC0zIDE3IC0xNSAxNyAtMjkgMCAtMTMgNCAtMjcgMTAgLTMwCjYgLTQgNiAtMTIgMSAtMjMgLTUgLTkgLTE0IC00NCAtMjAgLTc3IC0xNiAtODYgLTc3IC0yMDcgLTE1MiAtMjk5IC0zNSAtNDMKLTEwNyAtMTMzIC0xNTkgLTIwMSAtMTg3IC0yNDAgLTI1OSAtMzMxIC0yOTIgLTM2OCBsLTMzIC0zOCAtMyAxMDggYy0yIDU5IC02CjExMiAtMTAgMTE4IC00IDUgLTUgOTAgLTMgMTg3IDIgOTcgMCAxODEgLTMgMTg3IC00IDUgLTkgNjIgLTEyIDEyNyAtMiA2NCAtNwoxMjEgLTEwIDEyNiAtNCA1IC01IDExNCAtNSAyNDMgMSAxNTAgLTIgMjM2IC04IDI0MCAtNiAzIC04IDI0IC01IDQ4IDMgMjMgMQo2NyAtNCA5NyAtNiAzNCAtNyA2MSAtMSA3MiAxMiAyMSAtMTEgODIgLTM2IDk1IC0xNCA4IC00IDE4IDU3IDU1IDQwIDI1IDkyCjU1IDExNCA2NiA2NCAzMyAyNTIgOTIgMjg5IDkyIDE5IDAgMzYgNCAzOSA4IDcgMTMgOTUgNiAxMTIgLTl6Ii8+CjwvZz4KPC9zdmc+Cg=="
+              alt="ben murphy brand icon" /></a
+          ><button
+            aria-controls="responsive-navbar-nav"
+            type="button"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="justify-content-end navbar-collapse collapse"
+            id="basic-navbar-nav"
+          >
+            <div class="justify-content-end navbar-nav">
+              <div class="d-flex justify-content-end nav-item">
+                <a
+                  href="/knowledge"
+                  data-rr-ui-event-key="/knowledge"
+                  class="px-2 nav-link"
+                  >Knowledge</a
+                >
+              </div>
+              <div class="d-flex justify-content-end nav-item">
+                <a
+                  href="/experience"
+                  data-rr-ui-event-key="/experience"
+                  class="px-2 nav-link"
+                  >Experience</a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="h-100">
+          <div
+            style="background-image: url(59c0f4b8a3cc006a6862.jpg)"
+            class="pRMSuhh6KM10l_cToaVJ container-fluid"
+          >
+            <div class="justify-content-center row">
+              <div class="col">
+                <h1
+                  class="w44pbPYp20YWPincSZYt"
+                  style="transform: translateY(-200px) translateZ(0)"
+                >
+                  Welcome!
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="hVRzAN3r9td1y17lsSKr py-2 undefined container">
+                <div class="row">
+                  <div class="align-items-center col">
+                    <h1 class="display-6 mb-2 text-center">About Me</h1>
+                    <hr class="G1sEQb6m9oGeeUfEAtK7" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4 row">
+              <div class="d-flex justify-content-center col">
+                <img
+                  src="21e5ff1b25513e3d80ad.jpg"
+                  alt="portrait photo of Ben Murphy"
+                  class="R7CqzLuoCFwR6oRO8CN4"
+                />
+              </div>
+            </div>
+            <div class="pt-4 justify-content-center row">
+              <div class="align-items-center col-xl-6 col-lg-7">
+                <p class="fs-4 text-center">
+                  I&#x27;m Ben, a year 2 student in the National University of
+                  Singapore (NUS), pursuing a Bachelor&#x27;s degree (Hons) in
+                  Computer Science. I created this website to be a space for me
+                  to share my technical skills and industry experience, along
+                  with projects I&#x27;ve done. Thanks for taking a look, and
+                  feel free to connect with me!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pb-4 px-4 container-fluid">
+            <div class="py-2 undefined container">
+              <div class="row">
+                <div class="align-items-center col">
+                  <h1 class="display-6 mb-2 text-center">Quick Links</h1>
+                  <hr class="G1sEQb6m9oGeeUfEAtK7" />
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="justify-content-center row">
+                <div
+                  class="d-flex justify-content-center align-items-stretch col-12 col-sm-3 col-xl-2 gy-1 gx-2 col"
+                >
+                  <a
+                    role="button"
+                    tabindex="0"
+                    href="/knowledge?modules"
+                    style="background-color: #373f51"
+                    class="Rr9ZcGIOJCmyn16mK4u4 w-100 btn btn-primary"
+                    >University Modules</a
+                  >
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-stretch col-12 col-sm-3 col-xl-2 gy-1 gx-2 col"
+                >
+                  <a
+                    role="button"
+                    tabindex="0"
+                    href="/knowledge?skills"
+                    style="background-color: #58a4b0"
+                    class="Rr9ZcGIOJCmyn16mK4u4 w-100 btn btn-primary"
+                    >Skills</a
+                  >
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-stretch col-12 col-sm-3 col-xl-2 gy-1 gx-2 col"
+                >
+                  <a
+                    role="button"
+                    tabindex="0"
+                    href="/experience?career"
+                    style="background-color: #ce8147"
+                    class="Rr9ZcGIOJCmyn16mK4u4 w-100 btn btn-primary"
+                    >Career Experience</a
+                  >
+                </div>
+                <div
+                  class="d-flex justify-content-center align-items-stretch col-12 col-sm-3 col-xl-2 gy-1 gx-2 col"
+                >
+                  <a
+                    role="button"
+                    tabindex="0"
+                    href="/experience?projects"
+                    style="background-color: #931621"
+                    class="Rr9ZcGIOJCmyn16mK4u4 w-100 btn btn-primary"
+                    >Projects</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="py-2 undefined container">
+              <div class="row">
+                <div class="align-items-center col">
+                  <h1 class="display-6 mb-2 text-center">Contact</h1>
+                  <hr class="G1sEQb6m9oGeeUfEAtK7" />
+                </div>
+              </div>
+            </div>
+            <div class="my-2 justify-content-center row">
+              <div
+                class="d-flex g-0 justify-content-center align-items-center col-xl-2 col"
+              >
+                <a
+                  href="https://www.linkedin.com/in/ben-murphyy"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjMDA3NmIyIiBkPSJNMTE2IDNIMTJhOC45MSA4LjkxIDAgMDAtOSA4Ljh2MTA0LjQyYTguOTEgOC45MSAwIDAwOSA4Ljc4aDEwNGE4LjkzIDguOTMgMCAwMDktOC44MVYxMS43N0E4LjkzIDguOTMgMCAwMDExNiAzeiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yMS4wNiA0OC43M2gxOC4xMVYxMDdIMjEuMDZ6bTkuMDYtMjlhMTAuNSAxMC41IDAgMTEtMTAuNSAxMC40OSAxMC41IDEwLjUgMCAwMTEwLjUtMTAuNDlNNTAuNTMgNDguNzNoMTcuMzZ2OGguMjRjMi40Mi00LjU4IDguMzItOS40MSAxNy4xMy05LjQxQzEwMy42IDQ3LjI4IDEwNyA1OS4zNSAxMDcgNzV2MzJIODguODlWNzguNjVjMC02Ljc1LS4xMi0xNS40NC05LjQxLTE1LjQ0cy0xMC44NyA3LjM2LTEwLjg3IDE1VjEwN0g1MC41M3oiLz48L3N2Zz4="
+                    class="R1K8k8bAfkMiVHLncb9O"
+                /></a>
+              </div>
+              <div
+                class="d-flex g-0 justify-content-center align-items-center col-xl-2 col"
+              >
+                <a
+                  href="https://github.com/benmurphyy"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48ZyBmaWxsPSIjMTgxNjE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTY0IDUuMTAzYy0zMy4zNDcgMC02MC4zODggMjcuMDM1LTYwLjM4OCA2MC4zODggMCAyNi42ODIgMTcuMzAzIDQ5LjMxNyA0MS4yOTcgNTcuMzAzIDMuMDE3LjU2IDQuMTI1LTEuMzEgNC4xMjUtMi45MDUgMC0xLjQ0LS4wNTYtNi4xOTctLjA4Mi0xMS4yNDMtMTYuOCAzLjY1My0yMC4zNDUtNy4xMjUtMjAuMzQ1LTcuMTI1LTIuNzQ3LTYuOTgtNi43MDUtOC44MzYtNi43MDUtOC44MzYtNS40OC0zLjc0OC40MTMtMy42Ny40MTMtMy42NyA2LjA2My40MjUgOS4yNTcgNi4yMjMgOS4yNTcgNi4yMjMgNS4zODYgOS4yMyAxNC4xMjcgNi41NjIgMTcuNTczIDUuMDIuNTQyLTMuOTAzIDIuMTA3LTYuNTY4IDMuODM0LTguMDc2LTEzLjQxMy0xLjUyNS0yNy41MTQtNi43MDQtMjcuNTE0LTI5Ljg0MyAwLTYuNTkzIDIuMzYtMTEuOTggNi4yMjMtMTYuMjEtLjYyOC0xLjUyLTIuNjk1LTcuNjYyLjU4NC0xNS45OCAwIDAgNS4wNy0xLjYyMyAxNi42MSA2LjE5QzUzLjcgMzUgNTguODY3IDM0LjMyNyA2NCAzNC4zMDRjNS4xMy4wMjMgMTAuMy42OTQgMTUuMTI3IDIuMDMzIDExLjUyNi03LjgxMyAxNi41OS02LjE5IDE2LjU5LTYuMTkgMy4yODcgOC4zMTcgMS4yMiAxNC40Ni41OTMgMTUuOTggMy44NzIgNC4yMyA2LjIxNSA5LjYxNyA2LjIxNSAxNi4yMSAwIDIzLjE5NC0xNC4xMjcgMjguMy0yNy41NzQgMjkuNzk2IDIuMTY3IDEuODc0IDQuMDk3IDUuNTUgNC4wOTcgMTEuMTgzIDAgOC4wOC0uMDcgMTQuNTgzLS4wNyAxNi41NzIgMCAxLjYwNyAxLjA4OCAzLjQ5IDQuMTQ4IDIuODk3IDIzLjk4LTcuOTk0IDQxLjI2My0zMC42MjIgNDEuMjYzLTU3LjI5NEMxMjQuMzg4IDMyLjE0IDk3LjM1IDUuMTA0IDY0IDUuMTA0eiIvPjxwYXRoIGQ9Ik0yNi40ODQgOTEuODA2Yy0uMTMzLjMtLjYwNS4zOS0xLjAzNS4xODUtLjQ0LS4xOTYtLjY4NS0uNjA1LS41NDMtLjkwNi4xMy0uMzEuNjAzLS4zOTUgMS4wNC0uMTg4LjQ0LjE5Ny42OS42MS41MzcuOTF6bTIuNDQ2IDIuNzI5Yy0uMjg3LjI2Ny0uODUuMTQzLTEuMjMyLS4yOC0uMzk2LS40Mi0uNDctLjk4My0uMTc3LTEuMjU0LjI5OC0uMjY2Ljg0NC0uMTQgMS4yNC4yOC4zOTQuNDI2LjQ3Mi45ODQuMTcgMS4yNTV6TTMxLjMxMiA5OC4wMTJjLS4zNy4yNTgtLjk3Ni4wMTctMS4zNS0uNTItLjM3LS41MzgtLjM3LTEuMTgzLjAxLTEuNDQuMzczLS4yNTguOTctLjAyNSAxLjM1LjUwNy4zNjguNTQ1LjM2OCAxLjE5LS4wMSAxLjQ1MnptMy4yNjEgMy4zNjFjLS4zMy4zNjUtMS4wMzYuMjY3LTEuNTUyLS4yMy0uNTI3LS40ODctLjY3NC0xLjE4LS4zNDMtMS41NDQuMzM2LS4zNjYgMS4wNDUtLjI2NCAxLjU2NC4yMy41MjcuNDg2LjY4NiAxLjE4LjMzMyAxLjU0M3ptNC41IDEuOTUxYy0uMTQ3LjQ3My0uODI1LjY4OC0xLjUxLjQ4Ni0uNjgzLS4yMDctMS4xMy0uNzYtLjk5LTEuMjM4LjE0LS40NzcuODIzLS43IDEuNTEyLS40ODUuNjgzLjIwNiAxLjEzLjc1Ni45ODggMS4yMzd6bTQuOTQzLjM2MWMuMDE3LjQ5OC0uNTYzLjkxLTEuMjguOTItLjcyMy4wMTctMS4zMDgtLjM4Ny0xLjMxNS0uODc3IDAtLjUwMy41NjgtLjkxIDEuMjktLjkyNC43MTctLjAxMyAxLjMwNi4zODcgMS4zMDYuODh6bTQuNTk4LS43ODJjLjA4Ni40ODUtLjQxMy45ODQtMS4xMjYgMS4xMTctLjcuMTMtMS4zNS0uMTcyLTEuNDQtLjY1My0uMDg2LS40OTguNDIyLS45OTcgMS4xMjItMS4xMjYuNzE0LS4xMjMgMS4zNTQuMTcgMS40NDQuNjYzem0wIDAiLz48L2c+PC9zdmc+"
+                    class="R1K8k8bAfkMiVHLncb9O"
+                /></a>
+              </div>
+              <div
+                class="d-flex g-0 justify-content-center align-items-center col-xl-2 col"
+              >
+                <a href="https://t.me/murph99" target="_blank" rel="noreferrer"
+                  ><img
+                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEwMCAxMDAiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiBmaWxsPSIjMTM5QkQwIiByPSI0NSIvPjxwYXRoIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUxLjQ3NCw2MC43NTRjLTEuNzMzLDEuNjg4LTMuNDUxLDMuMzQ4LTUuMTUzLDUuMDIxICAgYy0wLjU5NSwwLjU4Ni0xLjI2NCwwLjkxLTIuMTE4LDAuODY1Yy0wLjU4My0wLjAzMS0wLjkwOS0wLjI4Ny0xLjA4OC0wLjg0Yy0xLjMwNC00LjA0Ny0yLjYyNy04LjA4NC0zLjkyNC0xMi4xMzUgICBjLTAuMTI2LTAuMzkzLTAuMzEyLTAuNTg0LTAuNzEtMC43MDdjLTMuMDcyLTAuOTM4LTYuMTM4LTEuODk4LTkuMTk5LTIuODcxYy0wLjQ3MS0wLjE1LTAuOTQ2LTAuMzQ2LTEuMzUzLTAuNjIzICAgYy0wLjYyOS0wLjQyNi0wLjcyMS0xLjEyMS0wLjE1Ny0xLjYyMWMwLjUyMS0wLjQ2MSwxLjE0My0wLjg2MywxLjc4OS0xLjExOWMzLjc1NS0xLjQ4OCw3LjUzLTIuOTI4LDExLjI5OS00LjM4MSAgIGM5LjU2NS0zLjY5MywxOS4xMy03LjM4MywyOC42OTYtMTEuMDc2YzEuODE5LTAuNzAzLDMuMjE3LDAuMjg3LDMuMDI4LDIuMjU0Yy0wLjEyMSwxLjI1OC0wLjQ0NywyLjQ5Ni0wLjcxLDMuNzM4ICAgYy0yLjA3Nyw5LjgwNy00LjE1NiwxOS42MTUtNi4yNDQsMjkuNDJjLTAuNDk2LDIuMzI4LTIuMTMxLDIuOTM2LTQuMDQ3LDEuNTIzYy0zLjIwOS0yLjM2NS02LjQxNS00LjczOC05LjYyMi03LjEwNyAgIEM1MS44MDgsNjAuOTg0LDUxLjY0OSw2MC44NzcsNTEuNDc0LDYwLjc1NHogTTQ0LjI3MSw2My43MzJjMC4wMzYtMC4wMSwwLjA3Mi0wLjAyLDAuMTA4LTAuMDI5ICAgYzAuMDItMC4wOTIsMC4wNDktMC4xODIsMC4wNTctMC4yNzNjMC4yMDYtMi4yMjMsMC40MjQtNC40NDUsMC42MDMtNi42NzJjMC4wNC0wLjQ5NiwwLjIxLTAuODQ4LDAuNTgzLTEuMTgyICAgYzIuOTU4LTIuNjQ1LDUuODk4LTUuMzA3LDguODQ0LTcuOTYzYzMuMjYxLTIuOTQxLDYuNTIzLTUuODc5LDkuNzcyLTguODMyYzAuMjAxLTAuMTgyLDAuMjg1LTAuNDkyLDAuNDIzLTAuNzQ0ICAgYy0wLjMwNi0wLjAzMy0wLjYzNC0wLjE1Ni0wLjkxMi0wLjA4NGMtMC4zNzksMC4wOTgtMC43MzgsMC4zMTgtMS4wNzYsMC41MzFjLTcuMTk3LDQuNTMzLTE0LjM4OCw5LjA3NC0yMS41OSwxMy41OTggICBjLTAuNDA3LDAuMjU2LTAuNDgzLDAuNDczLTAuMzI4LDAuOTJjMC41MzEsMS41MjUsMS4wMTQsMy4wNjQsMS41MTUsNC42QzQyLjkzNyw1OS42NDYsNDMuNjA0LDYxLjY4OSw0NC4yNzEsNjMuNzMyeiIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9nPjwvc3ZnPg=="
+                    class="R1K8k8bAfkMiVHLncb9O"
+                /></a>
+              </div>
+              <div
+                class="d-flex g-0 justify-content-center align-items-center col-xl-2 col"
+              >
+                <a
+                  href="mailto:benmurphyyy99@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDM2NC40NDEgMzY0LjQ0MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzY0LjQ0MSAzNjQuNDQxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojQzNDNkM4OyIgZD0iTTM1Ni45NDEsODguNjM3YzAtMTMuNzUtMTEuMjUtMjUtMjUtMjVIMzIuNWMtMTMuNzUsMC0yNSwxMS4yNS0yNSwyNXYxODcuMTY4DQoJCWMwLDEzLjc1LDExLjI1LDI1LDI1LDI1aDI5OS40NDFjMTMuNzUsMCwyNS0xMS4yNSwyNS0yNVY4OC42Mzd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0U4RThFODsiIGQ9Ik0xODIuMjIxLDE1Ni45MzNMNy41LDI2OC43MDR2Ny4xYzAsMTMuNzUsMTEuMjUsMjUsMjUsMjVoMjk5LjQ0MWMxMy43NSwwLDI1LTExLjI1LDI1LTI1di03LjENCgkJTDE4Mi4yMjEsMTU2LjkzM3oiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRThFOEU4OyIgZD0iTTE4Mi4yMjEsMjA3LjUwOWwxNzQuNzItMTExLjc3M3YtNy4xYzAtMTMuNzUtMTEuMjUtMjUtMjUtMjVIMzIuNWMtMTMuNzUsMC0yNSwxMS4yNS0yNSwyNXY3LjENCgkJTDE4Mi4yMjEsMjA3LjUwOXoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojMDA1Q0I5OyIgZD0iTTM1NS41OTksODAuNTk1TDE4Mi4yMjEsMTkxLjUwOUw4Ljg0Myw4MC41OTVDNy45NzcsODMuMTIzLDcuNSw4NS44MjYsNy41LDg4LjYzN3Y3LjENCgkJbDE3NC43MjEsMTExLjc3MmwxNzQuNzItMTExLjc3M3YtNy4xQzM1Ni45NDEsODUuODI2LDM1Ni40NjUsODMuMTIzLDM1NS41OTksODAuNTk1eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiMwNzFDMkM7IiBkPSJNMzMxLjk0MSw1Ni4xMzdIMzIuNWMtMTcuOTIsMC0zMi41LDE0LjU4LTMyLjUsMzIuNXYxODcuMTY4YzAsMTcuOTIsMTQuNTgsMzIuNSwzMi41LDMyLjVoMjk5LjQ0MQ0KCQljMTcuOTIxLDAsMzIuNS0xNC41OCwzMi41LTMyLjVWODguNjM3QzM2NC40NDEsNzAuNzE2LDM0OS44NjIsNTYuMTM3LDMzMS45NDEsNTYuMTM3eiBNMTUsMTA5LjQzOGwxMTMuNzczLDcyLjc4M0wxNSwyNTUuMDA0DQoJCVYxMDkuNDM4eiBNMzQ5LjQ0MSwyNzUuODA1YzAsOS42NDktNy44NTEsMTcuNS0xNy41LDE3LjVIMzIuNWMtOS42NDksMC0xNy41LTcuODUxLTE3LjUtMTcuNXYtMi45OTRsMTI3LjY5LTgxLjY4N2wzNS40ODgsMjIuNzAzDQoJCWMxLjIzMiwwLjc4OCwyLjYzNywxLjE4Miw0LjA0MiwxLjE4MnMyLjgxLTAuMzk0LDQuMDQyLTEuMTgybDM1LjQ4Ny0yMi43MDJsMTI3LjY5MSw4MS42ODZ2Mi45OTRIMzQ5LjQ0MXogTTM0OS40NDEsMjU1LjAwMw0KCQlMMjM1LjY2OCwxODIuMjJsMTEzLjc3My03Mi43ODNWMjU1LjAwM3ogTTM0OS40NDEsOTEuNjMxbC0xNjcuMjIsMTA2Ljk3NEwxNSw5MS42MzF2LTIuOTk0YzAtOS42NDksNy44NTEtMTcuNSwxNy41LTE3LjVoMjk5LjQ0MQ0KCQljOS42NDksMCwxNy41LDcuODUxLDE3LjUsMTcuNVY5MS42MzF6Ii8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+                    class="R1K8k8bAfkMiVHLncb9O"
+                /></a>
+              </div>
+            </div>
+            <div class="my-4 justify-content-center row">
+              <div
+                class="d-flex flex-column align-items-center col-sm-4 col-xl-3 col"
+              >
+                <a
+                  class="N_VRJIPBVxEiU_AF7YUX"
+                  href="static/Resume_Ben_Murphy.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  download=""
+                  ><h4 class="text-center">Resume</h4>
+                  <div class="A4PAqWRWQX_EZgDmjdd5">
+                    <img
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDMzMCAzMzAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMzMCAzMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnIGlkPSJYTUxJRF8yM18iPg0KCTxwYXRoIGlkPSJYTUxJRF8yNF8iIGQ9Ik0xNTQuMzg5LDI1NS42MDJjMC4zNTEsMC4zNTEsMC43MTksMC42ODMsMS4xMDMsMC45OThjMC4xNjksMC4xMzgsMC4zNDcsMC4yNTgsMC41MiwwLjM4OA0KCQljMC4yMTgsMC4xNjQsMC40MzIsMC4zMzMsMC42NTksMC40ODRjMC4yMTIsMC4xNDIsMC40MzIsMC4yNjUsMC42NDksMC4zOTVjMC4yMDIsMC4xMjEsMC40LDAuMjQ4LDAuNjA4LDAuMzU5DQoJCWMwLjIyMywwLjEyLDAuNDUzLDAuMjIxLDAuNjgxLDAuMzI4YzAuMjE1LDAuMTAyLDAuNDI3LDAuMjEsMC42NDgsMC4zMDFjMC4yMjMsMC4wOTIsMC40NSwwLjE2NywwLjY3NiwwLjI0Nw0KCQljMC4yMzYsMC4wODUsMC40NjgsMC4xNzUsMC43MDksMC4yNDhjMC4yMjYsMC4wNjgsMC40NTYsMC4xMTksMC42ODQsMC4xNzZjMC4yNDYsMC4wNjIsMC40ODksMC4xMzEsMC43MzksMC4xODENCgkJYzAuMjYzLDAuMDUyLDAuNTI5LDAuMDgzLDAuNzk0LDAuMTIxYzAuMjE5LDAuMDMxLDAuNDM1LDAuMDczLDAuNjU4LDAuMDk1YzAuNDkyLDAuMDQ4LDAuOTg2LDAuMDc1LDEuNDgsMC4wNzUNCgkJYzAuNDk0LDAsMC45ODgtMC4wMjYsMS40NzktMC4wNzVjMC4yMjYtMC4wMjIsMC40NDQtMC4wNjQsMC42NjctMC4wOTZjMC4yNjItMC4wMzcsMC41MjQtMC4wNjgsMC43ODQtMC4xMg0KCQljMC4yNTUtMC4wNSwwLjUwNC0wLjEyMSwwLjc1NC0wLjE4NGMwLjIyMy0wLjA1NywwLjQ0OC0wLjEwNSwwLjY2OS0wLjE3MmMwLjI0Ni0wLjA3NSwwLjQ4My0wLjE2NywwLjcyNC0wLjI1Mw0KCQljMC4yMjEtMC4wOCwwLjQ0NC0wLjE1MiwwLjY2Mi0wLjI0MmMwLjIyNS0wLjA5MywwLjQ0LTAuMjAyLDAuNjU5LTAuMzA2YzAuMjI1LTAuMTA2LDAuNDUyLTAuMjA2LDAuNjcyLTAuMzI0DQoJCWMwLjIxLTAuMTEyLDAuNDA4LTAuMjM5LDAuNjExLTAuMzYxYzAuMjE3LTAuMTMsMC40MzctMC4yNTIsMC42NDgtMC4zOTRjMC4yMjItMC4xNDgsMC40MzEtMC4zMTQsMC42NDQtMC40NzMNCgkJYzAuMTc5LTAuMTM0LDAuMzYyLTAuMjU4LDAuNTM2LTAuNGMwLjM2NS0wLjMsMC43MTQtMC42MTcsMS4wNDktMC45NDljMC4wMTYtMC4wMTYsMC4wMzQtMC4wMjgsMC4wNDktMC4wNDRsNzAuMDAyLTY5Ljk5OA0KCQljNS44NTgtNS44NTgsNS44NTgtMTUuMzU1LDAtMjEuMjEzYy01Ljg1Ny01Ljg1Ny0xNS4zNTUtNS44NTgtMjEuMjEzLTAuMDAxbC00NC4zOTYsNDQuMzkzVjI1YzAtOC4yODQtNi43MTYtMTUtMTUtMTUNCgkJYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1djE4My43ODVsLTQ0LjM5Mi00NC4zOTFjLTUuODU3LTUuODU4LTE1LjM1NS01Ljg1OC0yMS4yMTMsMGMtNS44NTgsNS44NTgtNS44NTgsMTUuMzU1LDAsMjEuMjEzDQoJCUwxNTQuMzg5LDI1NS42MDJ6Ii8+DQoJPHBhdGggaWQ9IlhNTElEXzI1XyIgZD0iTTMxNSwxNjBjLTguMjg0LDAtMTUsNi43MTYtMTUsMTV2MTE1SDMwVjE3NWMwLTguMjg0LTYuNzE2LTE1LTE1LTE1Yy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1djEzMA0KCQljMCw4LjI4NCw2LjcxNiwxNSwxNSwxNWgzMDBjOC4yODQsMCwxNS02LjcxNiwxNS0xNVYxNzVDMzMwLDE2Ni43MTYsMzIzLjI4NCwxNjAsMzE1LDE2MHoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
+                      alt="Download Resume Icon"
+                      style="position: absolute"
+                      class="A4PAqWRWQX_EZgDmjdd5"
+                    /></div
+                ></a>
+              </div>
+              <div
+                class="d-flex flex-column align-items-center col-sm-4 col-xl-3 col"
+              >
+                <a
+                  class="N_VRJIPBVxEiU_AF7YUX"
+                  href="static/Transcript_Ben_Murphy.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  download=""
+                  ><h4 class="text-center">Transcript</h4>
+                  <div class="A4PAqWRWQX_EZgDmjdd5">
+                    <img
+                      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDMzMCAzMzAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMzMCAzMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnIGlkPSJYTUxJRF8yM18iPg0KCTxwYXRoIGlkPSJYTUxJRF8yNF8iIGQ9Ik0xNTQuMzg5LDI1NS42MDJjMC4zNTEsMC4zNTEsMC43MTksMC42ODMsMS4xMDMsMC45OThjMC4xNjksMC4xMzgsMC4zNDcsMC4yNTgsMC41MiwwLjM4OA0KCQljMC4yMTgsMC4xNjQsMC40MzIsMC4zMzMsMC42NTksMC40ODRjMC4yMTIsMC4xNDIsMC40MzIsMC4yNjUsMC42NDksMC4zOTVjMC4yMDIsMC4xMjEsMC40LDAuMjQ4LDAuNjA4LDAuMzU5DQoJCWMwLjIyMywwLjEyLDAuNDUzLDAuMjIxLDAuNjgxLDAuMzI4YzAuMjE1LDAuMTAyLDAuNDI3LDAuMjEsMC42NDgsMC4zMDFjMC4yMjMsMC4wOTIsMC40NSwwLjE2NywwLjY3NiwwLjI0Nw0KCQljMC4yMzYsMC4wODUsMC40NjgsMC4xNzUsMC43MDksMC4yNDhjMC4yMjYsMC4wNjgsMC40NTYsMC4xMTksMC42ODQsMC4xNzZjMC4yNDYsMC4wNjIsMC40ODksMC4xMzEsMC43MzksMC4xODENCgkJYzAuMjYzLDAuMDUyLDAuNTI5LDAuMDgzLDAuNzk0LDAuMTIxYzAuMjE5LDAuMDMxLDAuNDM1LDAuMDczLDAuNjU4LDAuMDk1YzAuNDkyLDAuMDQ4LDAuOTg2LDAuMDc1LDEuNDgsMC4wNzUNCgkJYzAuNDk0LDAsMC45ODgtMC4wMjYsMS40NzktMC4wNzVjMC4yMjYtMC4wMjIsMC40NDQtMC4wNjQsMC42NjctMC4wOTZjMC4yNjItMC4wMzcsMC41MjQtMC4wNjgsMC43ODQtMC4xMg0KCQljMC4yNTUtMC4wNSwwLjUwNC0wLjEyMSwwLjc1NC0wLjE4NGMwLjIyMy0wLjA1NywwLjQ0OC0wLjEwNSwwLjY2OS0wLjE3MmMwLjI0Ni0wLjA3NSwwLjQ4My0wLjE2NywwLjcyNC0wLjI1Mw0KCQljMC4yMjEtMC4wOCwwLjQ0NC0wLjE1MiwwLjY2Mi0wLjI0MmMwLjIyNS0wLjA5MywwLjQ0LTAuMjAyLDAuNjU5LTAuMzA2YzAuMjI1LTAuMTA2LDAuNDUyLTAuMjA2LDAuNjcyLTAuMzI0DQoJCWMwLjIxLTAuMTEyLDAuNDA4LTAuMjM5LDAuNjExLTAuMzYxYzAuMjE3LTAuMTMsMC40MzctMC4yNTIsMC42NDgtMC4zOTRjMC4yMjItMC4xNDgsMC40MzEtMC4zMTQsMC42NDQtMC40NzMNCgkJYzAuMTc5LTAuMTM0LDAuMzYyLTAuMjU4LDAuNTM2LTAuNGMwLjM2NS0wLjMsMC43MTQtMC42MTcsMS4wNDktMC45NDljMC4wMTYtMC4wMTYsMC4wMzQtMC4wMjgsMC4wNDktMC4wNDRsNzAuMDAyLTY5Ljk5OA0KCQljNS44NTgtNS44NTgsNS44NTgtMTUuMzU1LDAtMjEuMjEzYy01Ljg1Ny01Ljg1Ny0xNS4zNTUtNS44NTgtMjEuMjEzLTAuMDAxbC00NC4zOTYsNDQuMzkzVjI1YzAtOC4yODQtNi43MTYtMTUtMTUtMTUNCgkJYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1djE4My43ODVsLTQ0LjM5Mi00NC4zOTFjLTUuODU3LTUuODU4LTE1LjM1NS01Ljg1OC0yMS4yMTMsMGMtNS44NTgsNS44NTgtNS44NTgsMTUuMzU1LDAsMjEuMjEzDQoJCUwxNTQuMzg5LDI1NS42MDJ6Ii8+DQoJPHBhdGggaWQ9IlhNTElEXzI1XyIgZD0iTTMxNSwxNjBjLTguMjg0LDAtMTUsNi43MTYtMTUsMTV2MTE1SDMwVjE3NWMwLTguMjg0LTYuNzE2LTE1LTE1LTE1Yy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1djEzMA0KCQljMCw4LjI4NCw2LjcxNiwxNSwxNSwxNWgzMDBjOC4yODQsMCwxNS02LjcxNiwxNS0xNVYxNzVDMzMwLDE2Ni43MTYsMzIzLjI4NCwxNjAsMzE1LDE2MHoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
+                      alt="Download Transcript Icon"
+                      style="position: absolute"
+                      class="A4PAqWRWQX_EZgDmjdd5"
+                    /></div
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

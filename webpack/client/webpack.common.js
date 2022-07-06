@@ -1,5 +1,5 @@
 const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlMpaWebpackPlugin = require('../html-mpa-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -12,8 +12,9 @@ const path = require('path');
  */
 module.exports = merge(common, {
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(rootDir, 'serverBuild/index.html'),
+    new HtmlMpaWebpackPlugin({
+      pagesDir: path.resolve(rootDir, 'src/pages'),
+      serverHtmlDir: path.resolve(rootDir, 'renderedHtml'),
     }),
     new FaviconsWebpackPlugin({
       logo: path.resolve(rootDir, 'src/assets/icons/bjm.svg'),
@@ -24,11 +25,16 @@ module.exports = merge(common, {
       },
     }),
     // for analyzing bundle size
-    new BundleAnalyzerPlugin({ analyzerMode: 'json' }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: true,
+      statsOptions: { source: false },
+    }),
   ],
   optimization: {
     splitChunks: {
-      minSize: 0,
+      chunks: 'all',
     },
+    runtimeChunk: 'single',
   },
 });

@@ -1,13 +1,10 @@
 import { forwardRef } from 'react';
-import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { useNavigate } from 'react-router';
+import Navbar from 'react-bootstrap/Navbar';
 import bjmIcon from 'src/assets/icons/bjm.svg';
+import routes from 'src/routes';
 
-import { pages } from 'src/constants';
-
-const Navigator = forwardRef<HTMLDivElement>((_, ref) => {
-  const navigate = useNavigate();
+const MainNavbar = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <Navbar
       ref={ref}
@@ -22,23 +19,23 @@ const Navigator = forwardRef<HTMLDivElement>((_, ref) => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-        <Nav
-          className="justify-content-end"
-          onSelect={(eventKey) => navigate(eventKey as string)}
-        >
-          {pages.map((page) => (
-            <Nav.Item key={page.name} className="d-flex justify-content-end">
-              <Nav.Link key={page.name} className="px-2" eventKey={page.path}>
-                {page.navbarLinkTitle}
-              </Nav.Link>
-            </Nav.Item>
-          ))}
+        <Nav className="justify-content-end">
+          {Object.keys(routes).map((page) =>
+            // only home page does not get a link
+            page !== 'home' ? (
+              <Nav.Item key={page} className="d-flex justify-content-end">
+                <Nav.Link key={page} className="px-2" href={routes[page].path}>
+                  {routes[page].title}
+                </Nav.Link>
+              </Nav.Item>
+            ) : null
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 });
 
-Navigator.displayName = 'Navigator';
+MainNavbar.displayName = 'Navigator';
 
-export default Navigator;
+export default MainNavbar;

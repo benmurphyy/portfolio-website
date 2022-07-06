@@ -7,7 +7,6 @@ module.exports = merge(common, {
     // only use hashing for production to minimise dev build time
     filename: '[name].[contenthash].js',
   },
-  // enable minification for production code
   optimization: {
     minimize: true,
   },

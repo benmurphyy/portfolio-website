@@ -12,9 +12,14 @@ const globalStyleSheetPath = path.resolve(rootDir, 'src/styles/index.scss');
  * so that loaded resources can be accessed properly.
  */
 module.exports = {
+  // Each page of application forms a new entry point.
+  entry: {
+    home: path.resolve(rootDir, 'src/pages/home/index.tsx'),
+    knowledge: path.resolve(rootDir, 'src/pages/knowledge/index.tsx'),
+    experience: path.resolve(rootDir, 'src/pages/experience/index.tsx'),
+  },
   // resolve all entry paths and loaders from the root directory of the project
   // also serves as root when resolving import paths of modules
-  entry: path.resolve(rootDir, 'src/index.tsx'),
   context: rootDir,
   output: {
     path: path.resolve(rootDir, 'build'),
@@ -36,6 +41,14 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               configFile: path.resolve(rootDir, 'babel.config.json'),
+            },
+          },
+          {
+            loader: path.resolve(rootDir, 'webpack/webpack-ssg-loader'),
+            options: {
+              // path of directory that contains all the pages
+              pagesDir: path.resolve(rootDir, 'src/pages'),
+              renderedHtmlFileDir: path.resolve(rootDir, 'renderedHtml'),
             },
           },
           {

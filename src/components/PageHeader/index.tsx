@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+
 import styles from './styles.scss';
 
 /**
@@ -16,10 +17,10 @@ export default function PageHeader({ backgroundImage, children }: HeaderProps) {
   return (
     <Container
       fluid
-      className={`h-100 p-0 ${styles.headerContainer}`}
+      className={`${styles.headerContainer}`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <Row className="h-100 align-items-center justify-content-center m-0">
+      <Row className="justify-content-center">
         <Col>{children}</Col>
       </Row>
     </Container>

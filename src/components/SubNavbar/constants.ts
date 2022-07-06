@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useLayoutEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
 // used to determine when to use observer options short or long
 export const SUBPAGE_WINDOW_RATIO = 9 / 5;

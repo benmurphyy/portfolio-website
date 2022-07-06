@@ -35,8 +35,10 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
+    "fs-extra": "^10.1.0",
     "gh-pages": "^4.0.0",
     "html-loader": "^3.1.2",
     "html-webpack-plugin": "^5.5.0",
@@ -51,6 +53,7 @@
     "sass": "^1.52.3",
     "sass-loader": "^13.0.0",
     "sass-resources-loader": "^2.2.5",
+    "schema-utils": "^4.0.0",
     "source-map-loader": "^3.0.1",
     "stylelint": "^14.8.5",
     "stylelint-config-prettier-scss": "^0.0.1",
@@ -66,13 +69,14 @@
   "scripts": {
     "client-build": "npx webpack --config webpack/client/webpack.prod.js",
     "client-start": "npx webpack serve --config webpack/client/webpack.dev.js",
-    "server-build:dev": "npx webpack --config webpack/server/webpack.dev.js && node serverBuild/main.js",
-    "server-build": "npx webpack --config webpack/server/webpack.prod.js && node serverBuild/main.js",
+    "server-build:dev": "npx webpack --config webpack/server/webpack.dev.js && node scripts/renderHtml.js",
+    "server-build": "npx webpack --config webpack/server/webpack.prod.js && node scripts/renderHtml.js",
     "start": "yarn server-build:dev && yarn client-start",
     "build": "yarn server-build && yarn client-build",
     "prepare": "husky install",
-    "deploy": "npx webpack --config webpack/webpack.prod.js && gh-pages -d build -b main -r https://github.com/benmurphyy/benmurphyy.github.io",
-    "test-deploy": "npx webpack --config webpack/webpack.prod.js && gh-pages -d build -b main -r https://github.com/benmurphyy/portfolio-website-test-deploy.git"
+    "deploy": "yarn build && gh-pages -d build -b main -r https://github.com/benmurphyy/benmurphyy.github.io",
+    "test-deploy": "yarn build && gh-pages -d build -b main -r https://github.com/benmurphyy/portfolio-website-test-deploy.git",
+    "analyze-bundle": "webpack-bundle-analyzer --port 4200 build/stats.json"
   },
   "lint-staged": {
     "**/*": [

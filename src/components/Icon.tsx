@@ -2,8 +2,8 @@
  * Icon component that comes with the ability to move to its new position wiht animation when it is moved in its parent container.
  */
 
-import { MutableRefObject, useEffect, useLayoutEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { MutableRefObject, useEffect, useRef } from 'react';
 
 /**
  * Type which tracks position of a DOM node with the top and left keys.
