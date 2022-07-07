@@ -11,11 +11,10 @@ import SubNavbar from 'src/components/SubNavbar';
 import SkillsSection from 'src/pages/knowledge/components/SkillsSection';
 import UniModulesSection from 'src/pages/knowledge/components/UniModulesSection';
 import {
-  KnowledgePageSectionNames,
+  KnowledgePageSectionName,
   knowledgePageSections,
 } from 'src/pages/knowledge/constants';
-import useScrollToSubpageBasedOnPath from 'src/util/hooks/useScrollToSubpageBasedOnPath';
-import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
+import usePageSectionRefMapCreator from 'src/util/hooks/usePageSectionRefMapCreator';
 
 /**
  * Skills component for all skill icons.
@@ -26,14 +25,9 @@ import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
 
 function Root() {
   const mainNavbarRef = useRef<HTMLDivElement>(null);
-  //create a mapping object of page to its ref
-  const subPageRefs = useSubPageRefMapCreator(knowledgePageSections);
-
-  //subNavBar Ref
+  /** Ref containing an object where page section name is key, and PageSectionWithRef is value */
+  const pageSectionsRef = usePageSectionRefMapCreator(knowledgePageSections);
   const subNavbarRef = useRef<HTMLDivElement>(null);
-
-  //for quicklink functionality from homepage
-  useScrollToSubpageBasedOnPath(subNavbarRef, mainNavbarRef, subPageRefs);
 
   return (
     <div>
@@ -42,7 +36,7 @@ function Root() {
         <SubNavbar
           mainNavbarRef={mainNavbarRef}
           subNavbarRef={subNavbarRef}
-          subPageRefs={subPageRefs.current}
+          pageSections={pageSectionsRef.current}
         />
         <PageHeader backgroundImage={headerBackgroundImage}>
           <Container>
@@ -57,12 +51,13 @@ function Root() {
           </Container>
         </PageHeader>
         <SkillsSection
-          ref={subPageRefs.current.get(KnowledgePageSectionNames.SKILLS)}
+          ref={pageSectionsRef.current[KnowledgePageSectionName.SKILLS].ref}
         />
         <UniModulesSection
-          ref={subPageRefs.current.get(
-            KnowledgePageSectionNames.UNIVERSITY_MODULES
-          )}
+          ref={
+            pageSectionsRef.current[KnowledgePageSectionName.UNIVERSITY_MODULES]
+              .ref
+          }
         />
       </Container>
     </div>

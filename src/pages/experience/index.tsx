@@ -15,8 +15,7 @@ import {
   ExperiencePageSectionName,
   experiencePageSections,
 } from 'src/pages/experience/constants';
-import useScrollToSubpageBasedOnPath from 'src/util/hooks/useScrollToSubpageBasedOnPath';
-import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
+import usePageSectionRefMapCreator from 'src/util/hooks/usePageSectionRefMapCreator';
 
 import CareerExperienceSection from './careerExperienceSection';
 import Projects from './projectsSection';
@@ -30,14 +29,11 @@ import MainNavbar from 'src/components/MainNavbar';
  */
 function Root() {
   const mainNavbarRef = useRef<HTMLDivElement>(null);
-  //create a mapping object of page to its ref
-  const subPageRefs = useSubPageRefMapCreator(experiencePageSections);
-
-  //subNavBar ref
+  /** Ref containing all the page sections of experience page */
+  const experiencePageSectionsRef = usePageSectionRefMapCreator(
+    experiencePageSections
+  );
   const subNavbarRef = useRef(null);
-
-  //handles all scrolling to subpage based on path logic, used for quicklinks
-  useScrollToSubpageBasedOnPath(subNavbarRef, mainNavbarRef, subPageRefs);
 
   //take note all subcomponents other than main container are set to React.memo, so as to prevent unecessary updates when the state, whcih
   //is used for subNaavBar changes.
@@ -48,7 +44,7 @@ function Root() {
         <SubNavbar
           mainNavbarRef={mainNavbarRef}
           subNavbarRef={subNavbarRef}
-          subPageRefs={subPageRefs.current}
+          pageSections={experiencePageSectionsRef.current}
         />
         <PageHeader backgroundImage={headerBackgroundImage}>
           <Container>
@@ -64,15 +60,25 @@ function Root() {
           </Container>
         </PageHeader>
         <CareerExperienceSection
-          ref={subPageRefs.current.get(
-            ExperiencePageSectionName.CAREER_EXPERIENCE
-          )}
+          ref={
+            experiencePageSectionsRef.current[
+              ExperiencePageSectionName.CAREER_EXPERIENCE
+            ].ref
+          }
         />
         <AchievementsSection
-          ref={subPageRefs.current.get(ExperiencePageSectionName.ACHIEVEMENTS)}
+          ref={
+            experiencePageSectionsRef.current[
+              ExperiencePageSectionName.ACHIEVEMENTS
+            ].ref
+          }
         />
         <Projects
-          ref={subPageRefs.current.get(ExperiencePageSectionName.PROJECTS)}
+          ref={
+            experiencePageSectionsRef.current[
+              ExperiencePageSectionName.PROJECTS
+            ].ref
+          }
         />
       </Container>
     </div>

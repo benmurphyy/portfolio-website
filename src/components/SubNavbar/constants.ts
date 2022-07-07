@@ -22,15 +22,16 @@ const mainNavbarObserverOptions = {
 
 /**
  * Controls the visibility of the the SubNavbar.
- * 1. When mainNavbar is no longer visible, then the subNavbar appears.
- * 2. When the user has not scrolled for a duration of time, the SubNavbar disappears.
- *    It reappears when the user scrolls again.
+ * When mainNavbar is no longer visible, the subNavbar appears.
  * @param mainNavbarRef
  * @returns react state variable indicating if the subNavState should be visible.
  */
 export function useVisibilityController(
   mainNavbarRef: RefObject<HTMLDivElement>
-) {
+): [
+  isVisible: boolean,
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>
+] {
   const [isSubNavbarVisible, setIsSubNavbarVisible] = useState(false);
 
   useEffect(() => {
@@ -44,5 +45,5 @@ export function useVisibilityController(
     return () => observer.unobserve(refCur);
   });
 
-  return isSubNavbarVisible;
+  return [isSubNavbarVisible, setIsSubNavbarVisible];
 }

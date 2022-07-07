@@ -5,8 +5,7 @@ import EmailIcon from 'src/assets/icons/contact/email/email.svg';
 import GithubIcon from 'src/assets/icons/contact/github/github-original.svg';
 import LinkedInIcon from 'src/assets/icons/contact/linkedin/linkedin-original.svg';
 import TelegramIcon from 'src/assets/icons/contact/telegram/telegram.svg';
-
-export const subPages = ['About Me', 'Contact'];
+import { PageSection } from 'src/constants';
 
 //array of contact objects, corresponding to contact links
 export const contacts = [
@@ -43,3 +42,20 @@ export const downloads = [
     file: transcriptFile,
   },
 ];
+
+export enum HomePageSectionNames {
+  ABOUT_ME = 'aboutMe',
+  CONTACT = 'contact',
+}
+
+export const homePageSections: { [key in HomePageSectionNames]: PageSection } =
+  {
+    [HomePageSectionNames.ABOUT_ME]: {
+      name: HomePageSectionNames.ABOUT_ME,
+      title: 'About Me',
+    },
+    [HomePageSectionNames.CONTACT]: {
+      name: HomePageSectionNames.CONTACT,
+      title: 'Contact',
+    },
+  };

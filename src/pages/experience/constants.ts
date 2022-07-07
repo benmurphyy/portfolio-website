@@ -4,6 +4,7 @@ import alexaIcon from 'src/assets/icons/projects/alexa.svg';
 import bjmIcon from 'src/assets/icons/projects/bjm.svg';
 import pongIcon from 'src/assets/icons/projects/pong.svg';
 import telegramIcon from 'src/assets/icons/projects/telegram.svg';
+import { PageSection } from 'src/constants';
 
 interface Project {
   title: string;
@@ -15,9 +16,9 @@ interface Project {
 }
 
 export enum ExperiencePageSectionName {
-  CAREER_EXPERIENCE = 'Career Experience',
-  ACHIEVEMENTS = 'Achievements',
-  PROJECTS = 'Projects',
+  CAREER_EXPERIENCE = 'careerExperience',
+  ACHIEVEMENTS = 'achievements',
+  PROJECTS = 'projects',
 }
 
 /**
@@ -25,11 +26,25 @@ export enum ExperiencePageSectionName {
  */
 const icons = [bjmIcon, threeDPrintIcon, alexaIcon, telegramIcon, pongIcon];
 
-export const experiencePageSections = [
-  ExperiencePageSectionName.CAREER_EXPERIENCE,
-  ExperiencePageSectionName.ACHIEVEMENTS,
-  ExperiencePageSectionName.PROJECTS,
-];
+export const experiencePageSections: {
+  [key in ExperiencePageSectionName]: PageSection;
+} = {
+  [ExperiencePageSectionName.CAREER_EXPERIENCE]: {
+    name: ExperiencePageSectionName.CAREER_EXPERIENCE,
+    title: 'Career Experience',
+    queryParam: ExperiencePageSectionName.CAREER_EXPERIENCE,
+  },
+  [ExperiencePageSectionName.ACHIEVEMENTS]: {
+    name: ExperiencePageSectionName.ACHIEVEMENTS,
+    title: 'Achievements',
+    queryParam: ExperiencePageSectionName.ACHIEVEMENTS,
+  },
+  [ExperiencePageSectionName.PROJECTS]: {
+    name: ExperiencePageSectionName.PROJECTS,
+    title: 'Projects',
+    queryParam: ExperiencePageSectionName.PROJECTS,
+  },
+};
 
 /**
  * The array of Projects, which contains information from the json file,

@@ -9,6 +9,15 @@ module.exports = merge(common, {
   devServer: {
     host: '0.0.0.0',
     port: port,
-    historyApiFallback: true,
+    historyApiFallback: {
+      // adds file extension .html for all requests with no file extension
+      // this is essential for devServer to serve MPA pages correctly
+      rewrites: [
+        {
+          from: /\/[a-z0-9_]*/i,
+          to: (context) => context.parsedUrl.pathname + '.html',
+        },
+      ],
+    },
   },
 });

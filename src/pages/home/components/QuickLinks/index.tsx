@@ -20,7 +20,7 @@ export default function QuickLinks() {
                 style={{ backgroundColor: quickLink.buttonColor }}
                 href={quickLink.path}
               >
-                {quickLink.name}
+                {quickLink.title}
               </Button>
             </Col>
           ))}

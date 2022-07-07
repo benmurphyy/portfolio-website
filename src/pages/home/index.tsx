@@ -9,14 +9,18 @@ import AboutMe from 'src/pages/home/components/AboutMe';
 import AnimatedGreeting from 'src/pages/home/components/AnimatedGreeting';
 import Contact from 'src/pages/home/components/Contact';
 import QuickLinks from 'src/pages/home/components/QuickLinks';
-import { subPages } from 'src/pages/home/constants';
-import useSubPageRefMapCreator from 'src/util/hooks/useSubPageRefMapCreator';
+import {
+  HomePageSectionNames,
+  homePageSections,
+} from 'src/pages/home/constants';
+import usePageSectionRefMapCreator from 'src/util/hooks/usePageSectionRefMapCreator';
 
 /**
  * React component defining homepage of application.
  */
 function Root() {
-  const subPageRefs = useSubPageRefMapCreator(subPages);
+  /** Ref containing information on page sections */
+  const homePageSectionsRef = usePageSectionRefMapCreator(homePageSections);
   const mainNavbarRef = useRef<HTMLDivElement>(null);
   const subNavbarRef = useRef<HTMLDivElement>(null);
   return (
@@ -26,14 +30,18 @@ function Root() {
         <SubNavbar
           mainNavbarRef={mainNavbarRef}
           subNavbarRef={subNavbarRef}
-          subPageRefs={subPageRefs.current}
+          pageSections={homePageSectionsRef.current}
         />
         <PageHeader backgroundImage={headerBackgroundImage}>
           <AnimatedGreeting />
         </PageHeader>
-        <AboutMe ref={subPageRefs.current.get('About Me')} />
+        <AboutMe
+          ref={homePageSectionsRef.current[HomePageSectionNames.ABOUT_ME].ref}
+        />
         <QuickLinks />
-        <Contact ref={subPageRefs.current.get('Contact')} />
+        <Contact
+          ref={homePageSectionsRef.current[HomePageSectionNames.CONTACT].ref}
+        />
       </div>
     </div>
   );

@@ -1,3 +1,9 @@
+export enum PageName {
+  HOME = 'home',
+  KNOWLEDGE = 'knowledge',
+  EXPERIENCE = 'experience',
+}
+
 /**
  * Contains information on all the routes in the app.
  * Each routes key must match the name of the page(folder name) it routes to.
@@ -9,15 +15,15 @@ const routes: {
     path: string;
   };
 } = {
-  home: {
+  [PageName.HOME]: {
     title: 'Home',
     path: '/',
   },
-  knowledge: {
+  [PageName.KNOWLEDGE]: {
     title: 'Knowledge',
     path: '/knowledge',
   },
-  experience: {
+  [PageName.EXPERIENCE]: {
     title: 'Experience',
     path: '/experience',
   },
