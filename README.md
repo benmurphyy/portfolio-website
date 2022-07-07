@@ -1,7 +1,5 @@
 # Portfolio Website
 
-[Source Code](https://github.com/benmurphyy/portfolio-website)
-
 ## Main features of this project
 
 - Multi-Page Application (MPA) in React, employing Static Site Generation (SSG) to maximise performance. [Explanation on choice of MPA with SSG over typical single page application (SPA)](https://github.com/benmurphyy/portfolio-website/pull/1)
