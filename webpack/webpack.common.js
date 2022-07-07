@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const BundleAnalyzerPlugin =
@@ -8,8 +9,6 @@ const port = process.env.PORT || 8080;
 
 // absolute path of the root directory of the project
 const rootDir = path.resolve(__dirname, '..');
-
-console.log(path.resolve(rootDir, 'build'));
 
 // absolute path of global stylesheet
 const globalStyleSheetPath = path.resolve(rootDir, 'src/styles/index.scss');
@@ -56,7 +55,7 @@ module.exports = {
         exclude: [globalStyleSheetPath],
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -98,7 +97,7 @@ module.exports = {
         include: [globalStyleSheetPath],
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -160,6 +159,7 @@ module.exports = {
       },
     }),
     new BundleAnalyzerPlugin({ analyzerMode: 'json' }),
+    new MiniCssExtractPlugin(),
   ],
   devServer: {
     host: '0.0.0.0',

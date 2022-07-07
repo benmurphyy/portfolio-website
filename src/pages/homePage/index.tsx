@@ -15,7 +15,6 @@ interface HomepageProps {
 }
 
 export default function Homepage({ mainNavbarRef }: HomepageProps) {
-  console.log(headerBackgroundImage);
   const subPageRefs = useSubPageRefMapCreator(subPages);
   const subNavbarRef = useRef<HTMLDivElement>(null);
   return (
