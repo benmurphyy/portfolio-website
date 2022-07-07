@@ -68,14 +68,18 @@
   },
   "scripts": {
     "client-build": "npx webpack --config webpack/client/webpack.prod.js",
+    "client-build:dev": "npx webpack --config webpack/client/webpack.dev.js",
     "client-start": "npx webpack serve --config webpack/client/webpack.dev.js",
+    "client-start:prod": "npx webpack serve --config webpack/client/webpack.prod.js",
     "server-build:dev": "npx webpack --config webpack/server/webpack.dev.js && node scripts/renderHtml.js",
     "server-build": "npx webpack --config webpack/server/webpack.prod.js && node scripts/renderHtml.js",
+    "start:dev": "yarn server-build && yarn client-start:dev",
     "start": "yarn server-build:dev && yarn client-start",
     "build": "yarn server-build && yarn client-build",
     "prepare": "husky install",
     "deploy": "yarn build && gh-pages -d build -b main -r https://github.com/benmurphyy/benmurphyy.github.io",
     "test-deploy": "yarn build && gh-pages -d build -b main -r https://github.com/benmurphyy/portfolio-website-test-deploy.git",
+    "test-deploy:dev": "yarn server-build && yarn client-build:dev && gh-pages -d build -b main -r https://github.com/benmurphyy/portfolio-website-test-deploy.git",
     "analyze-bundle": "webpack-bundle-analyzer --port 4200 build/stats.json"
   },
   "lint-staged": {

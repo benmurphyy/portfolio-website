@@ -34,12 +34,6 @@ export interface PageSectionWithRef extends PageSection {
   ref: RefObject<HTMLDivElement>;
 }
 
-console.log(
-  routes[PageName.KNOWLEDGE].path +
-    '?' +
-    knowledgePageSections[KnowledgePageSectionName.SKILLS]
-);
-
 export const quickLinks: QuickLink[] = [
   {
     name: KnowledgePageSectionName.UNIVERSITY_MODULES,

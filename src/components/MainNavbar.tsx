@@ -25,6 +25,7 @@ const MainNavbar = forwardRef<HTMLDivElement>((_, ref) => {
     const indexOfLastSlash = currentPath.lastIndexOf('/');
     return currentPath.slice(0, indexOfLastSlash) + linkPath;
   }
+
   return (
     <Navbar
       ref={ref}

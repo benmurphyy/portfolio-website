@@ -18,11 +18,13 @@ class HtmlMpaWebpackPlugin {
 
   apply(compiler) {
     // create and apply the HtmlWebpackPLugin for each page
+    // minification of generated html must be turned off, to avoid React hydration mismatch errors
     this.pages.forEach((page) => {
       new HtmlWebpackPlugin({
         template: this.serverHtmlDir + '/' + page + '.html',
         filename: `${page === 'home' ? 'index' : page}.html`,
         chunks: [page],
+        minify: false,
       }).apply(compiler);
     });
   }
