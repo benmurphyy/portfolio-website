@@ -17,6 +17,7 @@ import {
   useVisibilityController,
 } from 'src/components/SubNavbar/constants';
 import { PageSectionWithRef, QuickLink, quickLinks } from 'src/constants';
+import useGeneratePath from 'src/util/hooks/useGeneratePath';
 
 interface SubNavbarProps {
   pageSections: { [pageSectionName: string]: PageSectionWithRef };
@@ -35,6 +36,8 @@ export default function SubNavbar({
   mainNavbarRef,
 }: SubNavbarProps) {
   const [isVisible, setIsVisible] = useVisibilityController(mainNavbarRef);
+  // currentPath contains the current pathname of browser url
+  const [currentPath, generatePath] = useGeneratePath();
   // create a map of each page section name to the ref of the nav link button that scrolls to it
   const navLinkRefsMap = new Map<string, RefObject<HTMLAnchorElement>>();
 
@@ -86,7 +89,10 @@ export default function SubNavbar({
    * Returns true if a quicklink was pressed on homepage.
    */
   function wasQuickLinkPressed(quickLink: QuickLink) {
-    return quickLink.path === window.location.pathname + window.location.search;
+    return (
+      generatePath(quickLink.path) ===
+      window.location.pathname + window.location.search
+    );
   }
 
   /**
@@ -94,7 +100,7 @@ export default function SubNavbar({
    * if so makes the navbar visible so that the page can be scrolled down correctly to the
    * quicklink section on next render.
    *
-   * This only runs on first mount.
+   * Only run if currentPath has changed.
    */
   useEffect(() => {
     for (const quickLink of quickLinks) {
@@ -103,8 +109,12 @@ export default function SubNavbar({
         return;
       }
     }
-  }, []);
+  }, [currentPath]);
 
+  /**
+   * Once subnavbar is visible, check if there is a query param from a quicklink having been pressed,
+   * if so, then scroll to the page section that quicklink represents.
+   */
   useEffect(() => {
     if (isVisible) {
       for (const quickLink of quickLinks) {
@@ -113,7 +123,7 @@ export default function SubNavbar({
         }
       }
     }
-  });
+  }, [isVisible]);
 
   /**
    * Scrolls to the section of the page with the given ref.

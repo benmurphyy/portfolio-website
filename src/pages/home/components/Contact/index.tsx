@@ -1,7 +1,6 @@
 import { ForwardedRef, forwardRef } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import downloadIcon from 'src/assets/icons/contact/download/download.svg';
-import Icon from 'src/components/Icon';
 import SectionHeader from 'src/components/SectionHeader';
 import { contacts, downloads } from 'src/pages/home/constants';
 
@@ -51,10 +50,10 @@ const Contact = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
               download
             >
               <h4 className="text-center">{document.name}</h4>
-              <Icon
-                iconSvg={downloadIcon}
+              <img
+                src={downloadIcon}
                 className={styles.documentDownloadIcon}
-                altText={`Download ${document.name}`}
+                alt={`Download ${document.name}`}
               />
             </a>
           </Col>

@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
  * e.g: If example.com/base is the base path of the webpage (like in github pages), then
  * the href for another page should be example.com/base/otherPage.
  */
-export default function useGeneratePath() {
+export default function useGeneratePath(): [string, (path: string) => string] {
   const [currentPath, setCurrentPath] = useState<string>('/');
   // Setting the current path of the browser must be in useEffect, as this is browser specific behaviour
   useEffect(() => {
@@ -31,5 +31,5 @@ export default function useGeneratePath() {
     return currentPath.slice(0, indexOfLastSlash) + path;
   }
 
-  return generatePath;
+  return [currentPath, generatePath];
 }

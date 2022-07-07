@@ -6,7 +6,7 @@ import useGeneratePath from 'src/util/hooks/useGeneratePath';
 import styles from './styles.scss';
 
 export default function QuickLinks() {
-  const generatePath = useGeneratePath();
+  const [_currentPath, generatePath] = useGeneratePath();
 
   return (
     <Container fluid className="pb-4 px-4">

@@ -6,7 +6,7 @@ import routes from 'src/routes';
 import useGeneratePath from 'src/util/hooks/useGeneratePath';
 
 const MainNavbar = forwardRef<HTMLDivElement>((_, ref) => {
-  const generatePath = useGeneratePath();
+  const [_currentPath, generatePath] = useGeneratePath();
 
   return (
     <Navbar
