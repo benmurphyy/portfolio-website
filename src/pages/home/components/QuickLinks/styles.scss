@@ -1,0 +1,12 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  &:hover,
+  &:active,
+  &:focus {
+    filter: brightness(85%);
+  }
+}

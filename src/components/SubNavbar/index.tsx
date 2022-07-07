@@ -7,19 +7,20 @@
  * 4) forwardRef is used so that the parent component that contains this subnavbar can reference it
  *
  */
-import { useEffect, useRef, RefObject } from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
 import { AnimatePresence, motion } from 'framer-motion';
+import { RefObject, useEffect, useRef } from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
 import {
   observerOptionsDefaultLong,
   observerOptionsDefaultShort,
   SUBPAGE_WINDOW_RATIO,
   useVisibilityController,
 } from 'src/components/SubNavbar/constants';
+import { PageSectionWithRef, QuickLink, quickLinks } from 'src/constants';
+import useGeneratePath from 'src/util/hooks/useGeneratePath';
 
 interface SubNavbarProps {
-  subPageRefs: Map<string, RefObject<HTMLDivElement>>;
-  isAnimated?: boolean;
+  pageSections: { [pageSectionName: string]: PageSectionWithRef };
   observerOptionsShort?: IntersectionObserverInit;
   observerOptionsLong?: IntersectionObserverInit;
   subNavbarRef: RefObject<HTMLDivElement>;
@@ -28,52 +29,54 @@ interface SubNavbarProps {
 }
 
 export default function SubNavbar({
-  subPageRefs,
-  isAnimated = true,
+  pageSections,
   observerOptionsShort = observerOptionsDefaultShort,
   observerOptionsLong = observerOptionsDefaultLong,
   subNavbarRef,
   mainNavbarRef,
 }: SubNavbarProps) {
-  const isVisible = useVisibilityController(mainNavbarRef);
-  // create a map of each navlink button page name to nav link button ref, for use in resolving focus after nav link press
+  const [isVisible, setIsVisible] = useVisibilityController(mainNavbarRef);
+  // currentPath contains the current pathname of browser url
+  const [currentPath, generatePath] = useGeneratePath();
+  // create a map of each page section name to the ref of the nav link button that scrolls to it
   const navLinkRefsMap = new Map<string, RefObject<HTMLAnchorElement>>();
 
-  // navlink names
-  const subPageNames: string[] = [];
+  Object.keys(pageSections).forEach((pageSectionName) => {
+    navLinkRefsMap.set(pageSectionName, useRef<HTMLAnchorElement>(null));
+  });
 
-  for (const page of subPageRefs.keys()) {
-    navLinkRefsMap.set(page, { current: null });
-    subPageNames.push(page);
-  }
   // ref for navlinkRefs
   const navLinkRefs = useRef(navLinkRefsMap);
 
+  /**
+   * Sets up intersection observers to handle the lightening of subnavbar links when sections are scrolled on screen.
+   */
   useEffect(() => {
     const intersectionObservers: IntersectionObserver[] = [];
-    // set up an intersection observer for each subpage ref
-    for (const subPage of subPageNames) {
-      // set up the intersection observer which watches for subpages being scrolled on screen
+    // set up an intersection observer for each page section ref
+    for (const pageSectionName of Object.keys(pageSections)) {
+      // set up the intersection observer which watches for page sections being scrolled on screen
       const intersectionObserver = new IntersectionObserver(
         ([entry]) => {
-          // manual writing of style when the subpage is intersecting/not interesecting.
-          // This makes the corresponding subpage link become light when its section is on screen.
-          if (navLinkRefs.current.get(subPage)!.current) {
+          // manual writing of style when the page section is intersecting/not interesecting.
+          // This makes the corresponding page section link become light when its section is on screen.
+          if (navLinkRefs.current.get(pageSectionName)!.current) {
             if (!entry.isIntersecting) {
-              navLinkRefs.current.get(subPage)!.current!.style.color =
+              navLinkRefs.current.get(pageSectionName)!.current!.style.color =
                 'rgba(255, 255, 255, 0.55)';
             } else {
-              navLinkRefs.current.get(subPage)!.current!.style.color =
+              navLinkRefs.current.get(pageSectionName)!.current!.style.color =
                 'rgba(255, 255, 255)';
             }
           }
         },
-        subPageRefs.get(subPage)!.current!.getBoundingClientRect().height <
+        pageSections[pageSectionName].ref.current!.getBoundingClientRect()
+          .height <
         window.innerHeight * SUBPAGE_WINDOW_RATIO
           ? observerOptionsShort
           : observerOptionsLong
       );
-      intersectionObserver.observe(subPageRefs.get(subPage)!.current!);
+      intersectionObserver.observe(pageSections[pageSectionName].ref.current!);
       intersectionObservers.push(intersectionObserver);
     }
     return () => {
@@ -81,6 +84,46 @@ export default function SubNavbar({
       intersectionObservers.forEach((observer) => observer.disconnect);
     };
   });
+
+  /**
+   * Returns true if a quicklink was pressed on homepage.
+   */
+  function wasQuickLinkPressed(quickLink: QuickLink) {
+    return (
+      generatePath(quickLink.path) ===
+      window.location.pathname + window.location.search
+    );
+  }
+
+  /**
+   * Sets up the quick links from homepage, by monitoring the url, if match with a quicklink,
+   * if so makes the navbar visible so that the page can be scrolled down correctly to the
+   * quicklink section on next render.
+   *
+   * Only run if currentPath has changed.
+   */
+  useEffect(() => {
+    for (const quickLink of quickLinks) {
+      if (wasQuickLinkPressed(quickLink)) {
+        setIsVisible(true);
+        return;
+      }
+    }
+  }, [currentPath]);
+
+  /**
+   * Once subnavbar is visible, check if there is a query param from a quicklink having been pressed,
+   * if so, then scroll to the page section that quicklink represents.
+   */
+  useEffect(() => {
+    if (isVisible) {
+      for (const quickLink of quickLinks) {
+        if (wasQuickLinkPressed(quickLink)) {
+          quickLinkScroll(quickLink);
+        }
+      }
+    }
+  }, [isVisible]);
 
   /**
    * Scrolls to the section of the page with the given ref.
@@ -95,7 +138,20 @@ export default function SubNavbar({
   }
 
   /**
-   * Runs on select of navlink, scrolls to the corresponding subpage AND removes the focus from the navlink
+   * Scrolls to the page section that the quicklink that was pressed refers to.
+   */
+  function quickLinkScroll(quickLink: QuickLink) {
+    // removes the query param from quicklink url
+    window.history.replaceState(
+      {},
+      '',
+      quickLink.path.slice(0, quickLink.path.indexOf('?'))
+    );
+    scrollTo(pageSections[quickLink.name].ref);
+  }
+
+  /**
+   * Runs on select of navlink, scrolls to the corresponding page section AND removes the focus from the navlink
    * so it dosent stay focused if the user scrolls away
    * @param eventKey
    * @returns
@@ -104,42 +160,48 @@ export default function SubNavbar({
     if (!eventKey) {
       return;
     }
-    // a ref object linked to the eventkey in subPageRefs map is guaranteed to exist
-    scrollTo(subPageRefs.get(eventKey)!);
+    scrollTo(pageSections[eventKey].ref);
   }
 
-  const AnimatedNavbar = motion(Navbar);
-
+  // Because of a bug with AnimatePresence where it is not able to properly remove custom component (NavBar),
+  // in that the navbar would be not visible, but still in the DOM and clickable, when not supposed to!
+  // so wrap Navbar with a motion.div to give it its animated behavious whilst avoiding the bug.
+  // the motion.div needs to have a height of 0 so it doesnt get seen at all on DOm (no blank spot appears temporarily).
   return (
     <AnimatePresence>
       {isVisible && (
-        <AnimatedNavbar
-          key={'navbar'}
-          ref={subNavbarRef}
-          onSelect={onSelectFunc}
-          fixed="top"
-          bg="primary"
-          className="justify-content-center"
-          style={{ overflow: 'hidden' }}
+        <motion.div
+          style={{ height: 0 }}
+          exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <Nav>
-            {subPageNames.map((pageName: string) => (
-              <Nav.Item key={pageName}>
-                <Nav.Link
-                  ref={navLinkRefs.current.get(pageName)}
-                  eventKey={pageName}
-                  key={pageName}
-                >
-                  {pageName}
-                </Nav.Link>
-              </Nav.Item>
-            ))}
-          </Nav>
-        </AnimatedNavbar>
+          (
+          <Navbar
+            key={'navbar'}
+            ref={subNavbarRef}
+            onSelect={onSelectFunc}
+            fixed="top"
+            bg="primary"
+            className="justify-content-center"
+            style={{ overflow: 'hidden' }}
+          >
+            <Nav>
+              {Object.keys(pageSections).map((pageSectionName) => (
+                <Nav.Item key={pageSectionName}>
+                  <Nav.Link
+                    ref={navLinkRefs.current.get(pageSectionName)}
+                    eventKey={pageSectionName}
+                  >
+                    {pageSections[pageSectionName].title}
+                  </Nav.Link>
+                </Nav.Item>
+              ))}
+            </Nav>
+          </Navbar>
+          )
+        </motion.div>
       )}
     </AnimatePresence>
   );

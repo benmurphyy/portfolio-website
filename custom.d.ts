@@ -8,6 +8,7 @@ declare module '*.scss';
 declare module '*.pdf';
 declare module '*.jpg?preload';
 declare module '*.jpg?prefetch';
+declare module '*.html';
 
 // for responsive loader
 interface ResponsiveImageOutput {

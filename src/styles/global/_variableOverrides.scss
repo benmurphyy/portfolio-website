@@ -6,12 +6,12 @@ $light: #dbd7d2 !default;
 //custom fonts - all fonts are set to preload
 @font-face {
   font-family: 'Open Sans';
-  src: url('src/assets/fonts/OpenSans-Medium.ttf?preload');
+  src: url('src/assets/fonts/OpenSans-Medium.ttf');
 }
 
 @font-face {
   font-family: 'Merienda-Bold';
-  src: url('src/assets/fonts/Merienda-Bold.ttf?preload');
+  src: url('src/assets/fonts/Merienda-Bold.ttf');
 }
 
 // default font family sans serif

@@ -1,13 +1,13 @@
 import { forwardRef } from 'react';
-import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { useNavigate } from 'react-router';
+import Navbar from 'react-bootstrap/Navbar';
 import bjmIcon from 'src/assets/icons/bjm.svg';
+import routes from 'src/routes';
+import useGeneratePath from 'src/util/hooks/useGeneratePath';
 
-import { pages } from 'src/constants';
+const MainNavbar = forwardRef<HTMLDivElement>((_, ref) => {
+  const [_currentPath, generatePath] = useGeneratePath();
 
-const Navigator = forwardRef<HTMLDivElement>((_, ref) => {
-  const navigate = useNavigate();
   return (
     <Navbar
       ref={ref}
@@ -17,28 +17,32 @@ const Navigator = forwardRef<HTMLDivElement>((_, ref) => {
       variant="dark"
       expand="md"
     >
-      <Navbar.Brand href="/" className="px-2 rounded">
+      <Navbar.Brand href={generatePath('/')} className="px-2 rounded">
         <img src={bjmIcon} alt="ben murphy brand icon" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-        <Nav
-          className="justify-content-end"
-          onSelect={(eventKey) => navigate(eventKey as string)}
-        >
-          {pages.map((page) => (
-            <Nav.Item key={page.name} className="d-flex justify-content-end">
-              <Nav.Link key={page.name} className="px-2" eventKey={page.path}>
-                {page.navbarLinkTitle}
-              </Nav.Link>
-            </Nav.Item>
-          ))}
+        <Nav className="justify-content-end">
+          {Object.keys(routes).map((page) =>
+            // only home page does not get a link
+            page !== 'home' ? (
+              <Nav.Item key={page} className="d-flex justify-content-end">
+                <Nav.Link
+                  key={page}
+                  className="px-2"
+                  href={generatePath(routes[page].path)}
+                >
+                  {routes[page].title}
+                </Nav.Link>
+              </Nav.Item>
+            ) : null
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 });
 
-Navigator.displayName = 'Navigator';
+MainNavbar.displayName = 'Navigator';
 
-export default Navigator;
+export default MainNavbar;
