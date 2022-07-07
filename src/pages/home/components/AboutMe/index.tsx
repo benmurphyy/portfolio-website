@@ -10,9 +10,7 @@ import styles from './styles.scss';
 const AboutMe = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <Container fluid className="" ref={ref}>
-      <Row>
-        <SectionHeader title="About Me" isHiddenOnPhone={true} />
-      </Row>
+      <SectionHeader title="About Me" isHiddenOnPhone />
       <Row className="pt-4">
         <Col className="d-flex justify-content-center">
           <Image

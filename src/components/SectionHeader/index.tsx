@@ -28,7 +28,7 @@ export default function SectionHeader({
     <Container
       className={`${
         isHiddenOnPhone ? styles.isHiddenOnPhone : ''
-      }py-2 ${className}`}
+      } py-2 ${className}`}
     >
       <Row>
         <Col className="align-items-center">

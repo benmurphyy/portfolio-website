@@ -1,10 +1,13 @@
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import SectionHeader from 'src/components/SectionHeader';
 import { quickLinks } from 'src/constants';
+import useGeneratePath from 'src/util/hooks/useGeneratePath';
 
 import styles from './styles.scss';
 
 export default function QuickLinks() {
+  const generatePath = useGeneratePath();
+
   return (
     <Container fluid className="pb-4 px-4">
       <SectionHeader title="Quick Links" />
@@ -18,7 +21,7 @@ export default function QuickLinks() {
               <Button
                 className={`${styles.button} w-100`}
                 style={{ backgroundColor: quickLink.buttonColor }}
-                href={quickLink.path}
+                href={generatePath(quickLink.path)}
               >
                 {quickLink.title}
               </Button>
