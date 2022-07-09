@@ -8,23 +8,26 @@ $icon-size-document-download: 50px;
 }
 
 .document-download-icon {
-  @include responsive-icon-sizes(50px, 80px);
+  // size of the icon should match the text beside it
+  height: $h3-font-size;
+  width: $h3-font-size;
+  margin-right: 8px;
 }
 
 .document-download-link {
   color: $dark;
+  padding: 2% 5%;
+  border-radius: 8px;
   text-decoration: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  border: solid transparent 1px;
 
   &:hover,
   &:active,
   &:focus {
-    color: $primary;
-
-    .document-download-icon {
-      fill: $primary;
-    }
+    border: solid $dark 1px;
+    background-color: #faf9f6;
   }
 }

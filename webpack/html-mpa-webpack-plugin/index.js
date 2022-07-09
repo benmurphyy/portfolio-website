@@ -7,13 +7,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  * injected into their html template.
  */
 class HtmlMpaWebpackPlugin {
-  constructor({ pagesDir, serverHtmlDir }) {
+  constructor({ pagesDir, serverHtmlDir, faviconPath }) {
     // only load all the folder names in the page folder, files do not count as a new page
     this.pages = fs
       .readdirSync(pagesDir, { withFileTypes: true })
       .filter((file) => file.isDirectory)
       .map((file) => file.name);
     this.serverHtmlDir = serverHtmlDir;
+    this.faviconPath = faviconPath;
   }
 
   apply(compiler) {
@@ -25,6 +26,7 @@ class HtmlMpaWebpackPlugin {
         filename: `${page === 'home' ? 'index' : page}.html`,
         chunks: [page],
         minify: false,
+        favicon: this.faviconPath,
       }).apply(compiler);
     });
   }

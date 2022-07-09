@@ -18,8 +18,6 @@ import usePageSectionRefMapCreator from 'src/util/hooks/usePageSectionRefMapCrea
 
 /**
  * Skills component for all skill icons.
- * TODO: add hover/click popup for each skill icons- attach it to the icon itself
- * TODO: add other ksills like fusion360
  */
 //setting up data variables
 

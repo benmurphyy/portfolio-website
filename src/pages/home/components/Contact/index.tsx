@@ -36,7 +36,7 @@ const Contact = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
           </Col>
         ))}
       </Row>
-      <Row className="my-4 justify-content-center">
+      <Row className="py-4 justify-content-center">
         {downloads.map((document) => (
           <Col
             className="d-flex flex-column align-items-center col-sm-4 col-xl-3"
@@ -49,12 +49,12 @@ const Contact = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
               rel="noreferrer"
               download
             >
-              <h4 className="text-center">{document.name}</h4>
               <img
                 src={downloadIcon}
                 className={styles.documentDownloadIcon}
-                alt={`Download ${document.name}`}
+                alt={`${document} download link`}
               />
+              <h4 className="text-center my-0">{document.name}</h4>
             </a>
           </Col>
         ))}

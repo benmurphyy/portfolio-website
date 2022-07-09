@@ -1,8 +1,14 @@
 .headerContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+
+.content {
+  position: relative;
+  top: 40%;
+
+  @include phone-to-desktop-changes {
+    top: 45%;
+  }
 }
