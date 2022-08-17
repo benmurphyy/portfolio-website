@@ -12,6 +12,7 @@ import kotlinIcon from 'src/assets/icons/skills/kotlin/kotlin-original.svg';
 import linuxIcon from 'src/assets/icons/skills/linux/linux-original.svg';
 import luaIcon from 'src/assets/icons/skills/lua/lua-original.svg';
 import mySqlIcon from 'src/assets/icons/skills/mysql/mysql-original.svg';
+import nextJsIcon from 'src/assets/icons/skills/nextjs/next-js.svg';
 import nodeJSIcon from 'src/assets/icons/skills/nodejs/nodejs-original.svg';
 import postgreSQLIcon from 'src/assets/icons/skills/postgresql/postgresql.svg';
 import pythonIcon from 'src/assets/icons/skills/python/python-original.svg';
@@ -180,6 +181,11 @@ export const skills: {
   PostgreSQL: {
     icon: postgreSQLIcon,
     type: Types.MISCELLANEOUS,
+    proficiency: Proficiencys.HIGH,
+  },
+  NextJs: {
+    icon: nextJsIcon,
+    type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
     proficiency: Proficiencys.HIGH,
   },
 };
