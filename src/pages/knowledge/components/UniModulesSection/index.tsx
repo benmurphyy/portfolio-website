@@ -6,7 +6,7 @@ import SectionHeader from 'src/components/SectionHeader';
 const UniModulesSection = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <Container ref={ref}>
-      <SectionHeader title="University Modules" subtitle="CAP: 5.0 / 5.0" />
+      <SectionHeader title="University Modules" subtitle="CAP: 4.95 / 5.0" />
       <Row>
         <Col>
           <h2>Computer Science</h2>
