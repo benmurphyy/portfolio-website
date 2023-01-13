@@ -1,6 +1,6 @@
 //Download Files
-import resumeFile from 'src/assets/downloads/Resume_Ben_Murphy.pdf';
-import transcriptFile from 'src/assets/downloads/Transcript_Ben_Murphy.pdf';
+import resumeFile from 'src/assets/downloads/Ben Murphy Resume.pdf';
+import transcriptFile from 'src/assets/downloads/Ben Murphy Transcript.pdf';
 import EmailIcon from 'src/assets/icons/contact/email/email.svg';
 import GithubIcon from 'src/assets/icons/contact/github/github-original.svg';
 import LinkedInIcon from 'src/assets/icons/contact/linkedin/linkedin-original.svg';

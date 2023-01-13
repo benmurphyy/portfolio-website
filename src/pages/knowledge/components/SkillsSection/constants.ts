@@ -6,6 +6,7 @@ import cssIcon from 'src/assets/icons/skills/css3/css3-original.svg';
 import dockerIcon from 'src/assets/icons/skills/docker/docker-original.svg';
 import gitIcon from 'src/assets/icons/skills/git/git-original.svg';
 import htmlIcon from 'src/assets/icons/skills/html5/html5-original.svg';
+import ionicIcon from 'src/assets/icons/skills/ionic/ionic.svg';
 import javaIcon from 'src/assets/icons/skills/java/java-original.svg';
 import javascriptIcon from 'src/assets/icons/skills/javascript/javascript-original.svg';
 import kotlinIcon from 'src/assets/icons/skills/kotlin/kotlin-original.svg';
@@ -185,6 +186,11 @@ export const skills: {
   },
   NextJs: {
     icon: nextJsIcon,
+    type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
+    proficiency: Proficiencys.HIGH,
+  },
+  Ionic: {
+    icon: ionicIcon,
     type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
     proficiency: Proficiencys.HIGH,
   },
