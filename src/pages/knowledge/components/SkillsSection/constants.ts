@@ -2,6 +2,7 @@ import arduinoIcon from 'src/assets/icons/skills/arduino/arduino-original.svg';
 import bashIcon from 'src/assets/icons/skills/bash/bash-original.svg';
 import bootstrapIcon from 'src/assets/icons/skills/bootstrap/bootstrap-original.svg';
 import cIcon from 'src/assets/icons/skills/c/c-original.svg';
+import cPlusPlusIcon from 'src/assets/icons/skills/c++/c++.svg';
 import cssIcon from 'src/assets/icons/skills/css3/css3-original.svg';
 import dockerIcon from 'src/assets/icons/skills/docker/docker-original.svg';
 import gitIcon from 'src/assets/icons/skills/git/git-original.svg';
@@ -19,6 +20,7 @@ import postgreSQLIcon from 'src/assets/icons/skills/postgresql/postgresql.svg';
 import pythonIcon from 'src/assets/icons/skills/python/python-original.svg';
 import raspberryPiIcon from 'src/assets/icons/skills/raspberrypi/raspberrypi-original.svg';
 import reactIcon from 'src/assets/icons/skills/react/react-original.svg';
+import rustIcon from 'src/assets/icons/skills/rust/rust.svg';
 import springIcon from 'src/assets/icons/skills/spring/spring-original.svg';
 import typescriptIcon from 'src/assets/icons/skills/typescript/typescript.svg';
 import unixIcon from 'src/assets/icons/skills/unix/unix-original.svg';
@@ -192,6 +194,16 @@ export const skills: {
   Ionic: {
     icon: ionicIcon,
     type: Types.LIBRARIES_RUNTIMES_FRAMEWORKS,
+    proficiency: Proficiencys.HIGH,
+  },
+  CPlusPlus: {
+    icon: cPlusPlusIcon,
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.HIGH,
+  },
+  Rust: {
+    icon: rustIcon,
+    type: Types.PROGRAMMING_LANGUAGES,
     proficiency: Proficiencys.HIGH,
   },
 };

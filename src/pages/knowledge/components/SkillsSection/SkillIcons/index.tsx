@@ -74,10 +74,14 @@ export default function SkillIcons({ sortMethod }: SkillIconsProps) {
                 </Col>
               </Row>
               <Row>
-                {Object.keys(skills).map((skill) =>
+                {Object.keys(skills)
                   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                   // @ts-ignore sortingMethodKey guranteed to exist on skills[skill]
-                  skills[skill][sortingMethodKey] !== cat ? null : (
+                  .filter((skill) => skills[skill][sortingMethodKey] === cat)
+                  .sort()
+                  .map((skill) => (
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore sortingMethodKey guranteed to exist on skills[skill]
                     <Col key={skill} className={skillIconColClasses}>
                       <Icon
                         iconSvg={skills[skill].icon}
@@ -88,8 +92,7 @@ export default function SkillIcons({ sortMethod }: SkillIconsProps) {
                       />
                       <p className={styles.skillIconLabel}>{skill}</p>
                     </Col>
-                  )
-                )}
+                  ))}
               </Row>
             </React.Fragment>
           ));
