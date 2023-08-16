@@ -201,5 +201,33 @@
     "type": "others",
     "description": "",
     "grade": "CS"
+  },
+  {
+    "code": "CS3211",
+    "name": "Parallel and Concurrent Programming",
+    "type": "cs",
+    "description": "",
+    "grade": "A+"
+  },
+  {
+    "code": "CS4225",
+    "name": "Big Data Systems for Data Science",
+    "type": "cs",
+    "description": "",
+    "grade": "A+"
+  },
+  {
+    "code": "CS4239",
+    "name": "Software Security",
+    "type": "cs",
+    "description": "",
+    "grade": "A+"
+  },
+  {
+    "code": "GES1004",
+    "name": "The Biophysical Environment of Singapore",
+    "type": "others",
+    "description": "",
+    "grade": "A"
   }
 ]

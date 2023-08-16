@@ -20,13 +20,22 @@
   {
     "Title": "Software Engineer Intern",
     "Company": "Shopee Pte. Ltd.",
-    "Duration": "May 2022 - Present",
+    "Duration": "May 2022 - July 2022",
     "Summary": [
       "Frontend Software Developer in Paid Ads team",
       "Developed web application for latest major Paid-Ads project",
       "Mainly Programmed in Typescript",
       "Libraries used in development: React, Vue.js",
       "Gained experienced in manually configuring code bundler (Webpack) to set up critical features like transpiling typescript, code-splitting, uglification etc"
+    ]
+  },
+  {
+    "Title": "Software Engineer Intern",
+    "Company": "Visa Worldwide Pte. Ltd.",
+    "Duration": "May 2023 - July 2023",
+    "Summary": [
+      "Visa Direct team of Commercial and Money Movement Solutions (CMS)",
+      "Designed and developed web-based application for creating, executing and monitoring automated tests for Visa Direct projects. Frontend used Next.js and backend used Spring Boot."
     ]
   }
 ]
