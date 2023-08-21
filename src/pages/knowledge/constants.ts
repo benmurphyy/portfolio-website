@@ -15,7 +15,7 @@ export const knowledgePageSections: {
   },
   [KnowledgePageSectionName.UNIVERSITY_MODULES]: {
     name: KnowledgePageSectionName.UNIVERSITY_MODULES,
-    title: 'University Modules',
+    title: 'University Courses',
     queryParam: KnowledgePageSectionName.UNIVERSITY_MODULES,
   },
 };

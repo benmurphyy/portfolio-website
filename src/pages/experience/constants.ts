@@ -2,6 +2,7 @@ import projectWriteups from 'src/assets/data/projects.json';
 import threeDPrintIcon from 'src/assets/icons/projects/3d_printing.svg';
 import alexaIcon from 'src/assets/icons/projects/alexa.svg';
 import bjmIcon from 'src/assets/icons/projects/bjm.svg';
+import onTheWayIcon from 'src/assets/icons/projects/on_the_way.svg';
 import pongIcon from 'src/assets/icons/projects/pong.svg';
 import telegramIcon from 'src/assets/icons/projects/telegram.svg';
 import { PageSection } from 'src/constants';
@@ -24,7 +25,14 @@ export enum ExperiencePageSectionName {
 /**
  * Icons for each project in the SAME order that they are written in the json file.
  */
-const icons = [bjmIcon, threeDPrintIcon, alexaIcon, telegramIcon, pongIcon];
+const icons = [
+  bjmIcon,
+  onTheWayIcon,
+  threeDPrintIcon,
+  alexaIcon,
+  telegramIcon,
+  pongIcon,
+];
 
 export const experiencePageSections: {
   [key in ExperiencePageSectionName]: PageSection;

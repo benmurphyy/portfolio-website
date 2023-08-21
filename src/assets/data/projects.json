@@ -8,8 +8,18 @@
       "Built with Webpack using a custom configuration",
       "Main libraries used: react-router, framer-motion, react-bootstrap"
     ],
-    "description": "Having originally started development on this website in December 2021, I have been continually updating it as I've learned more techniques in frontend developement.This webpage was built using React with Bootstrap to help in the layouts. React-router was used for routing and framer-motion for the animations. No template was used, as I wanted to fashion the website from the ground up, so I could impart my own style and also maximise the learning experience. The project was set up to be easy to maintain and update. Details and explanation regarding the configurations I used for the project can be viewed in its repository.",
+    "description": "Having originally started development on this website in December 2021, I have been continually updating it as I've learned more techniques in frontend developement, such as a move from Single Page Application (SPA) design to Multi Page Application (MPA) design with Static Site Generation (SSG), using my own technique with Webpack. The project was set up to be easy to maintain and update. Details and explanation regarding the configurations I used for the project can be viewed in its repository.",
     "repository": "https://github.com/benmurphyy/portfolio-website"
+  },
+  {
+    "title": "OnTheWay",
+    "subtitle": "An app to organize on-campus study sessions",
+    "summary": [
+      "Was the frontend lead developer (in a team of 4).",
+      "Cross-platform Progressive Web Application (PWA) built using Ionic framework, integrated with scalable Firebase backend."
+    ],
+    "description": "Built as the final project for CS3216 Software Product Engineering for Digital Markets. Launched in Fall 2022.",
+    "repository": ""
   },
   {
     "title": "Thinking in 3 Dimensions",

@@ -13,8 +13,8 @@
     "Company": "Singapore E-Business Pte. Ltd.",
     "Duration": "May 2021 - Jul 2021",
     "Summary": [
-      "Learnt to develop process flows for conceptualising implementation of payment services such as cross border payments",
-      "Developed backend for direct debit authorization service, utilizing Spring Boot framework in Java to implement RESTful API, with Hibernate ORM to interact with MySQL supporting database"
+      "Worked on Spring Boot project for a direct debit authorization service, with MySQL supporting database integrated using Hibernate object relation mapper.",
+      "Learnt to develop process flows for conceptualising implementation of payment services such as cross border payments"
     ]
   },
   {
@@ -23,10 +23,9 @@
     "Duration": "May 2022 - July 2022",
     "Summary": [
       "Frontend Software Developer in Paid Ads team",
-      "Developed web application for latest major Paid-Ads project",
-      "Mainly Programmed in Typescript",
+      "Developed React pages in Typescript as part of the latest major Paid-Ads project",
       "Libraries used in development: React, Vue.js",
-      "Gained experienced in manually configuring code bundler (Webpack) to set up critical features like transpiling typescript, code-splitting, uglification etc"
+      "Gained experience in manually configuring code bundler (Webpack) to set up critical features like transpiling typescript, code-splitting, uglification etc"
     ]
   },
   {
@@ -34,8 +33,10 @@
     "Company": "Visa Worldwide Pte. Ltd.",
     "Duration": "May 2023 - July 2023",
     "Summary": [
-      "Visa Direct team of Commercial and Money Movement Solutions (CMS)",
-      "Designed and developed web-based application for creating, executing and monitoring automated tests for Visa Direct projects. Frontend used Next.js and backend used Spring Boot."
+      "Interned in Visa Direct team of Commercial and Money Movement Solutions (CMS)",
+      "Developed a web application to create, manage and monitor automated tests on the projects under the Visa Direct team, utilizing Next.js for frontend and Spring Boot for the backend.",
+      "Gathered user requirements from team and designed project from scratch, which included the supporting Oracle database and REST API endpoints for frontend-backend communication.",
+      "Presented fully functional first iteration of the project to senior management near internship-end and handed off project to full-timers as a lasting internal project in the Visa Direct team."
     ]
   }
 ]
