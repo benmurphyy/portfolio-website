@@ -6,6 +6,7 @@ import cPlusPlusIcon from 'src/assets/icons/skills/c++/c++.svg';
 import cssIcon from 'src/assets/icons/skills/css3/css3-original.svg';
 import dockerIcon from 'src/assets/icons/skills/docker/docker-original.svg';
 import gitIcon from 'src/assets/icons/skills/git/git-original.svg';
+import goIcon from 'src/assets/icons/skills/go/go-logo-blue.svg';
 import htmlIcon from 'src/assets/icons/skills/html5/html5-original.svg';
 import ionicIcon from 'src/assets/icons/skills/ionic/ionic.svg';
 import javaIcon from 'src/assets/icons/skills/java/java-original.svg';
@@ -80,6 +81,11 @@ export const skills: {
     icon: dockerIcon,
     type: Types.MISCELLANEOUS,
     proficiency: Proficiencys.FAIR,
+  },
+  Go: {
+    icon: goIcon,
+    type: Types.PROGRAMMING_LANGUAGES,
+    proficiency: Proficiencys.HIGH,
   },
   Git: {
     icon: gitIcon,
