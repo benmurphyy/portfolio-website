@@ -229,5 +229,19 @@
     "type": "others",
     "description": "",
     "grade": "A"
+  },
+  {
+    "code": "CS3230",
+    "name": "Design and Analysis of Algorithms",
+    "type": "cs",
+    "description": "",
+    "grade": "A"
+  },
+  {
+    "code": "CS3219",
+    "name": "Software Engineering Principles and Patterns",
+    "type": "cs",
+    "description": "",
+    "grade": "A+"
   }
 ]
